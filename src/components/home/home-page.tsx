@@ -52,9 +52,8 @@ export function HomePage({ locale, content }: HomePageProps): React.JSX.Element 
   return (
     <div className="pb-8 sm:pb-10">
       <div className="bg-[color:var(--accent)] py-3 text-white">
-        <div className="container-shell flex flex-col gap-2 text-center text-xs font-medium tracking-[0.2em] uppercase sm:flex-row sm:items-center sm:justify-between sm:text-left">
+        <div className="container-shell flex items-center justify-center text-center text-xs font-medium tracking-[0.2em] uppercase sm:justify-start sm:text-left">
           <span>{content.topBar}</span>
-          <span className="text-white/75">EN · DE · 中文</span>
         </div>
       </div>
 
