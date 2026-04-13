@@ -1,0 +1,9 @@
+---
+description: Web 图标规范（SKTD 官网首页）
+alwaysApply: true
+---
+
+# 图标规范
+
+- 图标库统一使用 lucide-react
+- 禁止混用其他图标库，避免风格不一致与额外体积开销
