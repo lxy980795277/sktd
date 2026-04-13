@@ -1,0 +1,10 @@
+---
+description: Web 状态管理规范（SKTD 官网首页）
+alwaysApply: true
+---
+
+# 状态管理策略
+
+- 当前阶段默认不引入 Zustand、Redux 等全局状态管理
+- 页面交互优先使用 React 本地状态与组件间 props 传递
+- 仅当出现明确的跨区域复杂状态共享需求时，再评估引入全局状态管理

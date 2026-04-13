@@ -1,0 +1,28 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "SKTD: Next.js dev",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "pnpm dev --hostname 127.0.0.1",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "SKTD: Open homepage",
+      "type": "pwa-chrome",
+      "request": "launch",
+      "url": "http://127.0.0.1:3000/en",
+      "webRoot": "${workspaceFolder}"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "SKTD: Dev + Browser",
+      "configurations": [
+        "SKTD: Next.js dev",
+        "SKTD: Open homepage"
+      ]
+    }
+  ]
+}

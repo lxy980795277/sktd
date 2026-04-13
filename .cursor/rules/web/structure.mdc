@@ -1,0 +1,113 @@
+---
+description: Magic Book 前端项目结构规范
+alwaysApply: true
+---
+
+# 前端项目结构规范
+
+## 目录结构
+
+```
+apps/web/src/
+├── app/
+├── components/
+├── config/
+├── constants/
+├── context/
+├── hooks/
+├── services/
+├── stores/
+├── styles/
+├── types/
+└── utils/
+```
+
+## 组件目录结构
+
+**重要规范：组件必须放在独立目录中**
+
+### App Router 页面组件结构
+
+**核心原则：页面组件直接放在路由目录下，不需要额外的 `components` 包裹层**
+
+```
+# ✅ 正确示例（app/docs 路由）
+app/docs/
+├── page.tsx
+├── sidebar/
+│   ├── index.tsx
+│   └── user-section/
+│       └── index.tsx
+├── editor-area/
+│   └── index.tsx
+└── document-list/
+    └── index.tsx
+
+# ❌ 错误示例（多余的 components 目录）
+app/docs/
+├── page.tsx
+└── components/
+    ├── sidebar/
+    ├── editor-area/
+    └── document-list/
+```
+
+### 单个组件内部结构
+
+```
+component-name/
+├── index.tsx
+├── index.scss
+├── hooks.ts
+├── types.ts
+└── sub-component/
+    └── index.tsx
+```
+
+## 样式文件命名规范
+
+- 普通组件：`index.scss`
+- Tiptap 组件：`组件名.scss`
+
+## 命名规范
+
+| 类型       | 规范                | 示例               |
+| ---------- | ------------------- | ------------------ |
+| 组件名     | PascalCase          | `DocumentEditor`   |
+| 文件/目录  | kebab-case          | `document-editor`  |
+| Store Hook | `use[Feature]Store` | `useDocumentStore` |
+
+## 导入/导出规范
+
+- ❌ 禁止在 `config/services/stores/constants/hooks/utils` 创建 `index.ts` 统一导出
+- ✅ `types/` 可使用 `index.ts`
+- ❌ 禁止默认导出
+
+```typescript
+// ✅ 正确
+import { apiProxyRewrites } from '@/config/api-proxy';
+
+// ❌ 错误
+import { apiProxyRewrites } from '@/config';
+```
+
+## Services 与 Constants
+
+- API 路径统一放 `constants/api.ts`
+- services 中只拼接路径，不硬编码
+
+```typescript
+// services/document.ts
+import { API_DOCUMENTS } from '@/constants/api';
+```
+
+## Context 层结构
+
+- `context/` 仅单文件，不建子目录
+
+## 禁止事项
+
+- ❌ 使用 `lib/` 目录（使用 `utils/`）
+- ❌ 在 `services/` 中定义类型（应放在 `types/`）
+- ❌ 在父目录直接放组件文件
+- ❌ 文件名包含冗余后缀（`.store.ts`, `.service.ts`）

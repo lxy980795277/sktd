@@ -1,0 +1,10 @@
+---
+description: Web 组件库规范（SKTD 官网首页）
+alwaysApply: true
+---
+
+# 组件策略
+
+- 官网首页默认不强依赖组件库
+- 若确有必要引入组件库，仅允许使用 shadcn/ui
+- 引入新 UI 组件前，优先评估是否可通过 Tailwind 与原生语义标签实现

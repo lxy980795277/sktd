@@ -1,0 +1,17 @@
+---
+description: Web 技术栈规范（SKTD 官网首页）
+alwaysApply: true
+---
+
+# 技术栈
+
+- 前端框架使用 Next.js（最新稳定版本）
+- 开发语言统一使用 TypeScript（.ts / .tsx）
+- 样式方案使用 Tailwind CSS（最新稳定版本）
+- 使用 App Router 组织页面与路由
+
+# 实施约束
+
+- 新增代码优先使用函数式组件与 React Hooks
+- 优先使用服务端组件；仅在必要交互场景使用客户端组件
+- 保持首页项目轻量化，不引入与目标无关的重型依赖
