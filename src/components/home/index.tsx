@@ -51,7 +51,7 @@ type HomePageProps = {
 
 export function HomePage({ locale, content }: HomePageProps): React.JSX.Element {
   return (
-    <div className="pb-8 sm:pb-10">
+    <div className="pb-6 sm:pb-8">
       <div className="bg-(--accent) py-3 text-white">
         <div className="container-shell flex items-center justify-center text-center text-xs font-medium tracking-[0.2em] uppercase sm:justify-start sm:text-left">
           <span>{content.topBar}</span>
@@ -65,7 +65,7 @@ export function HomePage({ locale, content }: HomePageProps): React.JSX.Element 
         ctaHref={content.header.ctaHref}
       />
 
-      <main className="space-y-10 sm:space-y-14 lg:space-y-20">
+      <main className="space-y-8 sm:space-y-12 lg:space-y-16">
         <FeaturedBanner locale={locale} content={content.featuredBanner} />
         <HeroCarousel locale={locale} slides={content.hero.slides} />
 

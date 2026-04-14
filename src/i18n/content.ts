@@ -138,7 +138,7 @@ const content: Record<Locale, HomeContent> = {
         { label: "Milestones", href: "#milestones" },
         { label: "About", href: "#about" },
       ],
-      ctaLabel: "Contact our team",
+      ctaLabel: "Contact us",
       ctaHref: "#cta",
     },
     featuredBanner: {
