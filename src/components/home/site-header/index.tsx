@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -40,9 +41,14 @@ export function SiteHeader({
       <header className="sticky top-0 z-40 border-b border-(--line) bg-[rgba(246,241,232,0.82)] backdrop-blur-xl">
         <div className="container-shell flex items-center justify-between gap-4 py-4">
           <Link href={`/${locale}`} className="flex items-center gap-3">
-            <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-(--accent) text-sm font-bold tracking-[0.28em] text-white">
-              SKTD
-            </span>
+            <Image
+              src="/images/logo/2.png"
+              alt="SKTD logo"
+              width={100}
+              height={56}
+              className="h-24 w-48 object-cover"
+              priority
+            />
             <div>
               <p className="text-xs tracking-[0.32em] text-(--muted) uppercase">
                 Corporate Homepage
@@ -57,7 +63,7 @@ export function SiteHeader({
                 <Link
                   key={item.href}
                   href={`/${locale}${item.href}`}
-                  className="text-sm font-medium text-(--muted) transition hover:text-foreground"
+                  className="hover:text-foreground text-sm font-medium text-(--muted) transition"
                 >
                   {item.label}
                 </Link>
@@ -69,7 +75,7 @@ export function SiteHeader({
             <LanguageSwitcher locale={locale} />
             <Link
               href={`/${locale}${ctaHref}`}
-              className="rounded-full bg-(--accent) px-5 py-3 text-sm font-semibold text-white transition hover:bg-(--accent-strong)"
+              className="rounded-full bg-(--accent) px-5 py-3 text-sm font-semibold text-white! transition hover:bg-(--accent-strong)"
             >
               {ctaLabel}
             </Link>
@@ -77,7 +83,7 @@ export function SiteHeader({
 
           <button
             type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-(--line) bg-white/80 text-foreground lg:hidden"
+            className="text-foreground inline-flex h-11 w-11 items-center justify-center rounded-full border border-(--line) bg-white/80 lg:hidden"
             onClick={() => setOpen(true)}
             aria-label="Open menu"
           >
@@ -88,12 +94,10 @@ export function SiteHeader({
 
       {open && (
         <div className="fixed inset-0 z-50 bg-black/40 lg:hidden">
-          <div className="ml-auto flex h-full w-full max-w-sm flex-col bg-background px-6 py-6 shadow-2xl">
+          <div className="bg-background ml-auto flex h-full w-full max-w-sm flex-col px-6 py-6 shadow-2xl">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-xs tracking-[0.32em] text-(--muted) uppercase">
-                  Navigation
-                </p>
+                <p className="text-xs tracking-[0.32em] text-(--muted) uppercase">Navigation</p>
                 <p className="section-title text-3xl font-semibold">SKTD</p>
               </div>
               <button
@@ -127,7 +131,7 @@ export function SiteHeader({
 
             <Link
               href={`/${locale}${ctaHref}`}
-              className="mt-auto inline-flex items-center justify-center rounded-full bg-(--accent) px-5 py-3 text-sm font-semibold text-white transition hover:bg-(--accent-strong)"
+              className="mt-auto inline-flex items-center justify-center rounded-full bg-(--accent) px-5 py-3 text-sm font-semibold text-white! transition hover:bg-(--accent-strong)"
               onClick={() => setOpen(false)}
             >
               {ctaLabel}

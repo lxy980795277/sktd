@@ -1,0 +1,104 @@
+.featured-banner-entry {
+  --featured-shell-max-width: 1560px;
+  --featured-shell-padding: 1rem;
+  --featured-start-extra-inset: 72px;
+  --featured-start-inset: max(
+    0px,
+    calc(
+      (100vw - var(--featured-shell-max-width)) / 2 + var(--featured-shell-padding) +
+        var(--featured-start-extra-inset)
+    )
+  );
+}
+
+.featured-banner-frame {
+  width: calc(100% - (var(--featured-start-inset) * 2));
+  margin-inline: auto;
+  border-radius: 34px;
+  opacity: 0;
+  animation:
+    featured-banner-fade-in 320ms ease-out forwards,
+    featured-banner-expand 1080ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  will-change: width, border-radius;
+}
+
+.featured-banner-media {
+  animation: featured-banner-image-settle 1600ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.featured-banner-content {
+  animation: featured-banner-content-rise 1200ms cubic-bezier(0.2, 1, 0.3, 1) 420ms both;
+}
+
+.featured-banner-dots {
+  animation: featured-banner-content-rise 900ms cubic-bezier(0.2, 1, 0.3, 1) 620ms both;
+}
+
+@media (min-width: 640px) {
+  .featured-banner-entry {
+    --featured-shell-padding: 1.25rem;
+    --featured-start-extra-inset: 88px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .featured-banner-entry {
+    --featured-shell-padding: 2.5rem;
+    --featured-start-extra-inset: 110px;
+  }
+}
+
+@keyframes featured-banner-expand {
+  from {
+    width: calc(100% - (var(--featured-start-inset) * 2));
+    border-radius: 34px;
+  }
+
+  to {
+    width: 100%;
+    border-radius: 0;
+  }
+}
+
+@keyframes featured-banner-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes featured-banner-image-settle {
+  from {
+    transform: scale(1.04);
+    filter: saturate(1.04) contrast(1.02);
+  }
+
+  to {
+    transform: scale(1);
+    filter: saturate(1) contrast(1);
+  }
+}
+
+@keyframes featured-banner-content-rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .featured-banner-frame,
+  .featured-banner-media,
+  .featured-banner-content,
+  .featured-banner-dots {
+    animation: none;
+  }
+}

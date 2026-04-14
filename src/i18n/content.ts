@@ -139,7 +139,7 @@ const content: Record<Locale, HomeContent> = {
         { label: "About", href: "#about" },
       ],
       ctaLabel: "Contact us",
-      ctaHref: "#cta",
+      ctaHref: "/contact",
     },
     featuredBanner: {
       eyebrow: "SKTD international partnership",
@@ -223,19 +223,19 @@ const content: Record<Locale, HomeContent> = {
         "Built for companies that want dependable execution, international perspective and a partner who can move from concept to delivery without handoff friction.",
       items: [
         {
-          title: "Integrated sourcing network",
+          title: "Network",
           description:
             "A structured bridge between Asian product ecosystems and European market expectations.",
-          value: "4 strategic offices",
+          value: "4 Offices",
         },
         {
-          title: "Quality-first execution",
+          title: "Execution",
           description:
             "Controlled product development and quality management to reduce surprises across borders.",
-          value: "End-to-end oversight",
+          value: "End-to-End",
         },
         {
-          title: "Commercial resilience",
+          title: "Resilience",
           description:
             "Reliable coordination across procurement, financing and logistics to keep projects moving.",
           value: "Since 2014",
@@ -249,44 +249,42 @@ const content: Record<Locale, HomeContent> = {
         "The homepage follows the same modular rhythm as the reference site, while the content is tailored to SKTD’s B2B value proposition.",
       items: [
         {
-          title: "Home & Interior",
-          description: "Furniture, decor and design-led living collections.",
+          title: "Corner storage rack",
+          description:
+            "This corner shelf is 90-degree right angle, fits wall corners and does not occupy excess space.",
         },
         {
-          title: "Event & Styling",
-          description: "Commercial styling concepts and event-ready assortments.",
+          title: "Two tone carpet",
+          description: "Expertly woven from lightweight cotton and designed without rubber backing.",
         },
         {
-          title: "Food & Delicacies",
-          description: "Imported goods and specialty categories with curation support.",
+          title: "Exquisite bed products",
+          description:
+            "This solid bedding comforter set perfectly blends exquisite textured craft and everyday comfort.",
         },
         {
-          title: "Fashion & Accessories",
-          description: "Trend-aware sourcing for soft goods and accessories.",
+          title: "Courtyard furniture set",
+          description:
+            "This practical patio conversation set is the perfect addition to your outdoor space.",
         },
         {
-          title: "Corporate Gifting",
-          description: "Giftable items, seasonal lines and packaging directions.",
+          title: "Sunshade",
+          description: "Unique double-top canopy design for both commercial and residential use.",
         },
         {
-          title: "Office & Workspace",
-          description: "Functional products that balance aesthetics and utility.",
+          title: "Swing chair",
+          description:
+            "Model Name Accent Chair, Vintage Wingback Chair with Pillow and Arm, Mid Century Tall Back Chair.",
         },
         {
-          title: "Hospitality",
-          description: "Project-ready solutions for hotels, restaurants and leisure.",
+          title: "Minimal table lamp",
+          description:
+            "A slim-profile lamp with warm diffusion, ideal for bedside styling and curated interior lighting.",
         },
         {
-          title: "Baby & Kids",
-          description: "Safety-aware assortments developed for family-oriented brands.",
-        },
-        {
-          title: "Floral & Green",
-          description: "Accessories and concepts for seasonal visual merchandising.",
-        },
-        {
-          title: "Lifestyle Retail",
-          description: "Collections that help retail environments stay fresh and differentiated.",
+          title: "Decor storage basket",
+          description:
+            "Hand-finished woven basket with clean proportions, suitable for living-room, office, and entryway organization.",
         },
       ],
     },
@@ -423,7 +421,7 @@ const content: Record<Locale, HomeContent> = {
       subtitle:
         "Use this high-fidelity homepage as the foundation. You can replace imagery, partner names and call-to-action targets later without restructuring the design.",
       primaryLabel: "Start a conversation",
-      primaryHref: "mailto:hello@sktd.com",
+      primaryHref: "/contact",
       secondaryLabel: "Review milestones",
       secondaryHref: "#milestones",
     },
@@ -454,7 +452,7 @@ const content: Record<Locale, HomeContent> = {
         { label: "Über uns", href: "#about" },
       ],
       ctaLabel: "Team kontaktieren",
-      ctaHref: "#cta",
+      ctaHref: "/contact",
     },
     featuredBanner: {
       eyebrow: "SKTD internationale Partnerschaft",
@@ -740,7 +738,7 @@ const content: Record<Locale, HomeContent> = {
       subtitle:
         "Diese hochgradig referenznahe Startseite ist die Basis. Bilder, Partnernamen und CTA-Ziele können später ohne Designumbau ersetzt werden.",
       primaryLabel: "Gespräch starten",
-      primaryHref: "mailto:hello@sktd.com",
+      primaryHref: "/contact",
       secondaryLabel: "Meilensteine prüfen",
       secondaryHref: "#milestones",
     },
@@ -771,7 +769,7 @@ const content: Record<Locale, HomeContent> = {
         { label: "关于我们", href: "#about" },
       ],
       ctaLabel: "联系团队",
-      ctaHref: "#cta",
+      ctaHref: "/contact",
     },
     featuredBanner: {
       eyebrow: "SKTD 国际合作伙伴",
@@ -1036,7 +1034,7 @@ const content: Record<Locale, HomeContent> = {
       subtitle:
         "这版首页已经具备高保真参考站结构，后续你只需要替换图片、正式客户名称和最终跳转目标，不需要重做页面框架。",
       primaryLabel: "开始沟通",
-      primaryHref: "mailto:hello@sktd.com",
+      primaryHref: "/contact",
       secondaryLabel: "查看里程碑",
       secondaryHref: "#milestones",
     },

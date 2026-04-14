@@ -68,7 +68,6 @@ body::selection {
 }
 
 a {
-  color: inherit;
   text-decoration: none;
 }
 
@@ -79,9 +78,9 @@ img {
 
 .container-shell {
   width: 100%;
-  max-width: 1440px;
+  max-width: 1560px;
   margin-inline: auto;
-  padding-inline: 0.75rem;
+  padding-inline: 1rem;
 }
 
 @media (min-width: 640px) {
@@ -92,7 +91,7 @@ img {
 
 @media (min-width: 1024px) {
   .container-shell {
-    padding-inline: 1rem;
+    padding-inline: 2.5rem;
   }
 }
 
