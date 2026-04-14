@@ -52,6 +52,16 @@ export interface HomeContent {
     ctaLabel: string;
     ctaHref: string;
   };
+  featuredBanner: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    primaryLabel: string;
+    primaryHref: string;
+    secondaryLabel: string;
+    secondaryHref: string;
+    images: string[];
+  };
   hero: {
     slides: HeroSlide[];
   };
@@ -130,6 +140,22 @@ const content: Record<Locale, HomeContent> = {
       ],
       ctaLabel: "Contact our team",
       ctaHref: "#cta",
+    },
+    featuredBanner: {
+      eyebrow: "SKTD international partnership",
+      title: "Since 2014, SKTD has connected Asia and Europe through reliable execution.",
+      description:
+        "We blend German engineering discipline, Italian design perspective and Asian sourcing strength to deliver practical end-to-end value.",
+      primaryLabel: "Explore capabilities",
+      primaryHref: "#services",
+      secondaryLabel: "View milestones",
+      secondaryHref: "#milestones",
+      images: [
+        "/images/carous/1.webp",
+        "/images/carous/2.webp",
+        "/images/carous/3.webp",
+        "/images/carous/4.webp",
+      ],
     },
     hero: {
       slides: [
@@ -429,6 +455,22 @@ const content: Record<Locale, HomeContent> = {
       ],
       ctaLabel: "Team kontaktieren",
       ctaHref: "#cta",
+    },
+    featuredBanner: {
+      eyebrow: "SKTD internationale Partnerschaft",
+      title: "Seit 2014 verbindet SKTD Asien und Europa durch verlässliche Umsetzung.",
+      description:
+        "Wir vereinen deutsche Ingenieursdisziplin, italienische Designperspektive und asiatische Sourcing-Stärke zu belastbarem End-to-End-Mehrwert.",
+      primaryLabel: "Leistungen entdecken",
+      primaryHref: "#services",
+      secondaryLabel: "Meilensteine ansehen",
+      secondaryHref: "#milestones",
+      images: [
+        "/images/carous/1.webp",
+        "/images/carous/2.webp",
+        "/images/carous/3.webp",
+        "/images/carous/4.webp",
+      ],
     },
     hero: {
       slides: [
@@ -730,6 +772,22 @@ const content: Record<Locale, HomeContent> = {
       ],
       ctaLabel: "联系团队",
       ctaHref: "#cta",
+    },
+    featuredBanner: {
+      eyebrow: "SKTD 国际合作伙伴",
+      title: "自 2014 年起，SKTD 以可靠执行持续连接亚洲与欧洲。",
+      description:
+        "我们融合德国工程纪律、意大利设计视角与亚洲供应链优势，提供可落地的端到端商业价值。",
+      primaryLabel: "查看服务能力",
+      primaryHref: "#services",
+      secondaryLabel: "浏览发展历程",
+      secondaryHref: "#milestones",
+      images: [
+        "/images/carous/1.webp",
+        "/images/carous/2.webp",
+        "/images/carous/3.webp",
+        "/images/carous/4.webp",
+      ],
     },
     hero: {
       slides: [

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { HomePage } from "@/components/home/home-page";
+import { HomePage } from "@/components/home";
 import { getHomeContent } from "@/i18n/content";
 import { isLocale, locales } from "@/i18n/config";
 
