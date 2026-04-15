@@ -170,7 +170,7 @@ const content: Record<Locale, HomeContent> = {
           secondaryHref: "#milestones",
           note: "Germany · Italy · China · Vietnam",
           image:
-            "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1400&q=80",
+            "/images/hero-carousel/1.webp",
           highlights: [
             "Established in Düsseldorf in 2014",
             "Strategic offices across Europe and Asia",
@@ -188,7 +188,7 @@ const content: Record<Locale, HomeContent> = {
           secondaryHref: "#planning",
           note: "Europe · Asia · North America",
           image:
-            "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=80",
+            "/images/hero-carousel/2.webp",
           highlights: [
             "Multilingual commercial communication",
             "Regional business understanding",
@@ -207,7 +207,7 @@ const content: Record<Locale, HomeContent> = {
           secondaryHref: "#about",
           note: "Reliability · Efficiency · Innovation",
           image:
-            "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1400&q=80",
+            "/images/hero-carousel/3.webp",
           highlights: [
             "Sourcing and product development",
             "Quality management and project financing",
@@ -352,7 +352,7 @@ const content: Record<Locale, HomeContent> = {
       actionLabel: "Learn more about SKTD",
       actionHref: "#cta",
       image:
-        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1400&q=80",
+        "/images/about-section/1.webp",
     },
     services: {
       eyebrow: "Capabilities",
@@ -485,7 +485,7 @@ const content: Record<Locale, HomeContent> = {
           secondaryHref: "#milestones",
           note: "Deutschland · Italien · China · Vietnam",
           image:
-            "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1400&q=80",
+            "/images/hero-carousel/1.webp",
           highlights: [
             "2014 in Düsseldorf gegründet",
             "Strategische Büros in Europa und Asien",
@@ -504,7 +504,7 @@ const content: Record<Locale, HomeContent> = {
           secondaryHref: "#planning",
           note: "Europa · Asien · Nordamerika",
           image:
-            "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=80",
+            "/images/hero-carousel/2.webp",
           highlights: [
             "Mehrsprachige Kommunikation",
             "Verständnis regionaler Geschäftspraxis",
@@ -523,7 +523,7 @@ const content: Record<Locale, HomeContent> = {
           secondaryHref: "#about",
           note: "Zuverlässigkeit · Effizienz · Innovation",
           image:
-            "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1400&q=80",
+            "/images/hero-carousel/3.webp",
           highlights: [
             "Sourcing und Produktentwicklung",
             "Qualitätsmanagement und Projektfinanzierung",
@@ -669,7 +669,7 @@ const content: Record<Locale, HomeContent> = {
       actionLabel: "Mehr über SKTD",
       actionHref: "#cta",
       image:
-        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1400&q=80",
+        "/images/about-section/1.webp",
     },
     services: {
       eyebrow: "Leistungen",
@@ -801,7 +801,7 @@ const content: Record<Locale, HomeContent> = {
           secondaryHref: "#milestones",
           note: "德国 · 意大利 · 中国 · 越南",
           image:
-            "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1400&q=80",
+            "/images/hero-carousel/1.webp",
           highlights: [
             "2014 年于杜塞尔多夫成立",
             "欧洲与亚洲多地战略办公室",
@@ -819,7 +819,7 @@ const content: Record<Locale, HomeContent> = {
           secondaryHref: "#planning",
           note: "欧洲 · 亚洲 · 北美",
           image:
-            "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=80",
+            "/images/hero-carousel/2.webp",
           highlights: ["多语言商业沟通能力", "深入理解区域商业惯例", "跨时区快速协同响应"],
         },
         {
@@ -833,7 +833,7 @@ const content: Record<Locale, HomeContent> = {
           secondaryHref: "#about",
           note: "可靠 · 高效 · 创新",
           image:
-            "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1400&q=80",
+            "/images/hero-carousel/3.webp",
           highlights: ["采购与产品开发", "质量管理与项目融资", "物流节奏与交付控制"],
         },
       ],
@@ -966,7 +966,7 @@ const content: Record<Locale, HomeContent> = {
       actionLabel: "进一步了解 SKTD",
       actionHref: "#cta",
       image:
-        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1400&q=80",
+        "/images/about-section/1.webp",
     },
     services: {
       eyebrow: "服务能力",

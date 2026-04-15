@@ -99,10 +99,10 @@ const detailText = {
 } as const;
 
 const DETAIL_IMAGES = [
-  "https://images.unsplash.com/photo-1481437156560-3205f6a55735?auto=format&fit=crop&w=1400&q=80",
-  "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=1400&q=80",
-  "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1400&q=80",
-  "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1400&q=80",
+  "/images/product-detail/1.webp",
+  "/images/product-detail/2.webp",
+  "/images/product-detail/3.webp",
+  "/images/product-detail/4.webp",
 ] as const;
 
 export function generateStaticParams(): Array<{ category: string; productId: string }> {

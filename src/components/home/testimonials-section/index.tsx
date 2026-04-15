@@ -10,9 +10,9 @@ type TestimonialsSectionProps = {
 };
 
 const TESTIMONIAL_BACKGROUND_IMAGES = [
-  "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=80",
+  "/images/testimonials-section/1.webp",
+  "/images/testimonials-section/2.webp",
+  "/images/testimonials-section/3.webp",
 ] as const;
 
 // 口碑模块：展示合作反馈，增强页面信任感。

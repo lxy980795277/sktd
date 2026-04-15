@@ -12,6 +12,7 @@ type SiteHeaderProps = {
   navigation: NavigationItem[];
   ctaLabel: string;
   ctaHref: string;
+  appVersion: string;
 };
 
 export function SiteHeader({
@@ -19,6 +20,7 @@ export function SiteHeader({
   navigation,
   ctaLabel,
   ctaHref,
+  appVersion,
 }: SiteHeaderProps): React.JSX.Element {
   const [open, setOpen] = useState(false);
 
@@ -63,6 +65,9 @@ export function SiteHeader({
           </nav>
 
           <div className="hidden items-center gap-3 lg:flex">
+            <span className="rounded-full border border-(--line) bg-white/70 px-3 py-1 text-xs font-semibold tracking-[0.12em] text-(--muted) uppercase">
+              {`DEV v${appVersion}`}
+            </span>
             <LanguageSwitcher locale={locale} />
             <Link
               href={`/${locale}${ctaHref}`}
@@ -102,6 +107,9 @@ export function SiteHeader({
             </div>
 
             <div className="mt-8">
+              <p className="text-center text-xs font-semibold tracking-[0.12em] text-(--muted) uppercase">
+                {`DEV v${appVersion}`}
+              </p>
               <LanguageSwitcher locale={locale} className="w-full justify-center" />
             </div>
 

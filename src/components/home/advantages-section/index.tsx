@@ -6,9 +6,9 @@ type AdvantagesSectionProps = {
 };
 
 const ADVANTAGE_IMAGES = [
-  "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80",
+  "/images/advantages-section/1.webp",
+  "/images/advantages-section/2.webp",
+  "/images/advantages-section/3.webp",
 ] as const;
 
 // 优势模块：聚焦 SKTD 的核心价值与差异化能力。

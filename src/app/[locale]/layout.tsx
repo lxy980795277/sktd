@@ -3,6 +3,7 @@ import { SiteFooter } from "@/components/home/site-footer";
 import { SiteHeader } from "@/components/home/site-header";
 import { getHomeContent } from "@/i18n/content";
 import { isLocale } from "@/i18n/config";
+import packageJson from "../../../package.json";
 
 type LocaleLayoutProps = {
   children: React.ReactNode;
@@ -30,6 +31,7 @@ export default async function LocaleLayout({
         navigation={content.header.navigation}
         ctaLabel={content.header.ctaLabel}
         ctaHref={content.header.ctaHref}
+        appVersion={packageJson.version}
       />
       <div className="flex-1">{children}</div>
       <SiteFooter locale={locale} content={content.footer} />
