@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -40,15 +39,7 @@ export function SiteHeader({
     <>
       <header className="sticky top-0 z-40 border-b border-(--line) bg-[rgba(246,241,232,0.82)] backdrop-blur-xl">
         <div className="container-shell flex items-center justify-between gap-4 py-4">
-          <Link href={`/${locale}`} className="flex items-center gap-3">
-            <Image
-              src="/images/logo/2.png"
-              alt="SKTD logo"
-              width={100}
-              height={56}
-              className="h-24 w-48 object-cover"
-              priority
-            />
+          <Link href={`/${locale}`} className="flex items-center">
             <div>
               <p className="text-xs tracking-[0.32em] text-(--muted) uppercase">
                 Corporate Homepage

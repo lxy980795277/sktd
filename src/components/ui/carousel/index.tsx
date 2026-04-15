@@ -9,6 +9,11 @@ type CarouselApi = UseEmblaCarouselType[1];
 type CarouselOptions = Parameters<typeof useEmblaCarousel>[0];
 type CarouselPlugin = Parameters<typeof useEmblaCarousel>[1];
 
+type CarouselNavButtonProps = React.ComponentProps<"button"> & {
+  variant?: "outline";
+  size?: "icon";
+};
+
 type CarouselProps = {
   opts?: CarouselOptions;
   plugins?: CarouselPlugin;
@@ -56,7 +61,11 @@ function Carousel({
   const [canScrollPrev, setCanScrollPrev] = React.useState(false);
   const [canScrollNext, setCanScrollNext] = React.useState(false);
 
-  const onSelect = React.useCallback((apiValue: CarouselApi): void => {
+  const onSelect = React.useCallback((apiValue: CarouselApi | undefined): void => {
+    if (!apiValue) {
+      return;
+    }
+
     setCanScrollPrev(apiValue.canScrollPrev());
     setCanScrollNext(apiValue.canScrollNext());
   }, []);
@@ -115,10 +124,7 @@ function Carousel({
         carouselRef,
         api,
         opts,
-        orientation:
-          orientation === "horizontal"
-            ? "horizontal"
-            : "vertical",
+        orientation: orientation === "horizontal" ? "horizontal" : "vertical",
         scrollPrev,
         scrollNext,
         canScrollPrev,
@@ -139,30 +145,20 @@ function Carousel({
   );
 }
 
-function CarouselContent({
-  className,
-  ...props
-}: React.ComponentProps<"div">): React.JSX.Element {
+function CarouselContent({ className, ...props }: React.ComponentProps<"div">): React.JSX.Element {
   const { carouselRef, orientation } = useCarousel();
 
   return (
-    <div ref={carouselRef} className="overflow-hidden" data-slot="carousel-content">
+    <div ref={carouselRef} className="h-full overflow-hidden" data-slot="carousel-content">
       <div
-        className={cn(
-          "flex",
-          orientation === "horizontal" ? "-ml-4" : "-mt-4 flex-col",
-          className,
-        )}
+        className={cn("flex", orientation === "horizontal" ? "-ml-4" : "-mt-4 flex-col", className)}
         {...props}
       />
     </div>
   );
 }
 
-function CarouselItem({
-  className,
-  ...props
-}: React.ComponentProps<"div">): React.JSX.Element {
+function CarouselItem({ className, ...props }: React.ComponentProps<"div">): React.JSX.Element {
   const { orientation } = useCarousel();
 
   return (
@@ -185,7 +181,7 @@ function CarouselPrevious({
   variant = "outline",
   size = "icon",
   ...props
-}: React.ComponentProps<"button">): React.JSX.Element {
+}: CarouselNavButtonProps): React.JSX.Element {
   const { orientation, scrollPrev, canScrollPrev } = useCarousel();
 
   return (
@@ -197,7 +193,7 @@ function CarouselPrevious({
       className={cn(
         "absolute h-8 w-8 rounded-full",
         orientation === "horizontal"
-          ? "-left-12 top-1/2 -translate-y-1/2"
+          ? "top-1/2 -left-12 -translate-y-1/2"
           : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
         variant === "outline" && "border border-(--line) bg-white/90",
         size === "icon" && "inline-flex items-center justify-center",
@@ -216,7 +212,7 @@ function CarouselNext({
   variant = "outline",
   size = "icon",
   ...props
-}: React.ComponentProps<"button">): React.JSX.Element {
+}: CarouselNavButtonProps): React.JSX.Element {
   const { orientation, scrollNext, canScrollNext } = useCarousel();
 
   return (
@@ -228,7 +224,7 @@ function CarouselNext({
       className={cn(
         "absolute h-8 w-8 rounded-full",
         orientation === "horizontal"
-          ? "-right-12 top-1/2 -translate-y-1/2"
+          ? "top-1/2 -right-12 -translate-y-1/2"
           : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",
         variant === "outline" && "border border-(--line) bg-white/90",
         size === "icon" && "inline-flex items-center justify-center",

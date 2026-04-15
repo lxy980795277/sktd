@@ -24,7 +24,9 @@ export function MilestonesSection({ content }: MilestonesSectionProps): React.JS
               key={`${item.year}-${item.title}`}
               className="glass-card rounded-[28px] border border-(--line) p-6 shadow-[0_16px_44px_rgba(31,29,25,0.05)]"
             >
-              <p className="text-sm font-semibold tracking-[0.24em] text-(--accent) uppercase">{item.year}</p>
+              <p className="text-sm font-semibold tracking-[0.24em] text-(--accent) uppercase">
+                {item.year}
+              </p>
               <h3 className="mt-4 text-2xl font-semibold">{item.title}</h3>
               <p className="mt-3 text-sm leading-7 text-(--muted)">{item.description}</p>
             </article>

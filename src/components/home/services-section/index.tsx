@@ -20,7 +20,10 @@ export function ServicesSection({ locale, content }: ServicesSectionProps): Reac
           <h2 className="section-title max-w-3xl text-4xl leading-[0.95] font-semibold sm:text-5xl lg:text-[3.5rem]">
             {content.title}
           </h2>
-          <Link href={`/${locale}/contact`} className="inline-flex items-center gap-2 text-sm font-semibold text-(--accent)">
+          <Link
+            href={`/${locale}/contact`}
+            className="inline-flex items-center gap-2 text-sm font-semibold text-(--accent)"
+          >
             Contact SKTD
             <ArrowRight className="h-4 w-4" />
           </Link>

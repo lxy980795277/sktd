@@ -77,7 +77,7 @@ export function SectorsSection({ content }: SectorsSectionProps): React.JSX.Elem
               <article
                 key={item.title}
                 className={cn(
-                  "group min-h-[420px] rounded-[28px] border border-white/70 bg-white/78 p-5 shadow-[0_14px_32px_rgba(31,29,25,0.05)] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:duration-300 hover:shadow-[0_28px_64px_rgba(31,29,25,0.22)]",
+                  "group min-h-[420px] rounded-[28px] border border-white/70 bg-white/78 p-5 shadow-[0_14px_32px_rgba(31,29,25,0.05)] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:shadow-[0_28px_64px_rgba(31,29,25,0.22)] hover:duration-300",
                   isCardGridVisible
                     ? "translate-y-0 scale-100 opacity-100"
                     : "translate-y-10 scale-[0.975] opacity-0",

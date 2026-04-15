@@ -29,7 +29,8 @@ const contactContent: Record<Locale, ContactContent> = {
   en: {
     seo: {
       title: "Contact | SKTD",
-      description: "Contact SKTD for sourcing, product development, quality management and logistics.",
+      description:
+        "Contact SKTD for sourcing, product development, quality management and logistics.",
     },
     backToHomeLabel: "Back to homepage",
     eyebrow: "Contact us",

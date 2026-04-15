@@ -132,7 +132,11 @@ export function ContactForm({ content }: ContactFormProps): React.JSX.Element {
       </div>
 
       <div className="flex justify-end">
-        <Button type="submit" disabled={isSubmitting} className="h-10 min-w-[152px] sm:h-11 sm:min-w-[168px]">
+        <Button
+          type="submit"
+          disabled={isSubmitting}
+          className="h-10 min-w-[152px] sm:h-11 sm:min-w-[168px]"
+        >
           {isSubmitting ? content.submittingLabel : content.submitLabel}
         </Button>
       </div>

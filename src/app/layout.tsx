@@ -27,11 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>): React.JSX.Element {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${cormorant.variable}`}
-      suppressHydrationWarning
-    >
+    <html lang="en" className={`${inter.variable} ${cormorant.variable}`} suppressHydrationWarning>
       <body>
         {children}
         <Toaster position="top-right" />

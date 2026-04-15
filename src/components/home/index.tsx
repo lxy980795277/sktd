@@ -5,8 +5,6 @@ import { FeaturedBanner } from "@/components/home/featured-banner";
 import { HeroCarousel } from "@/components/home/hero-carousel";
 import { MilestonesSection } from "@/components/home/milestones-section";
 import { SectorsSection } from "@/components/home/sectors-section";
-import { SiteFooter } from "@/components/home/site-footer";
-import { SiteHeader } from "@/components/home/site-header";
 import { TestimonialsSection } from "@/components/home/testimonials-section";
 import { TopBar } from "@/components/home/top-bar";
 import type { HomeContent } from "@/i18n/content";
@@ -23,13 +21,6 @@ export function HomePage({ locale, content }: HomePageProps): React.JSX.Element 
     <div>
       <TopBar message={content.topBar} />
 
-      <SiteHeader
-        locale={locale}
-        navigation={content.header.navigation}
-        ctaLabel={content.header.ctaLabel}
-        ctaHref={content.header.ctaHref}
-      />
-
       <main className="space-y-8 sm:space-y-12 lg:space-y-16">
         {/* 首屏模块：品牌横幅 + 动态轮播 */}
         <FeaturedBanner locale={locale} content={content.featuredBanner} />
@@ -45,8 +36,6 @@ export function HomePage({ locale, content }: HomePageProps): React.JSX.Element 
         <MilestonesSection content={content.milestones} />
         <CtaSection locale={locale} content={content.cta} />
       </main>
-
-      <SiteFooter locale={locale} content={content.footer} />
     </div>
   );
 }

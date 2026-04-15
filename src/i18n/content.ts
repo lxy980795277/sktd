@@ -134,9 +134,9 @@ const content: Record<Locale, HomeContent> = {
     header: {
       navigation: [
         { label: "Why SKTD", href: "#advantages" },
-        { label: "Capabilities", href: "#services" },
+        { label: "Products", href: "/products" },
         { label: "Milestones", href: "#milestones" },
-        { label: "About", href: "#about" },
+        { label: "About", href: "/about" },
       ],
       ctaLabel: "Contact us",
       ctaHref: "/contact",
@@ -255,7 +255,8 @@ const content: Record<Locale, HomeContent> = {
         },
         {
           title: "Two tone carpet",
-          description: "Expertly woven from lightweight cotton and designed without rubber backing.",
+          description:
+            "Expertly woven from lightweight cotton and designed without rubber backing.",
         },
         {
           title: "Exquisite bed products",
@@ -430,9 +431,9 @@ const content: Record<Locale, HomeContent> = {
         "SKTD creates dependable links between Asia and Europe through sourcing, development, quality control, financing and logistics.",
       links: [
         { label: "Why SKTD", href: "#advantages" },
-        { label: "Capabilities", href: "#services" },
+        { label: "Products", href: "/products" },
         { label: "Milestones", href: "#milestones" },
-        { label: "About", href: "#about" },
+        { label: "About", href: "/about" },
       ],
       rights: "© SKTD. All rights reserved.",
     },
@@ -447,9 +448,9 @@ const content: Record<Locale, HomeContent> = {
     header: {
       navigation: [
         { label: "Warum SKTD", href: "#advantages" },
-        { label: "Leistungen", href: "#services" },
+        { label: "Produkte", href: "/products" },
         { label: "Meilensteine", href: "#milestones" },
-        { label: "Über uns", href: "#about" },
+        { label: "Über uns", href: "/about" },
       ],
       ctaLabel: "Team kontaktieren",
       ctaHref: "/contact",
@@ -747,9 +748,9 @@ const content: Record<Locale, HomeContent> = {
         "SKTD schafft belastbare Verbindungen zwischen Asien und Europa durch Sourcing, Entwicklung, Qualitätskontrolle, Finanzierung und Logistik.",
       links: [
         { label: "Warum SKTD", href: "#advantages" },
-        { label: "Leistungen", href: "#services" },
+        { label: "Produkte", href: "/products" },
         { label: "Meilensteine", href: "#milestones" },
-        { label: "Über uns", href: "#about" },
+        { label: "Über uns", href: "/about" },
       ],
       rights: "© SKTD. Alle Rechte vorbehalten.",
     },
@@ -764,9 +765,9 @@ const content: Record<Locale, HomeContent> = {
     header: {
       navigation: [
         { label: "为什么选择 SKTD", href: "#advantages" },
-        { label: "服务能力", href: "#services" },
+        { label: "产品", href: "/products" },
         { label: "发展里程碑", href: "#milestones" },
-        { label: "关于我们", href: "#about" },
+        { label: "关于我们", href: "/about" },
       ],
       ctaLabel: "联系团队",
       ctaHref: "/contact",
@@ -1043,9 +1044,9 @@ const content: Record<Locale, HomeContent> = {
         "SKTD 通过采购、产品开发、质量控制、融资与物流，在亚洲与欧洲之间建立稳定可信的合作链路。",
       links: [
         { label: "为什么选择 SKTD", href: "#advantages" },
-        { label: "服务能力", href: "#services" },
+        { label: "产品", href: "/products" },
         { label: "发展里程碑", href: "#milestones" },
-        { label: "关于我们", href: "#about" },
+        { label: "关于我们", href: "/about" },
       ],
       rights: "© SKTD. 保留所有权利。",
     },
