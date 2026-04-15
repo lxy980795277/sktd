@@ -5,10 +5,10 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { LanguageSwitcher } from "@/components/home/language-switcher";
 import type { NavigationItem } from "@/i18n/content";
-import type { Locale } from "@/i18n/config";
+import type { RouteLocale } from "@/i18n/config";
 
 type SiteHeaderProps = {
-  locale: Locale;
+  locale: RouteLocale;
   navigation: NavigationItem[];
   ctaLabel: string;
   ctaHref: string;

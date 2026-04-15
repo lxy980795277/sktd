@@ -10,21 +10,21 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { cn } from "@/lib/utils";
-import { localeLabels, locales, type Locale } from "@/i18n/config";
+import { localeLabels, locales, type RouteLocale } from "@/i18n/config";
 
 type LanguageSwitcherProps = {
-  locale: Locale;
+  locale: RouteLocale;
   className?: string;
 };
 
-function getLocalizedPath(pathname: string, nextLocale: Locale): string {
+function getLocalizedPath(pathname: string, nextLocale: RouteLocale): string {
   const segments = pathname.split("/");
 
   if (segments[0] !== "") {
     segments.unshift("");
   }
 
-  if (segments.length > 1 && locales.includes(segments[1] as Locale)) {
+  if (segments.length > 1 && locales.includes(segments[1] as RouteLocale)) {
     segments[1] = nextLocale;
   } else {
     segments.splice(1, 0, nextLocale);
@@ -45,7 +45,7 @@ export function LanguageSwitcher({
       return;
     }
 
-    router.push(getLocalizedPath(pathname ?? `/${locale}`, nextLocale as Locale));
+    router.push(getLocalizedPath(pathname ?? `/${locale}`, nextLocale as RouteLocale));
   };
 
   return (
