@@ -21,7 +21,7 @@ export function HomePage({ locale, content }: HomePageProps): React.JSX.Element 
     <div>
       <TopBar message={content.topBar} />
 
-      <main className="space-y-8 sm:space-y-12 lg:space-y-16">
+      <main className="space-y-10 sm:space-y-14 lg:space-y-20">
         {/* 首屏模块：品牌横幅 + 动态轮播 */}
         <FeaturedBanner locale={locale} content={content.featuredBanner} />
         <HeroCarousel locale={locale} slides={content.hero.slides} />
