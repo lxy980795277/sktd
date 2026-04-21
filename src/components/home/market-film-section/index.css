@@ -1,0 +1,211 @@
+.market-film-section {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+}
+
+.market-film-section__inner {
+  position: relative;
+  overflow: visible;
+  height: clamp(560px, 64vw, 820px);
+  perspective: 1600px;
+  transform-style: preserve-3d;
+  background:
+    radial-gradient(circle at 18% 20%, rgba(216, 155, 112, 0.22), transparent 34%),
+    radial-gradient(circle at 82% 78%, rgba(139, 63, 44, 0.18), transparent 38%),
+    linear-gradient(120deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.04));
+}
+
+.market-film-section__inner::after {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 8;
+  content: "";
+  background:
+    radial-gradient(ellipse at center, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 62%),
+    linear-gradient(
+      to right,
+      rgba(246, 241, 232, 0.24),
+      transparent 20%,
+      transparent 80%,
+      rgba(246, 241, 232, 0.24)
+    );
+}
+
+.market-film-section__glow {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 7;
+  background: linear-gradient(
+    100deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.09) 50%,
+    transparent 70%
+  );
+  mix-blend-mode: soft-light;
+  animation: market-film-glow-drift 10s linear infinite;
+}
+
+.market-film-section__mask-left,
+.market-film-section__mask-right {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 220px;
+  z-index: 9;
+}
+
+.market-film-section__mask-left {
+  left: 0;
+  background: linear-gradient(to right, rgba(246, 241, 232, 0.95), rgba(246, 241, 232, 0));
+}
+
+.market-film-section__mask-right {
+  right: 0;
+  background: linear-gradient(to left, rgba(246, 241, 232, 0.95), rgba(246, 241, 232, 0));
+}
+
+.market-film-row {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  overflow: visible;
+}
+
+.market-film-row--primary {
+  top: 0.4rem;
+}
+
+.market-film-row--secondary {
+  bottom: 0;
+  opacity: 0.84;
+}
+
+.market-film-row__track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: market-film-marquee-primary 66s linear infinite;
+}
+
+.market-film-row--secondary .market-film-row__track {
+  animation: market-film-marquee-secondary 78s linear infinite;
+}
+
+.market-film-row__group {
+  display: flex;
+  width: max-content;
+  flex-shrink: 0;
+  padding-inline: 1rem;
+}
+
+.market-film-row__group--primary {
+  gap: 1.35rem;
+}
+
+.market-film-row__group--secondary {
+  gap: 3.4rem;
+}
+
+.market-film-card {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 390px;
+  height: 500px;
+  overflow: hidden;
+  border: none;
+  border-radius: 18px;
+  box-shadow: 0 20px 42px rgba(31, 29, 25, 0.24);
+  transform: translateZ(0);
+  transition:
+    transform 360ms ease,
+    box-shadow 360ms ease,
+    filter 360ms ease;
+}
+
+.market-film-card--soft {
+  --card-rotate-y: -10deg;
+  --card-rotate-x: 2deg;
+  flex-basis: 210px;
+  height: 300px;
+  filter: saturate(0.9) brightness(0.94);
+  transform: perspective(1600px) rotateY(var(--card-rotate-y)) rotateX(var(--card-rotate-x))
+    translateZ(0);
+}
+
+.market-film-card:hover {
+  z-index: 6;
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 20px 44px rgba(31, 29, 25, 0.26);
+}
+
+.market-film-card--soft:hover {
+  transform: perspective(1600px) rotateY(var(--card-rotate-y)) rotateX(var(--card-rotate-x))
+    translateY(-4px) scale(1.02);
+}
+
+.market-film-card__image {
+  object-fit: cover;
+  filter: saturate(1.08) contrast(1.02);
+}
+
+.market-film-card__frost {
+  display: none;
+}
+
+.market-film-card__shine {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.16),
+    transparent 40%,
+    rgba(255, 255, 255, 0.05)
+  );
+}
+
+@keyframes market-film-glow-drift {
+  from {
+    transform: translateX(-36%);
+  }
+
+  to {
+    transform: translateX(36%);
+  }
+}
+
+@keyframes market-film-marquee-primary {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes market-film-marquee-secondary {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .market-film-section__glow {
+    animation: none;
+  }
+
+  .market-film-row__track {
+    animation: none;
+  }
+}

@@ -12,7 +12,6 @@ type SiteHeaderProps = {
   navigation: NavigationItem[];
   ctaLabel: string;
   ctaHref: string;
-  appVersion: string;
 };
 
 export function SiteHeader({
@@ -20,7 +19,6 @@ export function SiteHeader({
   navigation,
   ctaLabel,
   ctaHref,
-  appVersion,
 }: SiteHeaderProps): React.JSX.Element {
   const [open, setOpen] = useState(false);
 
@@ -40,23 +38,23 @@ export function SiteHeader({
   return (
     <>
       <header className="sticky top-0 z-40 border-b border-(--line) bg-[rgba(246,241,232,0.82)] backdrop-blur-xl">
-        <div className="container-shell flex items-center justify-between gap-4 py-4">
+        <div className="container-shell flex items-center justify-between gap-5 py-5 lg:py-6">
           <Link href={`/${locale}`} className="flex items-center">
             <div>
               <p className="text-xs tracking-[0.32em] text-(--muted) uppercase">
                 Corporate Homepage
               </p>
-              <p className="section-title text-2xl leading-none font-semibold">SKTD</p>
+              <p className="section-title text-3xl leading-none font-semibold">SKTD</p>
             </div>
           </Link>
 
-          <nav className="hidden items-center gap-8 lg:flex">
+          <nav className="hidden items-center gap-10 lg:flex">
             {navigation.map((item) => {
               return (
                 <Link
                   key={item.href}
                   href={`/${locale}${item.href}`}
-                  className="hover:text-foreground text-sm font-medium text-(--muted) transition"
+                  className="hover:text-foreground text-sm font-semibold tracking-[0.06em] text-(--muted) uppercase transition"
                 >
                   {item.label}
                 </Link>
@@ -64,14 +62,11 @@ export function SiteHeader({
             })}
           </nav>
 
-          <div className="hidden items-center gap-3 lg:flex">
-            <span className="rounded-full border border-(--line) bg-white/70 px-3 py-1 text-xs font-semibold tracking-[0.12em] text-(--muted) uppercase">
-              {`DEV v${appVersion}`}
-            </span>
-            <LanguageSwitcher locale={locale} />
+          <div className="hidden items-center gap-4 lg:flex">
+            <LanguageSwitcher locale={locale} className="min-w-[118px]" />
             <Link
               href={`/${locale}${ctaHref}`}
-              className="rounded-full bg-(--accent) px-5 py-3 text-sm font-semibold text-white! transition hover:bg-(--accent-strong)"
+              className="rounded-full bg-(--accent) px-6 py-3.5 text-sm font-semibold tracking-[0.04em] text-white! uppercase transition hover:bg-(--accent-strong)"
             >
               {ctaLabel}
             </Link>
@@ -79,7 +74,7 @@ export function SiteHeader({
 
           <button
             type="button"
-            className="text-foreground inline-flex h-11 w-11 items-center justify-center rounded-full border border-(--line) bg-white/80 lg:hidden"
+            className="text-foreground inline-flex h-12 w-12 items-center justify-center rounded-full border border-(--line) bg-white/80 lg:hidden"
             onClick={() => setOpen(true)}
             aria-label="Open menu"
           >
@@ -107,9 +102,6 @@ export function SiteHeader({
             </div>
 
             <div className="mt-8">
-              <p className="text-center text-xs font-semibold tracking-[0.12em] text-(--muted) uppercase">
-                {`DEV v${appVersion}`}
-              </p>
               <LanguageSwitcher locale={locale} className="w-full justify-center" />
             </div>
 
