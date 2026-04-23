@@ -1,0 +1,109 @@
+/* ─── 图片顶格到视口边缘 ────────────────────────────────────────────── */
+
+@media (min-width: 1024px) {
+  .about-story-img-bleed--right {
+    width: calc(100% + max(2.5rem, (100vw - 1280px) / 2));
+    margin-right: calc(-1 * max(2.5rem, (100vw - 1280px) / 2));
+    border-radius: 18px 0 0 18px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-story-img-bleed--left {
+    width: calc(100% + max(2.5rem, (100vw - 1280px) / 2));
+    margin-left: calc(-1 * max(2.5rem, (100vw - 1280px) / 2));
+    border-radius: 0 18px 18px 0;
+  }
+}
+
+/* ─── 滚动入场动效 ──────────────────────────────────────────────────── */
+
+/*
+  三层节奏：
+    0 ms  → 标题滑入 + 淡入   (1100ms)
+  160 ms  → 描述段落滑入 + 淡入 (1100ms)
+  260 ms  → 图片缩放 + 淡入    (1300ms)
+
+  曲线：expo-out，开头快、收尾极慢，有"落定"质感
+*/
+:root {
+  --story-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 初始隐藏 */
+.about-story-row .about-story-title,
+.about-story-row .about-story-desc,
+.about-story-row .about-story-img {
+  will-change: opacity, transform;
+}
+
+/* 标题：第一层，纯横向滑入（X 偏移由左/右方向类覆盖） */
+.about-story-row .about-story-title {
+  opacity: 0;
+  transform: translateX(0);
+  transition:
+    opacity 1400ms var(--story-ease),
+    transform 1400ms var(--story-ease);
+}
+
+/* 描述：第二层，240ms 后跟进 */
+.about-story-row .about-story-desc {
+  opacity: 0;
+  transform: translateX(0);
+  transition:
+    opacity 1400ms var(--story-ease) 240ms,
+    transform 1400ms var(--story-ease) 240ms;
+}
+
+/* 文字从左侧滑入 */
+.about-story-row .about-story-text--from-left .about-story-title {
+  transform: translateX(-48px);
+}
+.about-story-row .about-story-text--from-left .about-story-desc {
+  transform: translateX(-36px);
+}
+
+/* 文字从右侧滑入 */
+.about-story-row .about-story-text--from-right .about-story-title {
+  transform: translateX(48px);
+}
+.about-story-row .about-story-text--from-right .about-story-desc {
+  transform: translateX(36px);
+}
+
+/* 图片：轻微缩小 + 模糊，入场时伸展清晰 */
+.about-story-row .about-story-img {
+  opacity: 0;
+  transform: scale(0.97) translateY(20px);
+  filter: blur(6px);
+  transition:
+    opacity 1600ms var(--story-ease) 360ms,
+    transform 1600ms var(--story-ease) 360ms,
+    filter 1100ms var(--story-ease) 360ms;
+}
+
+/* ── 触发后：全部还原（需与初始偏移选择器优先级一致，均为 3 个类） */
+.about-story-row--visible .about-story-text .about-story-title,
+.about-story-row--visible .about-story-text .about-story-desc {
+  opacity: 1;
+  transform: none;
+}
+
+.about-story-row--visible .about-story-img {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+/* ─── 无障碍 ────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .about-story-row .about-story-text .about-story-title,
+  .about-story-row .about-story-text .about-story-desc,
+  .about-story-row .about-story-img {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+    will-change: auto;
+  }
+}

@@ -1,0 +1,44 @@
+/* ─── 产品卡片入场动效 ───────────────────────────────────────────────── */
+
+/* 初始态：隐藏 + 轻微下移 */
+.product-card {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 560ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 560ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 触发后：按序弹出，每张间隔 90ms */
+.products-grid--visible .product-card {
+  opacity: 1;
+  transform: none;
+}
+
+.products-grid--visible .product-card:nth-child(1) {
+  transition-delay: 0ms;
+}
+.products-grid--visible .product-card:nth-child(2) {
+  transition-delay: 90ms;
+}
+.products-grid--visible .product-card:nth-child(3) {
+  transition-delay: 180ms;
+}
+.products-grid--visible .product-card:nth-child(4) {
+  transition-delay: 270ms;
+}
+.products-grid--visible .product-card:nth-child(5) {
+  transition-delay: 360ms;
+}
+.products-grid--visible .product-card:nth-child(6) {
+  transition-delay: 450ms;
+}
+
+/* ─── 无障碍 ─────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .product-card {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

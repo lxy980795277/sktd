@@ -1,0 +1,72 @@
+/* ─── 里程碑时间线：3 列 × 2 行 ─────────────────────────────────────── */
+
+.milestones-timeline {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 2.5rem;
+  row-gap: 2.75rem;
+}
+
+/* 平板：2 列 */
+@media (max-width: 1024px) {
+  .milestones-timeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 移动：1 列 */
+@media (max-width: 640px) {
+  .milestones-timeline {
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+  }
+}
+
+/* ─── 单个里程碑 ─────────────────────────────────────────────────────── */
+
+.milestones-timeline__item {
+  position: relative;
+  /* 顶部留出圆点一半高度的空间 */
+  padding-top: 22px;
+  /* 每项自带顶线，取代统一的 ::before 横线 */
+  border-top: 1px solid var(--line-strong);
+}
+
+/* 圆点：骑在顶线上 */
+.milestones-timeline__dot {
+  position: absolute;
+  top: -7px; /* (14px dot height) / 2 */
+  left: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--background);
+  border: 2px solid var(--accent);
+  flex-shrink: 0;
+}
+
+/* 年份 */
+.milestones-timeline__year {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 9px;
+}
+
+/* 标题 */
+.milestones-timeline__title {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--foreground);
+  margin-bottom: 8px;
+}
+
+/* 描述 */
+.milestones-timeline__desc {
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--muted);
+}

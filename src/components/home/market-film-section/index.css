@@ -2,6 +2,8 @@
   position: relative;
   width: 100%;
   overflow: visible;
+  /* 隔离动画影响范围，避免每帧触发整页 layout/paint */
+  contain: layout style;
 }
 
 .market-film-section__inner {
@@ -44,7 +46,6 @@
     rgba(255, 255, 255, 0.09) 50%,
     transparent 70%
   );
-  mix-blend-mode: soft-light;
   animation: market-film-glow-drift 10s linear infinite;
 }
 

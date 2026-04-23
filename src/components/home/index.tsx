@@ -5,7 +5,6 @@ import { FeaturedBanner } from "@/components/home/featured-banner";
 import { HeroCarousel } from "@/components/home/hero-carousel";
 import { MarketFilmSection } from "@/components/home/market-film-section";
 import { MilestonesSection } from "@/components/home/milestones-section";
-import { SectorsSection } from "@/components/home/sectors-section";
 import { TestimonialsSection } from "@/components/home/testimonials-section";
 import { TopBar } from "@/components/home/top-bar";
 import type { HomeContent } from "@/i18n/content";
@@ -30,7 +29,7 @@ export function HomePage({ locale, content }: HomePageProps): React.JSX.Element 
         {/* 内容模块：优势、行业、流程、口碑、关于、服务、里程碑、CTA */}
         <AdvantagesSection content={content.advantages} />
         <MarketFilmSection />
-        <SectorsSection content={content.sectors} />
+        {/* <SectorsSection content={content.sectors} /> */}
         {/* <PlanningSection content={content.planning} /> */}
         <TestimonialsSection content={content.testimonials} />
         <AboutSection content={content.about} />

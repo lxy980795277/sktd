@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useRef } from "react";
 import type { FC } from "react";
-import { useState } from "react";
 import type { Locale } from "@/i18n/config";
-import { cn } from "@/lib/utils";
+import "./products-showcase.css";
 
 type ProductCard = {
   id: string;
@@ -22,8 +22,6 @@ type ProductCategory = {
 };
 
 type ProductsShowcaseContent = {
-  categoriesLabel: string;
-  selectedCategoryLabel: string;
   categories: ProductCategory[];
 };
 
@@ -32,89 +30,82 @@ type ProductsShowcaseProps = {
   content: ProductsShowcaseContent;
 };
 
-const ACTIVE_BUTTON_CLASS_NAME =
-  "border-(--accent) bg-(--accent) text-white shadow-[0_10px_28px_rgba(139,63,44,0.25)]";
-const INACTIVE_BUTTON_CLASS_NAME =
-  "border-(--line) bg-white/75 text-(--foreground) hover:border-(--accent)/40";
-
 export const ProductsShowcase: FC<ProductsShowcaseProps> = ({ locale, content }) => {
-  const [activeCategoryId, setActiveCategoryId] = useState(content.categories[0]?.id ?? "");
+  const gridRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  // 说明：根据当前激活分类实时取数，保证下方商品区与上方点击状态同步。
-  const activeCategory =
-    content.categories.find((category) => {
-      return category.id === activeCategoryId;
-    }) ?? content.categories[0];
+  useEffect(() => {
+    const observers: IntersectionObserver[] = [];
+
+    gridRefs.current.forEach((grid) => {
+      if (!grid) return;
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            grid.classList.add("products-grid--visible");
+            observer.unobserve(grid);
+          }
+        },
+        // 网格顶部进入视口 6% 时触发，略提前，节奏自然
+        { threshold: 0.06, rootMargin: "0px 0px -40px 0px" },
+      );
+
+      observer.observe(grid);
+      observers.push(observer);
+    });
+
+    return () => {
+      observers.forEach((o) => o.disconnect());
+    };
+  }, []);
 
   return (
     <section className="mt-8 lg:mt-10">
-      <div>
-        <p className="text-xs font-semibold tracking-[0.2em] text-(--accent) uppercase">
-          {content.categoriesLabel}
-        </p>
-        <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {content.categories.map((category) => {
-            const buttonClassName =
-              activeCategoryId === category.id
-                ? ACTIVE_BUTTON_CLASS_NAME
-                : INACTIVE_BUTTON_CLASS_NAME;
+      <div className="space-y-12 lg:space-y-14">
+        {content.categories.map((category, categoryIndex) => {
+          return (
+            <div
+              key={category.id}
+              className="grid gap-6 border-t border-(--line) pt-10 first:border-t-0 first:pt-0 lg:grid-cols-[220px_1fr]"
+            >
+              <div>
+                <h2 className="text-foreground text-lg font-semibold tracking-[0.04em] sm:text-xl">
+                  {category.title}
+                </h2>
+              </div>
 
-            return (
-              <button
-                key={category.id}
-                type="button"
-                onClick={() => setActiveCategoryId(category.id)}
-                className={cn(
-                  "cursor-pointer rounded-[18px] border px-4 py-3 text-left text-sm font-semibold transition-all",
-                  buttonClassName,
-                )}
+              {/* 产品网格：被 IntersectionObserver 观察 */}
+              <div
+                ref={(el) => {
+                  gridRefs.current[categoryIndex] = el;
+                }}
+                className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:gap-6"
               >
-                {category.title}
-              </button>
-            );
-          })}
-        </div>
+                {category.products.map((product) => (
+                  <Link
+                    key={`${category.id}-${product.id}`}
+                    href={`/${locale}/products/${category.id}/${product.id}`}
+                    className="product-card group cursor-pointer"
+                  >
+                    <div className="relative aspect-square overflow-hidden rounded-[10px] border border-(--line)">
+                      <Image
+                        src={product.image}
+                        alt={product.name}
+                        fill
+                        className="object-cover transition duration-300 group-hover:scale-[1.03]"
+                        sizes="(max-width: 1024px) 33vw, 260px"
+                      />
+                    </div>
+                    <p className="mt-3 text-sm leading-6 text-(--muted) sm:text-base">
+                      {product.name}
+                    </p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          );
+        })}
       </div>
-
-      {activeCategory && (
-        <div className="mt-6 rounded-[24px] border border-(--line) bg-white/55 p-4 sm:p-5 lg:p-6">
-          <p className="text-xs font-semibold tracking-[0.2em] text-(--accent) uppercase">
-            {content.selectedCategoryLabel}
-          </p>
-          <h2 className="section-title mt-3 text-3xl leading-[0.95] font-semibold sm:text-4xl">
-            {activeCategory.title}
-          </h2>
-          <p className="mt-3 text-sm leading-7 text-(--muted) sm:text-base">
-            {activeCategory.summary}
-          </p>
-
-          <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {activeCategory.products.map((product) => {
-              return (
-                <Link
-                  key={`${activeCategory.id}-${product.id}`}
-                  href={`/${locale}/products/${activeCategory.id}/${product.id}`}
-                  className="cursor-pointer overflow-hidden rounded-[18px] border border-(--line) bg-white transition hover:shadow-[0_14px_30px_rgba(31,29,25,0.12)]"
-                >
-                  <div className="relative h-44">
-                    <Image
-                      src={product.image}
-                      alt={product.name}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 1024px) 50vw, 33vw"
-                    />
-                  </div>
-                  <div className="p-4">
-                    <h3 className="text-foreground text-base font-semibold">{product.name}</h3>
-                    <p className="mt-2 text-sm leading-7 text-(--muted)">{product.description}</p>
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-        </div>
-      )}
     </section>
   );
 };

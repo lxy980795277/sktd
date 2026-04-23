@@ -64,7 +64,7 @@ export function ContactForm({ content }: ContactFormProps): React.JSX.Element {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
+    <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5" autoComplete="off">
       <div className="grid gap-4 sm:grid-cols-2 sm:gap-5">
         <div className="space-y-2">
           <Label htmlFor="contact-name">{content.nameLabel}</Label>
@@ -74,7 +74,7 @@ export function ContactForm({ content }: ContactFormProps): React.JSX.Element {
             value={formState.name}
             onChange={(event) => handleFieldChange("name", event.target.value)}
             placeholder={content.namePlaceholder}
-            autoComplete="name"
+            autoComplete="new-password"
             required
           />
         </div>
@@ -86,7 +86,7 @@ export function ContactForm({ content }: ContactFormProps): React.JSX.Element {
             value={formState.phone}
             onChange={(event) => handleFieldChange("phone", event.target.value)}
             placeholder={content.phonePlaceholder}
-            autoComplete="tel"
+            autoComplete="new-password"
             required
           />
         </div>
@@ -101,7 +101,7 @@ export function ContactForm({ content }: ContactFormProps): React.JSX.Element {
           value={formState.email}
           onChange={(event) => handleFieldChange("email", event.target.value)}
           placeholder={content.emailPlaceholder}
-          autoComplete="email"
+          autoComplete="new-password"
           required
         />
       </div>

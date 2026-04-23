@@ -63,37 +63,37 @@ const aboutContent: Record<Locale, AboutPageContent> = {
     milestones: [
       {
         year: "2014",
-        title: "SKTD was founded in Düsseldorf, Germany",
+        title: "Founded in Düsseldorf",
         description:
           "Established the foundation for cross-border sourcing and coordinated delivery services.",
       },
       {
         year: "2015",
-        title: "Annual sales exceeded €1 million",
+        title: "Sales Surpassed €1M",
         description:
           "Validated early market demand and strengthened client confidence in our execution model.",
       },
       {
         year: "2016",
-        title: "Opened sourcing center in Shanghai and became an official supplier to JYSK",
+        title: "Shanghai Hub & JYSK Partnership",
         description:
           "Expanded upstream supply capabilities and formalized collaboration with global retail channels.",
       },
       {
         year: "2017",
-        title: "Launched Italian design and sales center, with annual sales above €10 million",
+        title: "Italian Design Center & €10M Revenue",
         description:
           "Integrated design-driven product strategy with commercial growth in the European market.",
       },
       {
         year: "2019",
-        title: "Established Vietnam office and formed strategic partnership with KUKA HOME",
+        title: "Vietnam Expansion & KUKA HOME",
         description:
           "Enhanced regional flexibility and scaled support for large-volume furniture programs.",
       },
       {
         year: "2022",
-        title: "Initiated low-carbon programs to reduce plastic usage and promote sustainability",
+        title: "Low-Carbon Commitment",
         description:
           "Aligned product and supply-chain practices with long-term environmental responsibility goals.",
       },
@@ -138,34 +138,34 @@ const aboutContent: Record<Locale, AboutPageContent> = {
     milestones: [
       {
         year: "2014",
-        title: "Gründung von SKTD in Düsseldorf",
+        title: "Gründung in Düsseldorf",
         description:
           "Startpunkt für grenzüberschreitende Beschaffung und koordinierte Lieferprozesse.",
       },
       {
         year: "2015",
-        title: "Jahresumsatz über 1 Mio. EUR",
+        title: "Umsatz über 1 Mio. EUR",
         description: "Frühe Marktvalidierung und Aufbau langfristigen Kundenvertrauens.",
       },
       {
         year: "2016",
-        title: "Aufbau des Beschaffungszentrums in Shanghai und offizieller Lieferant von JYSK",
+        title: "Shanghai-Zentrum & JYSK-Partner",
         description:
           "Ausbau der Lieferkette und Professionalisierung internationaler Handelsbeziehungen.",
       },
       {
         year: "2017",
-        title: "Eröffnung des italienischen Design- und Vertriebszentrums, Umsatz über 10 Mio. EUR",
+        title: "Designzentrum Mailand & 10 Mio. EUR",
         description: "Verzahnung von Designkompetenz und kommerziellem Wachstum in Europa.",
       },
       {
         year: "2019",
-        title: "Start des Vietnam-Standorts und strategische Partnerschaft mit KUKA HOME",
+        title: "Vietnam-Standort & KUKA HOME",
         description: "Erweiterung der regionalen Umsetzungskraft für skalierbare Möbelprogramme.",
       },
       {
         year: "2022",
-        title: "Einführung CO2-orientierter Maßnahmen zur Reduktion von Kunststoff",
+        title: "Nachhaltigkeitsstrategie",
         description:
           "Stärkere Verankerung nachhaltiger Standards in Produkt- und Lieferkettenprozessen.",
       },
@@ -210,32 +210,32 @@ const aboutContent: Record<Locale, AboutPageContent> = {
     milestones: [
       {
         year: "2014",
-        title: "SKTD 在德国杜塞尔多夫成立",
+        title: "于杜塞尔多夫创立",
         description: "确立跨境采购与协同交付的业务基础。",
       },
       {
         year: "2015",
-        title: "年度销售额突破 100 万欧元",
+        title: "销售额突破百万欧元",
         description: "完成早期市场验证并建立客户信任。",
       },
       {
         year: "2016",
-        title: "设立上海采购中心，并成为 JYSK 官方供应商",
+        title: "上海中心 · JYSK 供应商",
         description: "强化上游供应能力，提升国际零售合作深度。",
       },
       {
         year: "2017",
-        title: "开设意大利设计与销售中心，年度销售额突破 1000 万欧元",
+        title: "意大利设计中心 · 破千万",
         description: "实现设计能力与欧洲市场增长的协同。",
       },
       {
         year: "2019",
-        title: "越南办事处成立，并与 KUKA HOME 建立战略合作",
+        title: "越南办事处 · KUKA HOME",
         description: "增强区域交付弹性，支持规模化家具业务。",
       },
       {
         year: "2022",
-        title: "启动低碳项目，减少塑料使用并推动可持续发展",
+        title: "低碳可持续战略",
         description: "将可持续理念纳入产品与供应链实践。",
       },
     ],

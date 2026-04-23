@@ -47,19 +47,20 @@ export function ProductGallery({ images, productName }: ProductGalleryProps): Re
   };
 
   return (
-    <div className="relative h-full">
-      <Carousel setApi={setCarouselApi} opts={{ loop: false }} className="h-full w-full">
-        <CarouselContent className="ml-0 h-full">
+    /* 竖长图容器：3:4 比例，符合电商商品图构图 */
+    <div className="relative">
+      <Carousel setApi={setCarouselApi} opts={{ loop: false }} className="w-full">
+        <CarouselContent className="ml-0">
           {images.map((image, index) => {
             return (
-              <CarouselItem key={`${image}-${index}`} className="h-full pl-0">
-                <div className="relative h-full min-h-[320px] overflow-hidden rounded-[24px] border border-(--line) sm:min-h-[420px]">
+              <CarouselItem key={`${image}-${index}`} className="pl-0">
+                <div className="relative aspect-[9/10] overflow-hidden rounded-[20px] border border-(--line)">
                   <Image
                     src={image}
                     alt={`${productName} image ${index + 1}`}
                     fill
                     className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 56vw"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                     priority={index === 0}
                   />
                 </div>
@@ -69,7 +70,8 @@ export function ProductGallery({ images, productName }: ProductGalleryProps): Re
         </CarouselContent>
       </Carousel>
 
-      <div className="absolute bottom-3 left-3 z-30 grid grid-cols-3 gap-1.5 rounded-[10px] border border-white/24 bg-black/35 p-1.5 backdrop-blur-sm">
+      {/* 缩略图导航：浮于图片左下角内部 */}
+      <div className="absolute bottom-4 left-4 z-30 flex gap-2">
         {images.map((image, index) => {
           return (
             <button
@@ -77,20 +79,20 @@ export function ProductGallery({ images, productName }: ProductGalleryProps): Re
               type="button"
               onClick={() => handleThumbClick(index)}
               className={cn(
-                "cursor-pointer overflow-hidden rounded-[8px] border transition",
+                "cursor-pointer overflow-hidden rounded-[8px] border-2 transition",
                 index === activeIndex
-                  ? "border-(--accent)"
-                  : "border-(--line) opacity-75 hover:opacity-100",
+                  ? "border-(--accent) opacity-100"
+                  : "border-white/40 opacity-70 hover:opacity-100",
               )}
               aria-label={`View image ${index + 1}`}
             >
-              <div className="relative h-8 w-11">
+              <div className="relative h-12 w-9">
                 <Image
                   src={image}
                   alt={`${productName} thumbnail ${index + 1}`}
                   fill
                   className="object-cover"
-                  sizes="(max-width: 1024px) 33vw, 18vw"
+                  sizes="48px"
                 />
               </div>
             </button>

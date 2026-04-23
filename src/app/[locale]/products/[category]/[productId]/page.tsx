@@ -153,44 +153,49 @@ export default async function ProductDetailPage({
           {copy.backToProducts}
         </Link>
 
-        <div className="mt-4 grid gap-6 lg:grid-cols-[1.06fr_0.94fr] lg:items-stretch lg:gap-10">
+        <div className="mt-4 grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-start lg:gap-12">
           <ProductGallery
             images={[result.product.image, result.product.image, result.product.image]}
             productName={result.product.name}
           />
 
-          <div className="h-full">
-            <h1 className="section-title text-4xl leading-[0.95] font-semibold sm:text-5xl">
-              {result.product.name}
-            </h1>
-            <p className="mt-4 text-sm leading-8 text-(--muted) sm:text-base">
-              {result.product.description}
-            </p>
+          {/* 右侧：产品信息，随图片顶部对齐，垂直堆叠 */}
+          <div className="flex flex-col gap-7 lg:pt-2">
+            {/* 标题 + 短线 + 描述 */}
+            <div>
+              <h1 className="section-title text-4xl leading-[0.95] font-semibold sm:text-5xl">
+                {result.product.name}
+              </h1>
+              <div className="mt-5 h-[2px] w-10 rounded-full bg-(--accent)" />
+              <p className="mt-5 text-sm leading-8 text-(--muted) sm:text-base">
+                {result.product.description}
+              </p>
+            </div>
 
-            <div className="mt-6 rounded-[20px] border border-(--line) bg-white/70 p-4 sm:p-5">
-              <h2 className="text-sm font-semibold tracking-[0.14em] text-(--accent) uppercase">
+            {/* 产品亮点：accent 淡色背景卡 */}
+            <div className="rounded-2xl bg-(--accent)/8 px-5 py-4">
+              <p className="text-[11px] font-bold tracking-[0.2em] text-(--accent) uppercase">
                 {copy.highlightLabel}
-              </h2>
-              <p className="mt-2 text-sm leading-8 text-(--muted) sm:text-base">
+              </p>
+              <p className="mt-2 text-sm leading-7 text-(--muted) sm:text-base">
                 {result.product.highlight}
               </p>
             </div>
 
-            <div className="mt-5">
-              <h2 className="text-sm font-semibold tracking-[0.14em] text-(--accent) uppercase">
+            {/* 规格：横向 pill 标签 */}
+            <div>
+              <p className="text-[11px] font-bold tracking-[0.2em] text-(--accent) uppercase">
                 {copy.specsLabel}
-              </h2>
-              <ul className="mt-3 space-y-2 text-sm leading-7 text-(--muted) sm:text-base">
-                {result.product.specs.map((spec) => {
-                  return (
-                    <li
-                      key={spec}
-                      className="rounded-[14px] border border-(--line) bg-white/60 px-4 py-2"
-                    >
-                      {spec}
-                    </li>
-                  );
-                })}
+              </p>
+              <ul className="mt-3 flex flex-wrap gap-2">
+                {result.product.specs.map((spec) => (
+                  <li
+                    key={spec}
+                    className="rounded-full border border-(--line) bg-white/70 px-4 py-1.5 text-sm text-(--muted)"
+                  >
+                    {spec}
+                  </li>
+                ))}
               </ul>
             </div>
           </div>

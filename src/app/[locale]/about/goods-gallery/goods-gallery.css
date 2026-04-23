@@ -1,0 +1,121 @@
+/* ─── 公司日常瀑布流画廊 ─────────────────────────────────────────────── */
+
+/* 全宽突破容器 */
+.goods-gallery-viewport {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+/* CSS columns 瀑布流：4 列为主，依次降级 */
+.goods-gallery-columns {
+  columns: 4;
+  column-gap: 4px;
+  line-height: 0;
+}
+
+@media (max-width: 1280px) {
+  .goods-gallery-columns {
+    columns: 3;
+  }
+}
+
+@media (max-width: 768px) {
+  .goods-gallery-columns {
+    columns: 2;
+  }
+}
+
+/* ─── 单格 ──────────────────────────────────────────────────────────── */
+
+.goods-gallery-item {
+  display: block;
+  break-inside: avoid;
+  margin-bottom: 4px;
+  position: relative;
+  overflow: hidden;
+  background: var(--line);
+}
+
+/* ─── 图片本体 ───────────────────────────────────────────────────────── */
+
+.goods-gallery-item__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 800ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.goods-gallery-item:hover .goods-gallery-item__img {
+  transform: scale(1.07);
+}
+
+/*
+  双层遮罩：
+  - 底层：永久轻微暗角，增强图片纵深感
+  - 顶层：hover 时加深，强调聚焦
+*/
+.goods-gallery-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 55%, rgba(10, 8, 5, 0.28) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.goods-gallery-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 8, 5, 0);
+  z-index: 2;
+  pointer-events: none;
+  transition: background 500ms ease;
+}
+
+.goods-gallery-item:hover::after {
+  background: rgba(10, 8, 5, 0.15);
+}
+
+/* ─── 宽高比变体 ─────────────────────────────────────────────────────── */
+
+.goods-gallery-item--r-4-5 {
+  aspect-ratio: 4 / 5;
+}
+.goods-gallery-item--r-3-4 {
+  aspect-ratio: 3 / 4;
+}
+.goods-gallery-item--r-2-3 {
+  aspect-ratio: 2 / 3;
+}
+.goods-gallery-item--r-3-5 {
+  aspect-ratio: 3 / 5;
+}
+.goods-gallery-item--r-16-9 {
+  aspect-ratio: 16 / 9;
+}
+.goods-gallery-item--r-4-3 {
+  aspect-ratio: 4 / 3;
+}
+.goods-gallery-item--r-1-1 {
+  aspect-ratio: 1 / 1;
+}
+
+/* ─── 无障碍 ─────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .goods-gallery-item {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .goods-gallery-item__img {
+    transition: none;
+    will-change: auto;
+  }
+}

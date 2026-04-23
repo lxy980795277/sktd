@@ -133,10 +133,9 @@ const content: Record<Locale, HomeContent> = {
     topBar: "Since 2014, SKTD has connected Asia and Europe with controlled end-to-end solutions.",
     header: {
       navigation: [
-        { label: "Why SKTD", href: "#advantages" },
+        { label: "Home", href: "#advantages" },
         { label: "Products", href: "/products" },
-        { label: "Milestones", href: "#milestones" },
-        { label: "About", href: "/about" },
+        { label: "About Us", href: "/about" },
       ],
       ctaLabel: "Contact us",
       ctaHref: "/contact",
@@ -426,10 +425,10 @@ const content: Record<Locale, HomeContent> = {
       blurb:
         "SKTD creates dependable links between Asia and Europe through sourcing, development, quality control, financing and logistics.",
       links: [
-        { label: "Why SKTD", href: "#advantages" },
+        { label: "Home", href: "#advantages" },
         { label: "Products", href: "/products" },
         { label: "Milestones", href: "#milestones" },
-        { label: "About", href: "/about" },
+        { label: "About Us", href: "/about" },
       ],
       rights: "© SKTD. All rights reserved.",
     },
@@ -445,7 +444,6 @@ const content: Record<Locale, HomeContent> = {
       navigation: [
         { label: "Warum SKTD", href: "#advantages" },
         { label: "Produkte", href: "/products" },
-        { label: "Meilensteine", href: "#milestones" },
         { label: "Über uns", href: "/about" },
       ],
       ctaLabel: "Team kontaktieren",
@@ -758,7 +756,6 @@ const content: Record<Locale, HomeContent> = {
       navigation: [
         { label: "为什么选择 SKTD", href: "#advantages" },
         { label: "产品", href: "/products" },
-        { label: "发展里程碑", href: "#milestones" },
         { label: "关于我们", href: "/about" },
       ],
       ctaLabel: "联系团队",
