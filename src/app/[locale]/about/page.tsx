@@ -13,29 +13,23 @@ type AboutPageProps = {
   }>;
 };
 
-// 里程碑轮播配图：商务风格，与各年份主题对应
+// 里程碑轮播配图
 const MILESTONE_IMAGES = [
-  // 2014 公司创立 — 德国城市商务
-  "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=1200&q=85",
-  // 2015 营收破百万 — 商务握手/合作
-  "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&q=85",
-  // 2016 上海办公室 + JYSK — 仓储物流
-  "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=85",
-  // 2017 意大利设计中心 — 设计工作室
-  "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=1200&q=85",
-  // 2019 越南办公室 + KUKA — 家居展厅
-  "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&q=85",
-  // 2022 低碳项目 — 绿色可持续
-  "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=1200&q=85",
+  "/images/about/milestones/1.jpg",
+  "/images/about/milestones/2.jpg",
+  "/images/about/milestones/3.jpg",
+  "/images/about/milestones/4.jpg",
+  "/images/about/milestones/5.jpg",
+  "/images/about/milestones/6.jpg",
 ] as const;
 
-// 每个板块对应的占位配图（Unsplash 大气商务风）
+// 五大板块配图
 const STORY_IMAGES = [
-  "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=1400&q=80",
-  "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1400&q=80",
-  "https://images.unsplash.com/photo-1494412519320-aa613dfb7738?w=1400&q=80",
-  "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1400&q=80",
-  "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1400&q=80",
+  "/images/about/story-sections/1.jpg",
+  "/images/about/story-sections/2.jpg",
+  "/images/about/story-sections/3.jpg",
+  "/images/about/story-sections/4.jpg",
+  "/images/about/story-sections/5.jpg",
 ] as const;
 
 export async function generateMetadata({ params }: AboutPageProps): Promise<Metadata> {

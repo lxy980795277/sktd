@@ -10,9 +10,9 @@ type TestimonialsSectionProps = {
 };
 
 const TESTIMONIAL_BACKGROUND_IMAGES = [
-  "/images/testimonials-section/1.webp",
-  "/images/testimonials-section/2.webp",
-  "/images/testimonials-section/3.webp",
+  "/images/home/testimonials-section/1.webp",
+  "/images/home/testimonials-section/2.webp",
+  "/images/home/testimonials-section/3.webp",
 ] as const;
 
 // 口碑模块：展示合作反馈，增强页面信任感。

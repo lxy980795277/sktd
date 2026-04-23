@@ -3,66 +3,18 @@ import type { FC } from "react";
 import "./goods-gallery.css";
 
 const GALLERY_ITEMS = [
-  {
-    src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900&q=85",
-    ratio: "r-4-5",
-    alt: "Team collaboration",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=85",
-    ratio: "r-16-9",
-    alt: "Modern office space",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=900&q=85",
-    ratio: "r-3-4",
-    alt: "Brainstorming session",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=900&q=85",
-    ratio: "r-4-3",
-    alt: "Team presentation",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=900&q=85",
-    ratio: "r-2-3",
-    alt: "Business professional",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1543269865-cbf427effbad?w=900&q=85",
-    ratio: "r-16-9",
-    alt: "Team at work",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=900&q=85",
-    ratio: "r-3-5",
-    alt: "Working together",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=900&q=85",
-    ratio: "r-4-5",
-    alt: "Focused work",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=900&q=85",
-    ratio: "r-4-3",
-    alt: "Business meeting",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1491336477066-31156b5e4f35?w=900&q=85",
-    ratio: "r-1-1",
-    alt: "Office discussion",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=900&q=85",
-    ratio: "r-2-3",
-    alt: "Creative workspace",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=900&q=85",
-    ratio: "r-16-9",
-    alt: "Laptop working",
-  },
+  { src: "/images/about/life-at-sktd/1.jpg", ratio: "r-4-5", alt: "Team collaboration" },
+  { src: "/images/about/life-at-sktd/2.jpg", ratio: "r-16-9", alt: "Modern office space" },
+  { src: "/images/about/life-at-sktd/3.jpg", ratio: "r-3-4", alt: "Brainstorming session" },
+  { src: "/images/about/life-at-sktd/4.jpg", ratio: "r-4-3", alt: "Team presentation" },
+  { src: "/images/about/life-at-sktd/5.jpg", ratio: "r-2-3", alt: "Business professional" },
+  { src: "/images/about/life-at-sktd/6.jpg", ratio: "r-16-9", alt: "Team at work" },
+  { src: "/images/about/life-at-sktd/7.jpg", ratio: "r-3-5", alt: "Working together" },
+  { src: "/images/about/life-at-sktd/8.jpg", ratio: "r-4-5", alt: "Focused work" },
+  { src: "/images/about/life-at-sktd/9.jpg", ratio: "r-4-3", alt: "Business meeting" },
+  { src: "/images/about/life-at-sktd/10.jpg", ratio: "r-1-1", alt: "Office discussion" },
+  { src: "/images/about/life-at-sktd/11.jpg", ratio: "r-2-3", alt: "Creative workspace" },
+  { src: "/images/about/life-at-sktd/12.jpg", ratio: "r-16-9", alt: "Laptop working" },
 ] as const;
 
 export const GoodsGallery: FC = () => {

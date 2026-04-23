@@ -99,10 +99,10 @@ const detailText = {
 } as const;
 
 const DETAIL_IMAGES = [
-  "/images/product-detail/1.webp",
-  "/images/product-detail/2.webp",
-  "/images/product-detail/3.webp",
-  "/images/product-detail/4.webp",
+  "/images/products/product-detail/1.webp",
+  "/images/products/product-detail/2.webp",
+  "/images/products/product-detail/3.webp",
+  "/images/products/product-detail/4.webp",
 ] as const;
 
 export function generateStaticParams(): Array<{ category: string; productId: string }> {

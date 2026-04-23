@@ -3,14 +3,14 @@ import type { FC } from "react";
 import "./index.css";
 
 const GOODS_IMAGES = [
-  "/images/goods/1.jpg",
-  "/images/goods/2.jpg",
-  "/images/goods/3.jpg",
-  "/images/goods/4.jpg",
-  "/images/goods/5.jpg",
-  "/images/goods/6.jpg",
-  "/images/goods/7.jpg",
-  "/images/goods/8.jpg",
+  "/images/products/goods/1.jpg",
+  "/images/products/goods/2.jpg",
+  "/images/products/goods/3.jpg",
+  "/images/products/goods/4.jpg",
+  "/images/products/goods/5.jpg",
+  "/images/products/goods/6.jpg",
+  "/images/products/goods/7.jpg",
+  "/images/products/goods/8.jpg",
 ] as const;
 
 export const MarketFilmSection: FC = () => {

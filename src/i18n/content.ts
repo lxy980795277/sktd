@@ -150,10 +150,10 @@ const content: Record<Locale, HomeContent> = {
       secondaryLabel: "View milestones",
       secondaryHref: "#milestones",
       images: [
-        "/images/carous/1.webp",
-        "/images/carous/2.webp",
-        "/images/carous/3.webp",
-        "/images/carous/4.webp",
+        "/images/home/featured-banner/1.webp",
+        "/images/home/featured-banner/2.webp",
+        "/images/home/featured-banner/3.webp",
+        "/images/home/featured-banner/4.webp",
       ],
     },
     hero: {
@@ -168,7 +168,7 @@ const content: Record<Locale, HomeContent> = {
           secondaryLabel: "View milestones",
           secondaryHref: "#milestones",
           note: "Germany · Italy · China · Vietnam",
-          image: "/images/hero-carousel/1.webp",
+          image: "/images/home/hero-carousel/1.webp",
           highlights: [
             "Established in Düsseldorf in 2014",
             "Strategic offices across Europe and Asia",
@@ -185,7 +185,7 @@ const content: Record<Locale, HomeContent> = {
           secondaryLabel: "Plan a collaboration",
           secondaryHref: "#planning",
           note: "Europe · Asia · North America",
-          image: "/images/hero-carousel/2.webp",
+          image: "/images/home/hero-carousel/2.webp",
           highlights: [
             "Multilingual commercial communication",
             "Regional business understanding",
@@ -203,7 +203,7 @@ const content: Record<Locale, HomeContent> = {
           secondaryLabel: "Meet SKTD",
           secondaryHref: "#about",
           note: "Reliability · Efficiency · Innovation",
-          image: "/images/hero-carousel/3.webp",
+          image: "/images/home/hero-carousel/3.webp",
           highlights: [
             "Sourcing and product development",
             "Quality management and project financing",
@@ -347,7 +347,7 @@ const content: Record<Locale, HomeContent> = {
       offices: ["Düsseldorf", "Milan", "Shanghai", "Ho Chi Minh City"],
       actionLabel: "Learn more about SKTD",
       actionHref: "#cta",
-      image: "/images/about-section/1.webp",
+      image: "/images/home/about-section/1.webp",
     },
     services: {
       eyebrow: "Capabilities",
@@ -459,10 +459,10 @@ const content: Record<Locale, HomeContent> = {
       secondaryLabel: "Meilensteine ansehen",
       secondaryHref: "#milestones",
       images: [
-        "/images/carous/1.webp",
-        "/images/carous/2.webp",
-        "/images/carous/3.webp",
-        "/images/carous/4.webp",
+        "/images/home/featured-banner/1.webp",
+        "/images/home/featured-banner/2.webp",
+        "/images/home/featured-banner/3.webp",
+        "/images/home/featured-banner/4.webp",
       ],
     },
     hero: {
@@ -478,7 +478,7 @@ const content: Record<Locale, HomeContent> = {
           secondaryLabel: "Meilensteine ansehen",
           secondaryHref: "#milestones",
           note: "Deutschland · Italien · China · Vietnam",
-          image: "/images/hero-carousel/1.webp",
+          image: "/images/home/hero-carousel/1.webp",
           highlights: [
             "2014 in Düsseldorf gegründet",
             "Strategische Büros in Europa und Asien",
@@ -496,7 +496,7 @@ const content: Record<Locale, HomeContent> = {
           secondaryLabel: "Zusammenarbeit planen",
           secondaryHref: "#planning",
           note: "Europa · Asien · Nordamerika",
-          image: "/images/hero-carousel/2.webp",
+          image: "/images/home/hero-carousel/2.webp",
           highlights: [
             "Mehrsprachige Kommunikation",
             "Verständnis regionaler Geschäftspraxis",
@@ -514,7 +514,7 @@ const content: Record<Locale, HomeContent> = {
           secondaryLabel: "SKTD kennenlernen",
           secondaryHref: "#about",
           note: "Zuverlässigkeit · Effizienz · Innovation",
-          image: "/images/hero-carousel/3.webp",
+          image: "/images/home/hero-carousel/3.webp",
           highlights: [
             "Sourcing und Produktentwicklung",
             "Qualitätsmanagement und Projektfinanzierung",
@@ -659,7 +659,7 @@ const content: Record<Locale, HomeContent> = {
       offices: ["Düsseldorf", "Mailand", "Shanghai", "Ho-Chi-Minh-Stadt"],
       actionLabel: "Mehr über SKTD",
       actionHref: "#cta",
-      image: "/images/about-section/1.webp",
+      image: "/images/home/about-section/1.webp",
     },
     services: {
       eyebrow: "Leistungen",
@@ -771,10 +771,10 @@ const content: Record<Locale, HomeContent> = {
       secondaryLabel: "浏览发展历程",
       secondaryHref: "#milestones",
       images: [
-        "/images/carous/1.webp",
-        "/images/carous/2.webp",
-        "/images/carous/3.webp",
-        "/images/carous/4.webp",
+        "/images/home/featured-banner/1.webp",
+        "/images/home/featured-banner/2.webp",
+        "/images/home/featured-banner/3.webp",
+        "/images/home/featured-banner/4.webp",
       ],
     },
     hero: {
@@ -789,7 +789,7 @@ const content: Record<Locale, HomeContent> = {
           secondaryLabel: "浏览发展历程",
           secondaryHref: "#milestones",
           note: "德国 · 意大利 · 中国 · 越南",
-          image: "/images/hero-carousel/1.webp",
+          image: "/images/home/hero-carousel/1.webp",
           highlights: [
             "2014 年于杜塞尔多夫成立",
             "欧洲与亚洲多地战略办公室",
@@ -806,7 +806,7 @@ const content: Record<Locale, HomeContent> = {
           secondaryLabel: "规划合作路径",
           secondaryHref: "#planning",
           note: "欧洲 · 亚洲 · 北美",
-          image: "/images/hero-carousel/2.webp",
+          image: "/images/home/hero-carousel/2.webp",
           highlights: ["多语言商业沟通能力", "深入理解区域商业惯例", "跨时区快速协同响应"],
         },
         {
@@ -819,7 +819,7 @@ const content: Record<Locale, HomeContent> = {
           secondaryLabel: "认识 SKTD",
           secondaryHref: "#about",
           note: "可靠 · 高效 · 创新",
-          image: "/images/hero-carousel/3.webp",
+          image: "/images/home/hero-carousel/3.webp",
           highlights: ["采购与产品开发", "质量管理与项目融资", "物流节奏与交付控制"],
         },
       ],
@@ -951,7 +951,7 @@ const content: Record<Locale, HomeContent> = {
       offices: ["杜塞尔多夫", "米兰", "上海", "胡志明市"],
       actionLabel: "进一步了解 SKTD",
       actionHref: "#cta",
-      image: "/images/about-section/1.webp",
+      image: "/images/home/about-section/1.webp",
     },
     services: {
       eyebrow: "服务能力",

@@ -33,7 +33,7 @@ export default async function ContactPage({
     <main className="relative flex min-h-[calc(100vh-72px)] items-center overflow-hidden">
       {/* ── 背景图：横向占满，纵向覆盖全页 ── */}
       <Image
-        src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=90"
+        src="/images/contact/1.jpg"
         alt="Contact background"
         fill
         priority
