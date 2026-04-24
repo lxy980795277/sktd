@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Globe, Mail, MapPin, Phone, Printer } from "lucide-react";
 import type { HomeContent } from "@/i18n/content";
 import type { Locale } from "@/i18n/config";
+import { getLocaleHref } from "@/lib/locale-href";
 
 type SiteFooterProps = {
   locale: Locale;
@@ -77,7 +78,7 @@ export function SiteFooter({ locale, content }: SiteFooterProps): React.JSX.Elem
                   return (
                     <Link
                       key={item.href}
-                      href={`/${locale}${item.href}`}
+                      href={getLocaleHref(locale, item.href)}
                       className="hover:text-white"
                     >
                       {item.label}

@@ -10,7 +10,7 @@ export default function NotFound(): React.JSX.Element {
           The page you are looking for is unavailable. Please return to the SKTD homepage.
         </p>
         <Link
-          href="/en"
+          href="/en/home"
           className="mt-8 inline-flex items-center justify-center rounded-full bg-(--accent) px-6 py-3 text-sm font-semibold text-white transition hover:bg-(--accent-strong)"
         >
           Back to home

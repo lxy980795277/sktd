@@ -45,7 +45,7 @@ export function LanguageSwitcher({
       return;
     }
 
-    router.push(getLocalizedPath(pathname ?? `/${locale}`, nextLocale as RouteLocale));
+    router.push(getLocalizedPath(pathname ?? `/${locale}/home`, nextLocale as RouteLocale));
   };
 
   return (

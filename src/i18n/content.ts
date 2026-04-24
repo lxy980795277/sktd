@@ -133,7 +133,7 @@ const content: Record<Locale, HomeContent> = {
     topBar: "Since 2014, SKTD has connected Asia and Europe with controlled end-to-end solutions.",
     header: {
       navigation: [
-        { label: "Home", href: "#advantages" },
+        { label: "Home", href: "/home" },
         { label: "Products", href: "/products" },
         { label: "About Us", href: "/about" },
       ],
@@ -425,7 +425,7 @@ const content: Record<Locale, HomeContent> = {
       blurb:
         "SKTD creates dependable links between Asia and Europe through sourcing, development, quality control, financing and logistics.",
       links: [
-        { label: "Home", href: "#advantages" },
+        { label: "Home", href: "/home" },
         { label: "Products", href: "/products" },
         { label: "Milestones", href: "#milestones" },
         { label: "About Us", href: "/about" },
@@ -442,7 +442,7 @@ const content: Record<Locale, HomeContent> = {
     topBar: "Seit 2014 verbindet SKTD Asien und Europa mit kontrollierten End-to-End-Lösungen.",
     header: {
       navigation: [
-        { label: "Warum SKTD", href: "#advantages" },
+        { label: "Warum SKTD", href: "/home" },
         { label: "Produkte", href: "/products" },
         { label: "Über uns", href: "/about" },
       ],
@@ -737,7 +737,7 @@ const content: Record<Locale, HomeContent> = {
       blurb:
         "SKTD schafft belastbare Verbindungen zwischen Asien und Europa durch Sourcing, Entwicklung, Qualitätskontrolle, Finanzierung und Logistik.",
       links: [
-        { label: "Warum SKTD", href: "#advantages" },
+        { label: "Warum SKTD", href: "/home" },
         { label: "Produkte", href: "/products" },
         { label: "Meilensteine", href: "#milestones" },
         { label: "Über uns", href: "/about" },
@@ -754,7 +754,7 @@ const content: Record<Locale, HomeContent> = {
     topBar: "自 2014 年起，SKTD 通过完全可控的端到端方案连接亚洲与欧洲。",
     header: {
       navigation: [
-        { label: "为什么选择 SKTD", href: "#advantages" },
+        { label: "为什么选择 SKTD", href: "/home" },
         { label: "产品", href: "/products" },
         { label: "关于我们", href: "/about" },
       ],
@@ -1028,7 +1028,7 @@ const content: Record<Locale, HomeContent> = {
       blurb:
         "SKTD 通过采购、产品开发、质量控制、融资与物流，在亚洲与欧洲之间建立稳定可信的合作链路。",
       links: [
-        { label: "为什么选择 SKTD", href: "#advantages" },
+        { label: "为什么选择 SKTD", href: "/home" },
         { label: "产品", href: "/products" },
         { label: "发展里程碑", href: "#milestones" },
         { label: "关于我们", href: "/about" },

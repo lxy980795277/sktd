@@ -11,6 +11,7 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 import type { Locale } from "@/i18n/config";
+import { getLocaleHref } from "@/lib/locale-href";
 import { cn } from "@/lib/utils";
 import "./index.css";
 
@@ -122,14 +123,14 @@ export function FeaturedBanner({ locale, content }: FeaturedBannerProps): React.
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link
-                  href={`/${locale}${content.primaryHref}`}
+                  href={getLocaleHref(locale, content.primaryHref)}
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-(--accent) transition hover:bg-[#f7e9df]"
                 >
                   {content.primaryLabel}
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
-                  href={`/${locale}${content.secondaryHref}`}
+                  href={getLocaleHref(locale, content.secondaryHref)}
                   className="inline-flex items-center justify-center rounded-full border border-white/30 bg-white/12 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/18"
                 >
                   {content.secondaryLabel}

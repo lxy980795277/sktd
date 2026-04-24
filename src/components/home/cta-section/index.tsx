@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import type { HomeContent } from "@/i18n/content";
 import type { Locale } from "@/i18n/config";
+import { getLocaleHref } from "@/lib/locale-href";
 
 type CtaSectionProps = {
   locale: Locale;
@@ -12,7 +13,7 @@ type CtaSectionProps = {
 export function CtaSection({ locale, content }: CtaSectionProps): React.JSX.Element {
   const primaryHref = content.primaryHref.startsWith("mailto:")
     ? content.primaryHref
-    : `/${locale}${content.primaryHref}`;
+    : getLocaleHref(locale, content.primaryHref);
 
   return (
     <section id="cta" className="container-shell">

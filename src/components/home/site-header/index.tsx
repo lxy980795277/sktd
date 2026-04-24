@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { LanguageSwitcher } from "@/components/home/language-switcher";
 import type { NavigationItem } from "@/i18n/content";
 import type { RouteLocale } from "@/i18n/config";
+import { getLocaleHref } from "@/lib/locale-href";
 
 type SiteHeaderProps = {
   locale: RouteLocale;
@@ -39,7 +40,7 @@ export function SiteHeader({
     <>
       <header className="sticky top-0 z-40 border-b border-(--line) bg-[rgba(246,241,232,0.82)] backdrop-blur-xl">
         <div className="container-shell flex items-center justify-between gap-5 py-5 lg:py-6">
-          <Link href={`/${locale}`} className="flex items-center">
+          <Link href={`/${locale}/home`} className="flex items-center">
             <div>
               <p className="text-xs tracking-[0.32em] text-(--muted) uppercase">
                 Corporate Homepage
@@ -53,7 +54,7 @@ export function SiteHeader({
               return (
                 <Link
                   key={item.href}
-                  href={`/${locale}${item.href}`}
+                  href={getLocaleHref(locale, item.href)}
                   className="hover:text-foreground text-sm font-semibold tracking-[0.06em] text-(--muted) uppercase transition"
                 >
                   {item.label}
@@ -65,7 +66,7 @@ export function SiteHeader({
           <div className="hidden items-center gap-4 lg:flex">
             <LanguageSwitcher locale={locale} className="min-w-[118px]" />
             <Link
-              href={`/${locale}${ctaHref}`}
+              href={getLocaleHref(locale, ctaHref)}
               className="rounded-full bg-(--accent) px-6 py-3.5 text-sm font-semibold tracking-[0.04em] text-white! uppercase transition hover:bg-(--accent-strong)"
             >
               {ctaLabel}
@@ -110,7 +111,7 @@ export function SiteHeader({
                 return (
                   <Link
                     key={item.href}
-                    href={`/${locale}${item.href}`}
+                    href={getLocaleHref(locale, item.href)}
                     className="rounded-[24px] border border-(--line) bg-white/70 px-4 py-4 text-base font-medium"
                     onClick={() => setOpen(false)}
                   >
@@ -121,7 +122,7 @@ export function SiteHeader({
             </nav>
 
             <Link
-              href={`/${locale}${ctaHref}`}
+              href={getLocaleHref(locale, ctaHref)}
               className="mt-auto inline-flex items-center justify-center rounded-full bg-(--accent) px-5 py-3 text-sm font-semibold text-white! transition hover:bg-(--accent-strong)"
               onClick={() => setOpen(false)}
             >

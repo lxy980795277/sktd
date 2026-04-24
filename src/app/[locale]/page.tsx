@@ -1,44 +1,25 @@
-import type { Metadata } from "next";
-import { notFound } from "next/navigation";
-import { HomePage } from "@/components/home";
-import { getHomeContent } from "@/i18n/content";
+import { notFound, redirect } from "next/navigation";
 import { isLocale, locales } from "@/i18n/config";
 
-type PageProps = {
+type LocaleIndexProps = {
   params: Promise<{
     locale: string;
   }>;
 };
 
+/**
+ * 语言根路径仅作跳转到显式首页路由 `/[locale]/home`，让首页拥有稳定 URL，避免与 `/#` 混用。
+ */
 export async function generateStaticParams(): Promise<Array<{ locale: string }>> {
   return locales.map((locale) => ({ locale }));
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { locale } = await params;
-
-  if (!isLocale(locale)) {
-    return {
-      title: "SKTD",
-    };
-  }
-
-  const content = getHomeContent(locale);
-
-  return {
-    title: content.seo.title,
-    description: content.seo.description,
-  };
-}
-
-export default async function LocaleHomePage({ params }: PageProps): Promise<React.JSX.Element> {
+export default async function LocaleIndexPage({ params }: LocaleIndexProps): Promise<never> {
   const { locale } = await params;
 
   if (!isLocale(locale)) {
     notFound();
   }
 
-  const content = getHomeContent(locale);
-
-  return <HomePage locale={locale} content={content} />;
+  redirect(`/${locale}/home`);
 }
