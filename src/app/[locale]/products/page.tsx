@@ -71,7 +71,9 @@ export default async function ProductsPage({
         <p className="mt-5 max-w-4xl text-sm leading-7 text-(--muted) sm:text-base">
           {content.description}
         </p>
+        {/* key 随分类变化，强制重新挂载以触发 IntersectionObserver */}
         <ProductsShowcase
+          key={activeCategory.id}
           locale={resolvedLocale}
           content={{ categories: [activeCategory] }}
         />

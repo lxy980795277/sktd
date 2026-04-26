@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ProductFilmSection } from "@/components/products/product-film-section";
+import { ProductStorySection } from "@/components/products/product-story-section";
 import { getAllProductSlugs, getProductByIds } from "@/constants/products";
 import { isLocale } from "@/i18n/config";
 
@@ -16,86 +18,18 @@ type ProductDetailPageProps = {
 const detailText = {
   en: {
     productsLabel: "Products",
-    backToProducts: "Back to products",
     highlightLabel: "Product highlight",
     specsLabel: "Key specifications",
-    longDescriptionTitle: "Detailed product overview",
-    storyBlocks: [
-      {
-        title: "Commercial positioning",
-        description:
-          "This product direction is designed for stable channel performance, clear shelf presence, and long-cycle replenishment. It is suitable for both retail and project-based sourcing programs.",
-      },
-      {
-        title: "Material and quality control",
-        description:
-          "Material selection follows practical durability standards and repeatable process controls. Each production run can be managed through standardized checkpoints to improve consistency.",
-      },
-      {
-        title: "Supply and delivery readiness",
-        description:
-          "The sourcing model supports scalable order volumes with structured planning windows. Packaging, labeling, and shipment workflows can be adjusted for different destination markets.",
-      },
-      {
-        title: "Customization potential",
-        description:
-          "Specification details, finishing options, and branding presentation can be tailored by project scope. This enables private-label adaptation while keeping execution predictable.",
-      },
-    ],
   },
   de: {
     productsLabel: "Produkte",
-    backToProducts: "Zurück zu Produkten",
     highlightLabel: "Produkt-Highlight",
     specsLabel: "Wichtige Spezifikationen",
-    longDescriptionTitle: "Detaillierte Produktübersicht",
-    storyBlocks: [
-      {
-        title: "Kommerzielle Positionierung",
-        description:
-          "Diese Produktlinie ist auf stabile Kanalperformance, klare Präsentation und verlässliche Nachversorgung ausgelegt.",
-      },
-      {
-        title: "Material und Qualität",
-        description:
-          "Die Materialauswahl folgt praxisnahen Haltbarkeitsstandards und wiederholbaren Qualitätsprozessen.",
-      },
-      {
-        title: "Lieferfähigkeit",
-        description:
-          "Das Modell unterstützt skalierbare Volumina mit planbaren Zeitfenstern für Verpackung und Versand.",
-      },
-      {
-        title: "Anpassbarkeit",
-        description:
-          "Spezifikationen, Oberflächen und Markenauftritt können projektbezogen flexibel angepasst werden.",
-      },
-    ],
   },
   zh: {
     productsLabel: "产品",
-    backToProducts: "返回产品页",
     highlightLabel: "产品亮点",
     specsLabel: "关键规格",
-    longDescriptionTitle: "产品详细介绍",
-    storyBlocks: [
-      {
-        title: "商业定位",
-        description: "该产品方向面向稳定渠道表现与持续补货能力，适用于零售场景和项目型采购场景。",
-      },
-      {
-        title: "材料与质量控制",
-        description: "材料选择强调耐用性与可复用工艺，通过标准化质控节点保障批次一致性。",
-      },
-      {
-        title: "供应与交付能力",
-        description: "支持规模化订单与分阶段交付计划，可按不同市场要求进行包装与物流协同。",
-      },
-      {
-        title: "定制化扩展",
-        description: "可根据项目需求调整规格、外观与品牌展示方式，在保证落地效率的同时提升适配度。",
-      },
-    ],
   },
 } as const;
 
@@ -229,48 +163,14 @@ export default async function ProductDetailPage({
         </div>
       </div>
 
-      {/* 下方详细介绍区（后续调整） */}
-      <div className="container-shell py-10 sm:py-12 lg:py-14">
-        <section className="mx-auto max-w-6xl">
-          <h2 className="section-title text-3xl leading-[0.95] font-semibold sm:text-4xl">
-            {copy.longDescriptionTitle}
-          </h2>
-
-          <div className="mt-5 space-y-8 lg:space-y-10">
-            {copy.storyBlocks.map((block, index) => {
-              const isReverse = index % 2 === 1;
-              const rowClassName = isReverse
-                ? "grid items-center gap-5 lg:grid-cols-[0.95fr_1.05fr]"
-                : "grid items-center gap-5 lg:grid-cols-[1.05fr_0.95fr]";
-              const textClassName = isReverse ? "lg:order-2" : "lg:order-1";
-              const imageClassName = isReverse ? "lg:order-1" : "lg:order-2";
-
-              return (
-                <article key={block.title} className={rowClassName}>
-                  <div className={`${textClassName} border-l-2 border-(--accent)/35 pl-4 sm:pl-5`}>
-                    <h3 className="text-foreground text-xl font-semibold">{block.title}</h3>
-                    <p className="mt-3 text-sm leading-8 text-(--muted) sm:text-base">
-                      {block.description}
-                    </p>
-                  </div>
-
-                  <div
-                    className={`${imageClassName} relative min-h-[240px] overflow-hidden rounded-[20px] border border-(--line) sm:min-h-[280px]`}
-                  >
-                    <Image
-                      src={detailImage}
-                      alt={`${result.product.name} detail ${index + 1}`}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 1024px) 100vw, 45vw"
-                    />
-                  </div>
-                </article>
-              );
-            })}
-          </div>
-        </section>
+      {/* 底部商品图片滚动条 */}
+      <div className="mt-14 sm:mt-16 lg:mt-20">
+        <ProductFilmSection />
       </div>
+
+      {/* 公司产品理念双分区 */}
+      <ProductStorySection />
+
     </main>
   );
 }

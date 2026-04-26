@@ -1,0 +1,96 @@
+.product-film-section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  /* 隔离动画影响范围，避免每帧触发整页 layout */
+  contain: layout style;
+}
+
+/* 左右渐隐遮罩 */
+.product-film-section__mask-left,
+.product-film-section__mask-right {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 180px;
+  z-index: 2;
+}
+
+.product-film-section__mask-left {
+  left: 0;
+  background: linear-gradient(to right, rgba(246, 241, 232, 0.95), rgba(246, 241, 232, 0));
+}
+
+.product-film-section__mask-right {
+  right: 0;
+  background: linear-gradient(to left, rgba(246, 241, 232, 0.95), rgba(246, 241, 232, 0));
+}
+
+/* 单行滚动轨道 */
+.product-film-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: product-film-marquee 60s linear infinite;
+}
+
+.product-film-group {
+  display: flex;
+  flex-shrink: 0;
+  gap: 1.25rem;
+  padding-inline: 0.625rem;
+}
+
+/* 图片卡片 */
+.product-film-card {
+  position: relative;
+  flex: 0 0 340px;
+  height: 440px;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 16px 36px rgba(31, 29, 25, 0.2);
+  transform: translateZ(0);
+  transition:
+    transform 300ms ease,
+    box-shadow 300ms ease;
+}
+
+.product-film-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 20px 44px rgba(31, 29, 25, 0.26);
+}
+
+.product-film-card__image {
+  object-fit: cover;
+  filter: saturate(1.06) contrast(1.02);
+}
+
+.product-film-card__shine {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.14),
+    transparent 40%,
+    rgba(255, 255, 255, 0.04)
+  );
+}
+
+@keyframes product-film-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .product-film-track {
+    animation: none;
+  }
+}

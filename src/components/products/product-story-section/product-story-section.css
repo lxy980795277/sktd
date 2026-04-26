@@ -1,0 +1,112 @@
+/* ─── 行布局 ───────────────────────────────────────────────────── */
+
+.pss-row {
+  display: grid;
+  align-items: center;
+  gap: 0;
+}
+
+/* 移动端单列 */
+@media (max-width: 1023px) {
+  .pss-row {
+    grid-template-columns: 1fr !important;
+    gap: 2rem;
+  }
+}
+
+/* ─── 图片顶格到视口边缘（与 about 页策略一致） ──────────────── */
+
+@media (min-width: 1024px) {
+  .pss-img--bleed-left {
+    width: calc(100% + max(2.5rem, (100vw - 1280px) / 2));
+    margin-left: calc(-1 * max(2.5rem, (100vw - 1280px) / 2));
+    border-radius: 0 18px 18px 0;
+  }
+
+  .pss-img--bleed-right {
+    width: calc(100% + max(2.5rem, (100vw - 1280px) / 2));
+    margin-right: calc(-1 * max(2.5rem, (100vw - 1280px) / 2));
+    border-radius: 18px 0 0 18px;
+  }
+}
+
+/* ─── 滚动入场动效 ──────────────────────────────────────────────── */
+
+:root {
+  --pss-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 标题初始状态：不预设 will-change，避免提前占用 GPU 资源 */
+.pss-row .pss-title {
+  opacity: 0;
+  transition:
+    opacity 1400ms var(--pss-ease),
+    transform 1400ms var(--pss-ease);
+}
+
+/* 描述初始状态 */
+.pss-row .pss-desc {
+  opacity: 0;
+  transition:
+    opacity 1400ms var(--pss-ease) 220ms,
+    transform 1400ms var(--pss-ease) 220ms;
+}
+
+/* 图片初始状态：去掉 blur，只用 opacity + transform，性能友好 */
+.pss-row .pss-img {
+  opacity: 0;
+  transform: scale(0.97) translateY(18px);
+  transition:
+    opacity 1400ms var(--pss-ease) 300ms,
+    transform 1400ms var(--pss-ease) 300ms;
+}
+
+/* 文字从左滑入 */
+.pss-row .pss-text--from-left .pss-title {
+  transform: translateX(-44px);
+}
+.pss-row .pss-text--from-left .pss-desc {
+  transform: translateX(-32px);
+}
+
+/* 文字从右滑入 */
+.pss-row .pss-text--from-right .pss-title {
+  transform: translateX(44px);
+}
+.pss-row .pss-text--from-right .pss-desc {
+  transform: translateX(32px);
+}
+
+/* 图片从左滑入 */
+.pss-row .pss-img--from-left {
+  transform: scale(0.97) translateX(-24px);
+}
+
+/* 图片从右滑入 */
+.pss-row .pss-img--from-right {
+  transform: scale(0.97) translateX(24px);
+}
+
+/* ─── 触发后还原 ─────────────────────────────────────────────── */
+
+.pss-row--visible .pss-text .pss-title,
+.pss-row--visible .pss-text .pss-desc {
+  opacity: 1;
+  transform: none;
+}
+
+.pss-row--visible .pss-img {
+  opacity: 1;
+  transform: none;
+}
+
+/* ─── 无障碍 ─────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .pss-row .pss-title,
+  .pss-row .pss-desc,
+  .pss-row .pss-img {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
