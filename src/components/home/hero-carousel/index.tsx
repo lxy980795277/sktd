@@ -82,11 +82,6 @@ export function HeroCarousel({ locale: _locale, slides }: HeroCarouselProps): Re
         </div>
 
         <div className="relative h-full overflow-hidden rounded-[32px] border border-(--line) bg-[#e8dccd] shadow-[0_24px_80px_rgba(31,29,25,0.08)]">
-          <div className="absolute top-5 left-5 z-10 sm:top-6 sm:left-6">
-            <div className="rounded-full bg-black/35 px-4 py-2 text-xs font-semibold tracking-[0.2em] text-white uppercase backdrop-blur-md">
-              SKTD Homepage Concept
-            </div>
-          </div>
 
           <div className="relative h-full min-h-[420px] sm:min-h-[560px] lg:min-h-[760px]">
             <Carousel

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { redirect } from "next/navigation";
 import { ProductsShowcase } from "@/components/products/products-showcase";
 import { getProductCategories } from "@/constants/products";
 import { isLocale } from "@/i18n/config";
@@ -9,9 +10,8 @@ type ProductsPageContent = {
 };
 
 type ProductsPageProps = {
-  params: Promise<{
-    locale: string;
-  }>;
+  params: Promise<{ locale: string }>;
+  searchParams: Promise<{ category?: string }>;
 };
 
 const pageText: Record<"en" | "de" | "zh", ProductsPageContent> = {
@@ -44,11 +44,22 @@ export async function generateMetadata({ params }: ProductsPageProps): Promise<M
 
 export default async function ProductsPage({
   params,
+  searchParams,
 }: ProductsPageProps): Promise<React.JSX.Element> {
   const { locale } = await params;
+  const { category } = await searchParams;
   const resolvedLocale = isLocale(locale) ? locale : "en";
   const content = pageText[resolvedLocale];
   const categories = getProductCategories();
+
+  // 无分类参数时，默认跳转到第一个分类
+  if (!category) {
+    redirect(`/${locale}/products?category=${categories[0].id}`);
+  }
+
+  // 找到匹配的分类；若 category 非法则回退到第一个
+  const activeCategory =
+    categories.find((c) => c.id === category) ?? categories[0];
 
   return (
     <main className="container-shell py-8 sm:py-10 lg:py-12">
@@ -62,9 +73,7 @@ export default async function ProductsPage({
         </p>
         <ProductsShowcase
           locale={resolvedLocale}
-          content={{
-            categories,
-          }}
+          content={{ categories: [activeCategory] }}
         />
       </section>
     </main>

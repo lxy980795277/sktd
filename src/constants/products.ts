@@ -26,7 +26,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
         name: "Corner Storage Rack",
         description:
           "Right-angle rack solution for compact corners and vertical space optimization.",
-        image: "/images/products/goods/1.jpg",
+        image: "/images/products/home-furnishings/corner-storage-rack/cover.jpg",
         highlight: "Space-saving storage structure for modern apartments and compact layouts.",
         specs: [
           "Material: Powder-coated steel",
@@ -38,7 +38,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
         id: "two-tone-carpet",
         name: "Two Tone Carpet",
         description: "Lightweight woven carpet with balanced texture for modern living spaces.",
-        image: "/images/products/goods/2.jpg",
+        image: "/images/products/home-furnishings/two-tone-carpet/cover.jpg",
         highlight: "Soft-touch woven surface tailored for home and hospitality lounge zones.",
         specs: ["Material: Cotton blend", "Backing: Non-rubber", "Use Case: Bedroom / lounge"],
       },
@@ -47,7 +47,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
         name: "Exquisite Bed Set",
         description:
           "Textured bedding set focused on comfort, visual quality, and repeatable supply.",
-        image: "/images/products/goods/3.jpg",
+        image: "/images/products/home-furnishings/exquisite-bed-set/cover.jpg",
         highlight: "Layered comfort bedding program for lifestyle retail and project channels.",
         specs: [
           "Fabric: Microfiber blend",
@@ -59,7 +59,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
         id: "courtyard-furniture-set",
         name: "Courtyard Furniture Set",
         description: "Outdoor furniture group built for weather resistance and daily durability.",
-        image: "/images/products/goods/4.jpg",
+        image: "/images/products/home-furnishings/courtyard-furniture-set/cover.jpg",
         highlight: "Reliable outdoor arrangement with long-cycle usability for open-air spaces.",
         specs: [
           "Frame: Metal tube",
@@ -72,7 +72,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
         name: "Double-Top Sunshade",
         description:
           "Commercial and residential canopy structure with stable coverage performance.",
-        image: "/images/products/goods/5.jpg",
+        image: "/images/products/home-furnishings/double-top-sunshade/cover.jpg",
         highlight: "Dual-roof shading concept for improved airflow and sun protection.",
         specs: [
           "Canopy: UV-resistant fabric",
@@ -85,7 +85,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
         name: "Accent Lounge Chair",
         description:
           "Formal lounge seating with long-cycle usability for premium interior programs.",
-        image: "/images/products/goods/6.jpg",
+        image: "/images/products/home-furnishings/accent-lounge-chair/cover.jpg",
         highlight: "Statement seating option for reception, lounge, and curated retail displays.",
         specs: [
           "Style: Wingback accent",
@@ -104,7 +104,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
         id: "guest-room-bedding-program",
         name: "Guest Room Bedding Program",
         description: "Standardized bedding combination for reliable hotel room operations.",
-        image: "/images/products/goods/3.jpg",
+        image: "/images/products/hotel-supplies/guest-room-bedding-program/cover.jpg",
         highlight: "Stable hospitality bedding solution for consistent guest-room experience.",
         specs: [
           "Type: Commercial-grade set",
@@ -116,7 +116,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
         id: "lobby-seating-package",
         name: "Lobby Seating Package",
         description: "Reception-ready seating lineup for stable style and wear performance.",
-        image: "/images/products/goods/6.jpg",
+        image: "/images/products/hotel-supplies/lobby-seating-package/cover.jpg",
         highlight: "Formal seating bundle designed for front-desk and waiting areas.",
         specs: [
           "Frame: Reinforced wood/metal",
@@ -128,7 +128,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
         id: "terrace-sunshade-system",
         name: "Terrace Sunshade System",
         description: "Outdoor shade setup for patio, pool, and hospitality leisure areas.",
-        image: "/images/products/goods/5.jpg",
+        image: "/images/products/hotel-supplies/terrace-sunshade-system/cover.jpg",
         highlight: "All-weather canopy direction for resort and café terrace operations.",
         specs: [
           "Canopy: Waterproof UV layer",
@@ -140,7 +140,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
         id: "compact-storage-fixture",
         name: "Compact Storage Fixture",
         description: "Space-efficient storage components for room-side organization needs.",
-        image: "/images/products/goods/1.jpg",
+        image: "/images/products/hotel-supplies/compact-storage-fixture/cover.jpg",
         highlight: "Modular room-side storage concept for housekeeping and guest convenience.",
         specs: [
           "Format: Corner-fit vertical",
@@ -152,7 +152,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
         id: "public-area-floor-carpet",
         name: "Public Area Floor Carpet",
         description: "Durable surface carpet options suited for high-footfall pathways.",
-        image: "/images/products/goods/2.jpg",
+        image: "/images/products/hotel-supplies/public-area-floor-carpet/cover.jpg",
         highlight: "Traffic-resilient flooring layer supporting consistent visual quality.",
         specs: [
           "Weave: Dense loop pattern",
@@ -164,7 +164,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
         id: "outdoor-lounge-set",
         name: "Outdoor Lounge Set",
         description: "Conversation set for open-air guest zones and hospitality projects.",
-        image: "/images/products/goods/4.jpg",
+        image: "/images/products/hotel-supplies/outdoor-lounge-set/cover.jpg",
         highlight: "Comfort-focused furniture bundle for outdoor social and relaxation areas.",
         specs: [
           "Set: Sofa + table combo",
@@ -183,7 +183,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
         id: "smart-kitchen-helper-series",
         name: "Smart Kitchen Helper Series",
         description: "User-friendly kitchen appliance lineup for daily family routines.",
-        image: "/images/products/goods/7.jpg",
+        image: "/images/products/home-appliances/smart-kitchen-helper-series/cover.jpg",
         highlight: "Compact kitchen appliance concept for efficient home meal preparation.",
         specs: [
           "Power Class: Household standard",
@@ -195,7 +195,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
         id: "efficient-cleaning-unit",
         name: "Efficient Cleaning Unit",
         description: "Cleaning appliance direction focused on energy efficiency and convenience.",
-        image: "/images/products/goods/8.jpg",
+        image: "/images/products/home-appliances/efficient-cleaning-unit/cover.jpg",
         highlight: "Time-saving cleaning format designed for modern urban homes.",
         specs: [
           "Efficiency: Low-energy profile",
@@ -208,7 +208,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
         name: "Home Utility Core Line",
         description:
           "Essential appliance grouping with controlled lead-time and stable compliance.",
-        image: "/images/products/goods/6.jpg",
+        image: "/images/products/home-appliances/home-utility-core-line/cover.jpg",
         highlight: "Core household device set for large-scale retail assortment planning.",
         specs: [
           "Compliance: Export-ready baseline",
@@ -220,7 +220,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
         id: "compact-living-appliance",
         name: "Compact Living Appliance",
         description: "Small-footprint product option for urban apartments and tight layouts.",
-        image: "/images/products/goods/1.jpg",
+        image: "/images/products/home-appliances/compact-living-appliance/cover.jpg",
         highlight: "Space-aware appliance design for compact home environments.",
         specs: [
           "Size: Compact profile",
@@ -232,7 +232,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
         id: "comfort-climate-assistant",
         name: "Comfort Climate Assistant",
         description: "Home comfort appliance concept supporting four-season indoor needs.",
-        image: "/images/products/goods/5.jpg",
+        image: "/images/products/home-appliances/comfort-climate-assistant/cover.jpg",
         highlight: "Balanced indoor comfort module for year-round household routines.",
         specs: [
           "Function: Climate support",
@@ -244,7 +244,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
         id: "modular-household-device",
         name: "Modular Household Device",
         description: "Flexible modular configuration for multi-channel retail adaptation.",
-        image: "/images/products/goods/4.jpg",
+        image: "/images/products/home-appliances/modular-household-device/cover.jpg",
         highlight: "Modular appliance architecture for region-specific product mix planning.",
         specs: [
           "Design: Component modular",
@@ -263,7 +263,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
         id: "casual-essentials-collection",
         name: "Casual Essentials Collection",
         description: "Daily apparel base line designed for stable replenishment cycles.",
-        image: "/images/products/goods/8.jpg",
+        image: "/images/products/clothes/casual-essentials-collection/cover.jpg",
         highlight: "Reliable everyday-wear category for high-frequency retail demand.",
         specs: ["Fit: Daily comfort", "Fabric: Blended base", "Use Case: Casual retail assortment"],
       },
@@ -271,7 +271,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
         id: "home-comfort-wear",
         name: "Home Comfort Wear",
         description: "Soft-touch homewear direction centered on comfort and clean finishing.",
-        image: "/images/products/goods/2.jpg",
+        image: "/images/products/clothes/home-comfort-wear/cover.jpg",
         highlight: "Relaxed-fit apparel direction tailored to home lifestyle segments.",
         specs: ["Texture: Soft-touch", "Care: Easy wash cycle", "Use Case: Homewear category"],
       },
@@ -279,7 +279,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
         id: "seasonal-capsule-series",
         name: "Seasonal Capsule Series",
         description: "Fast-response seasonal drop strategy for retail campaign windows.",
-        image: "/images/products/goods/3.jpg",
+        image: "/images/products/clothes/seasonal-capsule-series/cover.jpg",
         highlight: "Short-cycle seasonal apparel drop for focused campaign periods.",
         specs: [
           "Launch: Seasonal cadence",
@@ -291,7 +291,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
         id: "urban-light-outerwear",
         name: "Urban Light Outerwear",
         description: "Lightweight outerwear option for transition-season daily use.",
-        image: "/images/products/goods/7.jpg",
+        image: "/images/products/clothes/urban-light-outerwear/cover.jpg",
         highlight: "Transitional outerwear style for spring and autumn merchandising.",
         specs: ["Weight: Light shell", "Closure: Front zip/buttons", "Use Case: Urban commute"],
       },
@@ -299,7 +299,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
         id: "core-knit-program",
         name: "Core Knit Program",
         description: "Foundational knitwear range with adaptable styling across markets.",
-        image: "/images/products/goods/6.jpg",
+        image: "/images/products/clothes/core-knit-program/cover.jpg",
         highlight: "Cross-market knitwear basics supporting repeatable category planning.",
         specs: ["Category: Knit basics", "Seasonality: Multi-season", "Use Case: Core shelf line"],
       },
@@ -307,7 +307,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
         id: "travel-ready-apparel",
         name: "Travel Ready Apparel",
         description: "Wrinkle-conscious apparel selection for mobility-focused lifestyles.",
-        image: "/images/products/goods/4.jpg",
+        image: "/images/products/clothes/travel-ready-apparel/cover.jpg",
         highlight: "Travel-friendly wardrobe category emphasizing comfort and portability.",
         specs: [
           "Feature: Wrinkle-conscious",
@@ -326,7 +326,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
         id: "urban-comfort-sneakers",
         name: "Urban Comfort Sneakers",
         description: "Daily sneaker direction balancing comfort, durability, and clean appearance.",
-        image: "/images/products/goods/7.jpg",
+        image: "/images/products/shoes/urban-comfort-sneakers/cover.jpg",
         highlight: "All-day comfort sneaker concept for mainstream lifestyle channels.",
         specs: ["Upper: Breathable mix", "Sole: Cushioned profile", "Use Case: City daily wear"],
       },
@@ -334,7 +334,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
         id: "indoor-soft-slippers",
         name: "Indoor Soft Slippers",
         description: "Home-focused footwear category with stable quality and gentle fit.",
-        image: "/images/products/goods/1.jpg",
+        image: "/images/products/shoes/indoor-soft-slippers/cover.jpg",
         highlight: "Comfort-first indoor footwear line for household and hospitality usage.",
         specs: ["Lining: Soft-touch", "Outsole: Indoor-safe grip", "Use Case: Home / hotel room"],
       },
@@ -342,7 +342,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
         id: "lifestyle-walking-shoes",
         name: "Lifestyle Walking Shoes",
         description: "Flexible walking option for mixed urban and casual applications.",
-        image: "/images/products/goods/4.jpg",
+        image: "/images/products/shoes/lifestyle-walking-shoes/cover.jpg",
         highlight: "Versatile walking shoe format for broad consumer profiles.",
         specs: ["Flex: Mid-flex sole", "Weight: Lightweight class", "Use Case: Daily walking"],
       },
@@ -350,7 +350,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
         id: "lightweight-canvas-series",
         name: "Lightweight Canvas Series",
         description: "Breathable canvas footwear for seasonal and everyday sales programs.",
-        image: "/images/products/goods/2.jpg",
+        image: "/images/products/shoes/lightweight-canvas-series/cover.jpg",
         highlight: "Canvas footwear range aligned with seasonal casual demand.",
         specs: ["Upper: Canvas", "Style: Casual low-cut", "Use Case: Spring/summer retail"],
       },
@@ -358,7 +358,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
         id: "hybrid-comfort-loafers",
         name: "Hybrid Comfort Loafers",
         description: "Semi-formal loafer concept for office-to-casual transitions.",
-        image: "/images/products/goods/6.jpg",
+        image: "/images/products/shoes/hybrid-comfort-loafers/cover.jpg",
         highlight: "Hybrid loafer direction bridging business-casual and lifestyle segments.",
         specs: [
           "Style: Semi-formal",
@@ -370,7 +370,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
         id: "outdoor-casual-sandals",
         name: "Outdoor Casual Sandals",
         description: "Casual outdoor sandal option with practical grip and comfort.",
-        image: "/images/products/goods/5.jpg",
+        image: "/images/products/shoes/outdoor-casual-sandals/cover.jpg",
         highlight: "Open-structure sandal format for warm-weather outdoor routines.",
         specs: ["Design: Open upper", "Traction: Patterned outsole", "Use Case: Outdoor casual"],
       },
@@ -385,7 +385,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
         id: "packaged-snack-range",
         name: "Packaged Snack Range",
         description: "Retail-ready packaged snack concept for broad distribution channels.",
-        image: "/images/products/goods/5.jpg",
+        image: "/images/products/foods/packaged-snack-range/cover.jpg",
         highlight: "Shelf-friendly snack assortment direction for multi-format retail.",
         specs: [
           "Packaging: Retail-ready",
@@ -397,7 +397,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
         id: "functional-pantry-series",
         name: "Functional Pantry Series",
         description: "Daily pantry products designed around quality and repeatability.",
-        image: "/images/products/goods/3.jpg",
+        image: "/images/products/foods/functional-pantry-series/cover.jpg",
         highlight: "Core pantry product matrix for steady household consumption.",
         specs: [
           "Category: Daily pantry",
@@ -409,7 +409,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
         id: "private-label-food-program",
         name: "Private Label Food Program",
         description: "Customizable private label framework for regional market positioning.",
-        image: "/images/products/goods/6.jpg",
+        image: "/images/products/foods/private-label-food-program/cover.jpg",
         highlight: "Private label food model for brand expansion and channel adaptation.",
         specs: [
           "Branding: Private label ready",
@@ -421,7 +421,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
         id: "healthy-ready-meals",
         name: "Healthy Ready Meals",
         description: "Convenience meal format built for modern, time-efficient consumption.",
-        image: "/images/products/goods/8.jpg",
+        image: "/images/products/foods/healthy-ready-meals/cover.jpg",
         highlight: "Ready-meal line aligned with fast-paced urban consumption habits.",
         specs: [
           "Format: Ready-to-eat",
@@ -433,7 +433,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
         id: "family-cooking-ingredients",
         name: "Family Cooking Ingredients",
         description: "Core ingredient portfolio for daily kitchen usage and practical storage.",
-        image: "/images/products/goods/2.jpg",
+        image: "/images/products/foods/family-cooking-ingredients/cover.jpg",
         highlight: "Ingredient-focused range supporting routine home-cooking workflows.",
         specs: [
           "Type: Cooking ingredients",
@@ -445,7 +445,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
         id: "cross-border-gift-selection",
         name: "Cross-Border Gift Selection",
         description: "Packaged gift-food direction for seasonal events and premium channels.",
-        image: "/images/products/goods/4.jpg",
+        image: "/images/products/foods/cross-border-gift-selection/cover.jpg",
         highlight: "Gift-ready food concept for campaign launches and festive demand peaks.",
         specs: [
           "Format: Gift package",
