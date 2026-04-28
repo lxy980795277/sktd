@@ -153,6 +153,7 @@ const content: Record<Locale, HomeContent> = {
         "/images/home/featured-banner/2.jpg",
         "/images/home/featured-banner/3.jpg",
         "/images/home/featured-banner/4.jpg",
+        "/images/home/featured-banner/5.jpg",
       ],
     },
     hero: {
@@ -461,6 +462,7 @@ const content: Record<Locale, HomeContent> = {
         "/images/home/featured-banner/2.jpg",
         "/images/home/featured-banner/3.jpg",
         "/images/home/featured-banner/4.jpg",
+        "/images/home/featured-banner/5.jpg",
       ],
     },
     hero: {
@@ -772,6 +774,7 @@ const content: Record<Locale, HomeContent> = {
         "/images/home/featured-banner/2.jpg",
         "/images/home/featured-banner/3.jpg",
         "/images/home/featured-banner/4.jpg",
+        "/images/home/featured-banner/5.jpg",
       ],
     },
     hero: {

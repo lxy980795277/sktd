@@ -4,6 +4,7 @@
 # next.js
 /.next/
 /out/
+public/images-old/
 
 # production
 /build

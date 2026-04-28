@@ -4,7 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ProductFilmSection } from "@/components/products/product-film-section";
 import { ProductStorySection } from "@/components/products/product-story-section";
-import { getAllProductSlugs, getProductByIds } from "@/constants/products";
+import { getAllProductSlugs, getCategoryProductImages, getProductByIds } from "@/constants/products";
 import { isLocale } from "@/i18n/config";
 
 type ProductDetailPageProps = {
@@ -33,9 +33,9 @@ const detailText = {
   },
 } as const;
 
-/** 商品详情页主图路径 */
+/** 商品详情页主图路径，取第一张图 */
 const getDetailImage = (category: string, productId: string): string => {
-  return `/images/products/${category}/${productId}/detail.jpg`;
+  return `/images/products/${category}/${productId}/1.jpg`;
 };
 
 export function generateStaticParams(): Array<{ category: string; productId: string }> {
@@ -76,6 +76,8 @@ export default async function ProductDetailPage({
   }
 
   const detailImage = getDetailImage(category, productId);
+  /** 读取品类下所有商品图片，用于底部轮播 */
+  const filmImages = getCategoryProductImages(category);
 
   return (
     <main>
@@ -163,9 +165,9 @@ export default async function ProductDetailPage({
         </div>
       </div>
 
-      {/* 底部商品图片滚动条 */}
+      {/* 底部品类图片滚动条 */}
       <div className="mt-14 sm:mt-16 lg:mt-20">
-        <ProductFilmSection />
+        <ProductFilmSection images={filmImages} />
       </div>
 
       {/* 公司产品理念双分区 */}

@@ -2,19 +2,17 @@ import Image from "next/image";
 import type { FC } from "react";
 import "./product-film-section.css";
 
-const FILM_IMAGES = [
-  "/images/products/product-film-section/1.jpg",
-  "/images/products/product-film-section/2.jpg",
-  "/images/products/product-film-section/3.jpg",
-  "/images/products/product-film-section/4.jpg",
-  "/images/products/product-film-section/5.jpg",
-  "/images/products/product-film-section/6.jpg",
-  "/images/products/product-film-section/7.jpg",
-  "/images/products/product-film-section/8.jpg",
-] as const;
+type ProductFilmSectionProps = {
+  /** 品类下所有商品图片路径，由详情页服务端读取后传入 */
+  images: string[];
+};
 
-/** 商品详情页底部无限滚动图片条，所有详情页共用同一批素材 */
-export const ProductFilmSection: FC = () => {
+/** 商品详情页底部无限滚动图片条，展示当前品类下所有商品图片 */
+export const ProductFilmSection: FC<ProductFilmSectionProps> = ({ images }) => {
+  if (images.length === 0) {
+    return null;
+  }
+
   return (
     <section className="product-film-section" aria-label="Product showcase strip">
       <div className="product-film-section__mask-left" />
@@ -27,7 +25,7 @@ export const ProductFilmSection: FC = () => {
             key={`group-${groupIndex}`}
             className="product-film-group"
           >
-            {FILM_IMAGES.map((image, index) => (
+            {images.map((image, index) => (
               <article
                 key={`${groupIndex}-${index}`}
                 className="product-film-card"
