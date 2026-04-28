@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import type { HomeContent } from "@/i18n/content";
 import { cn } from "@/lib/utils";
+import { imgV } from "@/utils/image-version";
 import "./index.css";
 
 type AboutSectionProps = {
@@ -50,7 +51,7 @@ export function AboutSection({ content }: AboutSectionProps): React.JSX.Element 
       <div className="about-section-frame relative overflow-hidden border border-(--line) shadow-[0_24px_80px_rgba(31,29,25,0.08)]">
         <div className="relative min-h-[420px] sm:min-h-[520px] lg:min-h-[620px]">
           <Image
-            src={content.image}
+            src={imgV(content.image)}
             alt={content.title}
             fill
             className="object-cover"

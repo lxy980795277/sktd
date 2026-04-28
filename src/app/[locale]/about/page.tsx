@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getAboutPageContent } from "@/i18n/about-content";
 import { isLocale } from "@/i18n/config";
+import { imgV } from "@/utils/image-version";
 import { StorySections } from "@/app/[locale]/about/story-sections";
 import { MilestonesCarousel } from "@/app/[locale]/about/milestones-carousel";
 import { MilestonesTimeline } from "@/app/[locale]/about/milestones-timeline";
@@ -15,22 +16,22 @@ type AboutPageProps = {
 
 // 里程碑轮播配图
 const MILESTONE_IMAGES = [
-  "/images/about/milestones/1.jpg",
-  "/images/about/milestones/2.jpg",
-  "/images/about/milestones/3.jpg",
-  "/images/about/milestones/4.jpg",
-  "/images/about/milestones/5.jpg",
-  "/images/about/milestones/6.jpg",
-] as const;
+  imgV("/images/about/milestones/1.jpg"),
+  imgV("/images/about/milestones/2.jpg"),
+  imgV("/images/about/milestones/3.jpg"),
+  imgV("/images/about/milestones/4.jpg"),
+  imgV("/images/about/milestones/5.jpg"),
+  imgV("/images/about/milestones/6.jpg"),
+];
 
 // 五大板块配图
 const STORY_IMAGES = [
-  "/images/about/story-sections/1.jpg",
-  "/images/about/story-sections/2.jpg",
-  "/images/about/story-sections/3.jpg",
-  "/images/about/story-sections/4.jpg",
-  "/images/about/story-sections/5.jpg",
-] as const;
+  imgV("/images/about/story-sections/1.jpg"),
+  imgV("/images/about/story-sections/2.jpg"),
+  imgV("/images/about/story-sections/3.jpg"),
+  imgV("/images/about/story-sections/4.jpg"),
+  imgV("/images/about/story-sections/5.jpg"),
+];
 
 export async function generateMetadata({ params }: AboutPageProps): Promise<Metadata> {
   const { locale } = await params;
@@ -55,7 +56,7 @@ export default async function AboutPage({ params }: AboutPageProps): Promise<Rea
         <div className="mx-auto max-w-7xl">
           {/* 标题区：与 Products 页完全一致 */}
           <h1 className="section-title text-4xl leading-[0.95] font-semibold sm:text-5xl lg:text-6xl">
-            About Us
+            {content.pageTitle}
           </h1>
           <div className="mt-6 h-[2px] w-full bg-(--line-strong)" />
 
@@ -83,7 +84,7 @@ export default async function AboutPage({ params }: AboutPageProps): Promise<Rea
       </div>
 
       {/* 瀑布流商品画廊：全宽，置于页面最底部 */}
-      <GoodsGallery />
+      <GoodsGallery title={content.galleryTitle} />
     </main>
   );
 }

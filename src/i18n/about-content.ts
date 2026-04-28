@@ -16,11 +16,13 @@ export type AboutPageContent = {
     title: string;
     description: string;
   };
+  pageTitle: string;
   eyebrow: string;
   title: string;
   storySections: AboutStorySection[];
   milestonesTitle: string;
   milestones: AboutMilestone[];
+  galleryTitle: string;
 };
 
 const aboutContent: Record<Locale, AboutPageContent> = {
@@ -30,6 +32,7 @@ const aboutContent: Record<Locale, AboutPageContent> = {
       description:
         "Learn how SKTD has connected Asia and Europe since 2014 through reliable end-to-end sourcing, development, quality and logistics execution.",
     },
+    pageTitle: "About Us",
     eyebrow: "About SKTD",
     title: "Connecting Asia and Europe with excellence since 2014.",
     storySections: [
@@ -60,6 +63,7 @@ const aboutContent: Record<Locale, AboutPageContent> = {
       },
     ],
     milestonesTitle: "Milestones in our journey",
+    galleryTitle: "Life at SKTD",
     milestones: [
       {
         year: "2014",
@@ -105,6 +109,7 @@ const aboutContent: Record<Locale, AboutPageContent> = {
       description:
         "Erfahren Sie, wie SKTD seit 2014 Asien und Europa mit verlässlicher End-to-End-Umsetzung in Beschaffung, Entwicklung, Qualität und Logistik verbindet.",
     },
+    pageTitle: "Über uns",
     eyebrow: "Über SKTD",
     title: "Seit 2014 verbinden wir Asien und Europa mit exzellenter Umsetzung.",
     storySections: [
@@ -135,6 +140,7 @@ const aboutContent: Record<Locale, AboutPageContent> = {
       },
     ],
     milestonesTitle: "Meilensteine unserer Entwicklung",
+    galleryTitle: "Leben bei SKTD",
     milestones: [
       {
         year: "2014",
@@ -177,6 +183,7 @@ const aboutContent: Record<Locale, AboutPageContent> = {
       description:
         "了解 SKTD 自 2014 年以来，如何通过采购、研发、质量与物流的端到端执行，持续连接亚洲与欧洲市场。",
     },
+    pageTitle: "关于我们",
     eyebrow: "关于 SKTD",
     title: "自 2014 年起，以卓越执行连接亚洲与欧洲。",
     storySections: [
@@ -207,6 +214,7 @@ const aboutContent: Record<Locale, AboutPageContent> = {
       },
     ],
     milestonesTitle: "发展历程里程碑",
+    galleryTitle: "SKTD 的日常",
     milestones: [
       {
         year: "2014",

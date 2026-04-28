@@ -1,15 +1,16 @@
 import Image from "next/image";
 import type { HomeContent } from "@/i18n/content";
+import { imgV } from "@/utils/image-version";
 
 type AdvantagesSectionProps = {
   content: HomeContent["advantages"];
 };
 
 const ADVANTAGE_IMAGES = [
-  "/images/home/advantages-section/1.jpg",
-  "/images/home/advantages-section/2.jpg",
-  "/images/home/advantages-section/3.jpg",
-] as const;
+  imgV("/images/home/advantages-section/1.jpg"),
+  imgV("/images/home/advantages-section/2.jpg"),
+  imgV("/images/home/advantages-section/3.jpg"),
+];
 
 // 优势模块：聚焦 SKTD 的核心价值与差异化能力。
 export function AdvantagesSection({ content }: AdvantagesSectionProps): React.JSX.Element {

@@ -25,7 +25,7 @@ export default async function LocaleLayout({
   const content = getHomeContent(locale);
 
   // 将产品分类动态注入到 Products 导航项的 children，保持分类数据单一来源
-  const productCategories = getProductCategories();
+  const productCategories = getProductCategories(locale);
   const navigation = content.header.navigation.map((item) => {
     if (item.href === "/products") {
       return {

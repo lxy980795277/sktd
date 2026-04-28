@@ -5,6 +5,8 @@ import { notFound } from "next/navigation";
 import { ProductFilmSection } from "@/components/products/product-film-section";
 import { ProductStorySection } from "@/components/products/product-story-section";
 import { getAllProductSlugs, getCategoryProductImages, getProductByIds } from "@/constants/products";
+import { getProductStories } from "@/i18n/products-content";
+import { imgV } from "@/utils/image-version";
 import { isLocale } from "@/i18n/config";
 
 type ProductDetailPageProps = {
@@ -35,7 +37,7 @@ const detailText = {
 
 /** 商品详情页主图路径，取第一张图 */
 const getDetailImage = (category: string, productId: string): string => {
-  return `/images/products/${category}/${productId}/1.jpg`;
+  return imgV(`/images/products/${category}/${productId}/1.jpg`);
 };
 
 export function generateStaticParams(): Array<{ category: string; productId: string }> {
@@ -45,7 +47,7 @@ export function generateStaticParams(): Array<{ category: string; productId: str
 export async function generateMetadata({ params }: ProductDetailPageProps): Promise<Metadata> {
   const { locale, category, productId } = await params;
   const resolvedLocale = isLocale(locale) ? locale : "en";
-  const result = getProductByIds(category, productId);
+  const result = getProductByIds(resolvedLocale, category, productId);
 
   if (!result) {
     return {
@@ -69,7 +71,7 @@ export default async function ProductDetailPage({
   const { locale, category, productId } = await params;
   const resolvedLocale = isLocale(locale) ? locale : "en";
   const copy = detailText[resolvedLocale];
-  const result = getProductByIds(category, productId);
+  const result = getProductByIds(resolvedLocale, category, productId);
 
   if (!result) {
     notFound();
@@ -78,6 +80,8 @@ export default async function ProductDetailPage({
   const detailImage = getDetailImage(category, productId);
   /** 读取品类下所有商品图片，用于底部轮播 */
   const filmImages = getCategoryProductImages(category);
+  /** 当前语言的产品故事文案 */
+  const productStories = getProductStories(resolvedLocale);
 
   return (
     <main>
@@ -171,7 +175,7 @@ export default async function ProductDetailPage({
       </div>
 
       {/* 公司产品理念双分区 */}
-      <ProductStorySection />
+      <ProductStorySection stories={productStories} />
 
     </main>
   );

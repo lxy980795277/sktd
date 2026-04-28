@@ -20,7 +20,7 @@ export function CtaSection({ locale, content }: CtaSectionProps): React.JSX.Elem
       <div className="overflow-hidden rounded-[38px] border border-(--line) bg-[linear-gradient(135deg,#8b3f2c_0%,#6f2c1f_50%,#a75d3f_100%)] px-6 py-8 text-white shadow-[0_28px_90px_rgba(31,29,25,0.14)] sm:px-8 sm:py-10 lg:px-10 lg:py-12">
         <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
           <div>
-            <p className="eyebrow border-white/20 bg-white/10 text-white">Final call to action</p>
+            <p className="eyebrow border-white/20 bg-white/10 text-white">{content.eyebrow}</p>
             <h2 className="section-title mt-5 text-4xl leading-[0.95] font-semibold sm:text-5xl lg:text-[3.8rem]">
               {content.title}
             </h2>

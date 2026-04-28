@@ -11,7 +11,10 @@ type SiteFooterProps = {
 
 // 页脚模块：提供品牌摘要、快速导航与语言切换。
 export function SiteFooter({ locale, content }: SiteFooterProps): React.JSX.Element {
-  const quickAccessLinks = [...content.links, { label: "Contact", href: "/contact" }] as const;
+  const quickAccessLinks = [
+    ...content.links,
+    { label: content.contactLabel, href: "/contact" },
+  ] as const;
   const copyrightYear = new Date().getFullYear();
 
   return (
@@ -28,7 +31,7 @@ export function SiteFooter({ locale, content }: SiteFooterProps): React.JSX.Elem
           <div className="grid gap-8 md:grid-cols-2">
             <div>
               <p className="text-sm font-semibold tracking-[0.2em] text-white/60 uppercase">
-                Contact Info
+                {content.contactInfoLabel}
               </p>
               <div className="mt-4 space-y-2 text-sm leading-7 text-white/82">
                 <div className="flex items-start gap-3">
@@ -71,7 +74,7 @@ export function SiteFooter({ locale, content }: SiteFooterProps): React.JSX.Elem
 
             <div>
               <p className="text-sm font-semibold tracking-[0.2em] text-white/60 uppercase">
-                Quick Access
+                {content.quickAccessLabel}
               </p>
               <div className="mt-4 flex flex-col gap-2 text-sm leading-7 text-white/82">
                 {quickAccessLinks.slice(0, 5).map((item) => {
@@ -91,8 +94,8 @@ export function SiteFooter({ locale, content }: SiteFooterProps): React.JSX.Elem
         </div>
 
         <div className="mt-8 border-t border-white/20 pt-5 text-xs tracking-[0.12em] text-white/62 uppercase sm:flex sm:items-center sm:justify-between">
-          <span>{`© ${copyrightYear} Copyright SKTD`}</span>
-          <span className="mt-2 block sm:mt-0">General Terms and Conditions</span>
+          <span>{`© ${copyrightYear} ${content.rights}`}</span>
+          <span className="mt-2 block sm:mt-0">{content.termsLabel}</span>
         </div>
       </div>
     </footer>

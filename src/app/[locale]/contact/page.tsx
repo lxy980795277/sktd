@@ -3,6 +3,7 @@ import Image from "next/image";
 import { ContactForm } from "@/components/contact/contact-form";
 import { getContactContent } from "@/i18n/contact-content";
 import { isLocale } from "@/i18n/config";
+import { imgV } from "@/utils/image-version";
 
 type ContactPageProps = {
   params: Promise<{
@@ -33,7 +34,7 @@ export default async function ContactPage({
     <main className="relative flex min-h-[calc(100vh-72px)] items-center overflow-hidden">
       {/* ── 背景图：横向占满，纵向覆盖全页 ── */}
       <Image
-        src="/images/contact/1.jpg"
+        src={imgV("/images/contact/1.jpg")}
         alt="Contact background"
         fill
         priority

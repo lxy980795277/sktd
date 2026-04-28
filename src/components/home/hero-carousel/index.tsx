@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { imgV } from "@/utils/image-version";
 import {
   Carousel,
   CarouselContent,
@@ -95,7 +96,7 @@ export function HeroCarousel({ locale: _locale, slides }: HeroCarouselProps): Re
                     <CarouselItem key={`${slide.title}-${index}`} className="pl-0">
                       <div className="relative h-full min-h-[420px] sm:min-h-[560px] lg:min-h-[760px]">
                         <Image
-                          src={slide.image}
+                          src={imgV(slide.image)}
                           alt={slide.title}
                           fill
                           priority={index === 0}

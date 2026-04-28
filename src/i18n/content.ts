@@ -109,6 +109,7 @@ export interface HomeContent {
     items: MilestoneItem[];
   };
   cta: {
+    eyebrow: string;
     title: string;
     subtitle: string;
     primaryLabel: string;
@@ -120,6 +121,10 @@ export interface HomeContent {
     blurb: string;
     links: NavigationItem[];
     rights: string;
+    contactInfoLabel: string;
+    quickAccessLabel: string;
+    contactLabel: string;
+    termsLabel: string;
   };
 }
 
@@ -413,6 +418,7 @@ const content: Record<Locale, HomeContent> = {
       ],
     },
     cta: {
+      eyebrow: "Final call to action",
       title: "Ready to shape your next cross-border opportunity?",
       subtitle:
         "Use this high-fidelity homepage as the foundation. You can replace imagery, partner names and call-to-action targets later without restructuring the design.",
@@ -430,7 +436,11 @@ const content: Record<Locale, HomeContent> = {
         { label: "Milestones", href: "#milestones" },
         { label: "About Us", href: "/about" },
       ],
-      rights: "© SKTD. All rights reserved.",
+      rights: "SKTD. All rights reserved.",
+      contactInfoLabel: "Contact Info",
+      quickAccessLabel: "Quick Access",
+      contactLabel: "Contact",
+      termsLabel: "General Terms and Conditions",
     },
   },
   de: {
@@ -725,6 +735,7 @@ const content: Record<Locale, HomeContent> = {
       ],
     },
     cta: {
+      eyebrow: "Jetzt handeln",
       title: "Bereit für Ihre nächste grenzüberschreitende Chance?",
       subtitle:
         "Diese hochgradig referenznahe Startseite ist die Basis. Bilder, Partnernamen und CTA-Ziele können später ohne Designumbau ersetzt werden.",
@@ -742,7 +753,11 @@ const content: Record<Locale, HomeContent> = {
         { label: "Meilensteine", href: "#milestones" },
         { label: "Über uns", href: "/about" },
       ],
-      rights: "© SKTD. Alle Rechte vorbehalten.",
+      rights: "SKTD. Alle Rechte vorbehalten.",
+      contactInfoLabel: "Kontakt",
+      quickAccessLabel: "Schnellzugriff",
+      contactLabel: "Kontakt",
+      termsLabel: "Allgemeine Geschäftsbedingungen",
     },
   },
   zh: {
@@ -1016,6 +1031,7 @@ const content: Record<Locale, HomeContent> = {
       ],
     },
     cta: {
+      eyebrow: "立即行动",
       title: "准备开启下一次跨境增长机会了吗？",
       subtitle:
         "这版首页已经具备高保真参考站结构，后续你只需要替换图片、正式客户名称和最终跳转目标，不需要重做页面框架。",
@@ -1033,7 +1049,11 @@ const content: Record<Locale, HomeContent> = {
         { label: "发展里程碑", href: "#milestones" },
         { label: "关于我们", href: "/about" },
       ],
-      rights: "© SKTD. 保留所有权利。",
+      rights: "SKTD. 保留所有权利。",
+      contactInfoLabel: "联系方式",
+      quickAccessLabel: "快速导航",
+      contactLabel: "联系我们",
+      termsLabel: "通用服务条款",
     },
   },
 };

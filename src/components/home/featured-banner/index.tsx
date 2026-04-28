@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { imgV } from "@/utils/image-version";
 import { ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import {
@@ -93,7 +94,7 @@ export function FeaturedBanner({ locale, content }: FeaturedBannerProps): React.
                   <CarouselItem key={`${image}-${index}`} className="pl-0">
                     <div className="featured-banner-media relative min-h-[460px] sm:min-h-[560px] lg:min-h-[620px]">
                       <Image
-                        src={image}
+                          src={imgV(image)}
                         alt={`${content.title} ${index + 1}`}
                         fill
                         priority={index === 0}

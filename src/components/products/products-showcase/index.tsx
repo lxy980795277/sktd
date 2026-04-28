@@ -81,7 +81,7 @@ export const ProductsShowcase: FC<ProductsShowcaseProps> = ({ locale, content })
                 }}
                 className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:gap-6"
               >
-                {category.products.map((product) => (
+                {category.products.map((product, productIndex) => (
                   <Link
                     key={`${category.id}-${product.id}`}
                     href={`/${locale}/products/${category.id}/${product.id}`}
@@ -94,6 +94,7 @@ export const ProductsShowcase: FC<ProductsShowcaseProps> = ({ locale, content })
                         fill
                         className="object-cover transition duration-300 group-hover:scale-[1.03]"
                         sizes="(max-width: 1024px) 33vw, 260px"
+                        priority={productIndex < 3}
                       />
                     </div>
                     <p className="mt-3 text-sm leading-6 text-(--muted) sm:text-base">

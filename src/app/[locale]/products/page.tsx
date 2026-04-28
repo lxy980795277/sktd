@@ -50,7 +50,7 @@ export default async function ProductsPage({
   const { category } = await searchParams;
   const resolvedLocale = isLocale(locale) ? locale : "en";
   const content = pageText[resolvedLocale];
-  const categories = getProductCategories();
+  const categories = getProductCategories(resolvedLocale);
 
   // 无分类参数时，默认跳转到第一个分类
   if (!category) {

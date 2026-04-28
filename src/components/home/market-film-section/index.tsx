@@ -1,30 +1,31 @@
 import Image from "next/image";
 import type { FC } from "react";
+import { imgV } from "@/utils/image-version";
 import "./index.css";
 
 /** 上排图片（8-1，反序播放） */
 const ROW_PRIMARY_IMAGES = [
-  "/images/home/market-film-section/8.jpg",
-  "/images/home/market-film-section/7.jpg",
-  "/images/home/market-film-section/6.jpg",
-  "/images/home/market-film-section/5.jpg",
-  "/images/home/market-film-section/4.jpg",
-  "/images/home/market-film-section/3.jpg",
-  "/images/home/market-film-section/2.jpg",
-  "/images/home/market-film-section/1.jpg",
-] as const;
+  imgV("/images/home/market-film-section/8.jpg"),
+  imgV("/images/home/market-film-section/7.jpg"),
+  imgV("/images/home/market-film-section/6.jpg"),
+  imgV("/images/home/market-film-section/5.jpg"),
+  imgV("/images/home/market-film-section/4.jpg"),
+  imgV("/images/home/market-film-section/3.jpg"),
+  imgV("/images/home/market-film-section/2.jpg"),
+  imgV("/images/home/market-film-section/1.jpg"),
+];
 
 /** 下排图片（9-16） */
 const ROW_SECONDARY_IMAGES = [
-  "/images/home/market-film-section/9.jpg",
-  "/images/home/market-film-section/10.jpg",
-  "/images/home/market-film-section/11.jpg",
-  "/images/home/market-film-section/12.jpg",
-  "/images/home/market-film-section/13.jpg",
-  "/images/home/market-film-section/14.jpg",
-  "/images/home/market-film-section/15.jpg",
-  "/images/home/market-film-section/16.jpg",
-] as const;
+  imgV("/images/home/market-film-section/9.jpg"),
+  imgV("/images/home/market-film-section/10.jpg"),
+  imgV("/images/home/market-film-section/11.jpg"),
+  imgV("/images/home/market-film-section/12.jpg"),
+  imgV("/images/home/market-film-section/13.jpg"),
+  imgV("/images/home/market-film-section/14.jpg"),
+  imgV("/images/home/market-film-section/15.jpg"),
+  imgV("/images/home/market-film-section/16.jpg"),
+];
 
 export const MarketFilmSection: FC = () => {
   return (
