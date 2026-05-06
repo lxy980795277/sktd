@@ -5,6 +5,8 @@
 /.next/
 /out/
 public/images-v1/
+public/images-v2/
+
 
 # production
 /build
