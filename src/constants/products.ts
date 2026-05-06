@@ -25,51 +25,45 @@ export type ProductCategory = {
  * key 格式：`${categoryId}/${productId}`
  */
 const PRODUCT_IMAGES: Record<string, string> = {
-  "clothes/womens-clothing": imgV("/images-v2/products/clothes/womens-clothing/1.jpg"),
-  "clothes/mens-clothing": imgV("/images-v2/products/clothes/mens-clothing/1.jpg"),
-  "clothes/activewear": imgV("/images-v2/products/clothes/activewear/1.jpg"),
-  "foods/nuts": imgV("/images-v2/products/foods/nuts/1.jpg"),
-  "foods/canned-foods": imgV("/images-v2/products/foods/canned-foods/1.jpg"),
-  "foods/honey": imgV("/images-v2/products/foods/honey/1.jpg"),
-  "foods/noodles": imgV("/images-v2/products/foods/noodles/1.jpg"),
-  "home-appliances/leisure-armchair": imgV("/images-v2/products/home-appliances/leisure-armchair/1.jpg"),
-  "home-appliances/two-tone-carpet": imgV("/images-v2/products/home-appliances/two-tone-carpet/1.jpg"),
-  "home-appliances/bedding-set": imgV("/images-v2/products/home-appliances/bedding-set/1.jpg"),
-  "home-appliances/outdoor-furniture": imgV("/images-v2/products/home-appliances/outdoor-furniture/1.jpg"),
-  "home-appliances/sofa": imgV("/images-v2/products/home-appliances/sofa/1.jpg"),
-  "home-appliances/swing-chair": imgV("/images-v2/products/home-appliances/swing-chair/1.jpg"),
-  "home-appliances/corner-storage-cabinet": imgV("/images-v2/products/home-appliances/corner-storage-cabinet/1.jpg"),
-  "home-appliances/patio-umbrella": imgV("/images-v2/products/home-appliances/patio-umbrella/1.jpg"),
-  "home-furnishings/health-kettle": imgV("/images-v2/products/home-furnishings/health-kettle/1.jpg"),
-  "home-furnishings/water-purifier": imgV("/images-v2/products/home-furnishings/water-purifier/1.jpg"),
-  "home-furnishings/humidifier": imgV("/images-v2/products/home-furnishings/humidifier/1.jpg"),
-  "home-furnishings/vacuum-cleaner": imgV("/images-v2/products/home-furnishings/vacuum-cleaner/1.jpg"),
-  "home-furnishings/hair-dryer": imgV("/images-v2/products/home-furnishings/hair-dryer/1.jpg"),
-  "home-furnishings/coffee-maker": imgV("/images-v2/products/home-furnishings/coffee-maker/1.jpg"),
-  "home-furnishings/desk-fan": imgV("/images-v2/products/home-furnishings/desk-fan/1.jpg"),
-  "home-furnishings/garment-steamer": imgV("/images-v2/products/home-furnishings/garment-steamer/1.jpg"),
-  "home-furnishings/food-processor": imgV("/images-v2/products/home-furnishings/food-processor/1.jpg"),
-  "home-furnishings/breakfast-maker": imgV("/images-v2/products/home-furnishings/breakfast-maker/1.jpg"),
-  "home-furnishings/juicer": imgV("/images-v2/products/home-furnishings/juicer/1.jpg"),
-  "home-furnishings/cooking-machine": imgV("/images-v2/products/home-furnishings/cooking-machine/1.jpg"),
-  "home-furnishings/oven": imgV("/images-v2/products/home-furnishings/oven/1.jpg"),
-  "home-furnishings/induction-cooker": imgV("/images-v2/products/home-furnishings/induction-cooker/1.jpg"),
-  "home-furnishings/air-fryer": imgV("/images-v2/products/home-furnishings/air-fryer/1.jpg"),
-  "home-furnishings/mite-remover": imgV("/images-v2/products/home-furnishings/mite-remover/1.jpg"),
-  "home-furnishings/electric-fan": imgV("/images-v2/products/home-furnishings/electric-fan/1.jpg"),
-  "hotel-supplies/flashlight": imgV("/images-v2/products/hotel-supplies/flashlight/1.jpg"),
-  "hotel-supplies/bathroom-supplies": imgV("/images-v2/products/hotel-supplies/bathroom-supplies/1.jpg"),
-  "hotel-supplies/cleaning-tools": imgV("/images-v2/products/hotel-supplies/cleaning-tools/1.jpg"),
-  "hotel-supplies/soap-dispenser": imgV("/images-v2/products/hotel-supplies/soap-dispenser/1.jpg"),
-  "hotel-supplies/display-stand": imgV("/images-v2/products/hotel-supplies/display-stand/1.jpg"),
-  "hotel-supplies/vanity-mirror": imgV("/images-v2/products/hotel-supplies/vanity-mirror/1.jpg"),
-  "hotel-supplies/hotel-decor": imgV("/images-v2/products/hotel-supplies/hotel-decor/1.jpg"),
-  "shoes/urban-comfort-sneakers": imgV("/images-v2/products/shoes/urban-comfort-sneakers/1.jpg"),
-  "shoes/indoor-soft-slippers": imgV("/images-v2/products/shoes/indoor-soft-slippers/1.jpg"),
-  "shoes/lifestyle-walking-shoes": imgV("/images-v2/products/shoes/lifestyle-walking-shoes/1.jpg"),
-  "shoes/lightweight-canvas-series": imgV("/images-v2/products/shoes/lightweight-canvas-series/1.jpg"),
-  "shoes/hybrid-comfort-loafers": imgV("/images-v2/products/shoes/hybrid-comfort-loafers/1.jpg"),
-  "shoes/outdoor-casual-sandals": imgV("/images-v2/products/shoes/outdoor-casual-sandals/1.jpg"),
+  "clothes/womens-clothing": imgV("/images-v3/products/clothes/womens-clothing/1.jpg"),
+  "clothes/mens-clothing": imgV("/images-v3/products/clothes/mens-clothing/1.jpg"),
+  "clothes/activewear": imgV("/images-v3/products/clothes/activewear/1.jpg"),
+  "foods/nuts": imgV("/images-v3/products/foods/nuts/1.jpg"),
+  "foods/canned-foods": imgV("/images-v3/products/foods/canned-foods/1.jpg"),
+  "foods/honey": imgV("/images-v3/products/foods/honey/1.jpg"),
+  "foods/noodles": imgV("/images-v3/products/foods/noodles/1.jpg"),
+  "home-appliances/leisure-armchair": imgV("/images-v3/products/home-appliances/leisure-armchair/1.jpg"),
+  "home-appliances/two-tone-carpet": imgV("/images-v3/products/home-appliances/two-tone-carpet/1.jpg"),
+  "home-appliances/bedding-set": imgV("/images-v3/products/home-appliances/bedding-set/1.jpg"),
+  "home-appliances/outdoor-furniture": imgV("/images-v3/products/home-appliances/outdoor-furniture/1.jpg"),
+  "home-appliances/sofa": imgV("/images-v3/products/home-appliances/sofa/1.jpg"),
+  "home-appliances/swing-chair": imgV("/images-v3/products/home-appliances/swing-chair/1.jpg"),
+  "home-appliances/corner-storage-cabinet": imgV("/images-v3/products/home-appliances/corner-storage-cabinet/1.jpg"),
+  "home-appliances/patio-umbrella": imgV("/images-v3/products/home-appliances/patio-umbrella/1.jpg"),
+  "home-furnishings/health-kettle": imgV("/images-v3/products/home-furnishings/health-kettle/1.jpg"),
+  "home-furnishings/humidifier": imgV("/images-v3/products/home-furnishings/humidifier/1.jpg"),
+  "home-furnishings/vacuum-cleaner": imgV("/images-v3/products/home-furnishings/vacuum-cleaner/1.jpg"),
+  "home-furnishings/hair-dryer": imgV("/images-v3/products/home-furnishings/hair-dryer/1.jpg"),
+  "home-furnishings/coffee-maker": imgV("/images-v3/products/home-furnishings/coffee-maker/1.jpg"),
+  "home-furnishings/food-processor": imgV("/images-v3/products/home-furnishings/food-processor/1.jpg"),
+  "home-furnishings/breakfast-maker": imgV("/images-v3/products/home-furnishings/breakfast-maker/1.jpg"),
+  "home-furnishings/juicer": imgV("/images-v3/products/home-furnishings/juicer/1.jpg"),
+  "home-furnishings/cooking-machine": imgV("/images-v3/products/home-furnishings/cooking-machine/1.jpg"),
+  "home-furnishings/oven": imgV("/images-v3/products/home-furnishings/oven/1.jpg"),
+  "home-furnishings/induction-cooker": imgV("/images-v3/products/home-furnishings/induction-cooker/1.jpg"),
+  "home-furnishings/air-fryer": imgV("/images-v3/products/home-furnishings/air-fryer/1.jpg"),
+  "home-furnishings/mite-remover": imgV("/images-v3/products/home-furnishings/mite-remover/1.jpg"),
+  "home-furnishings/electric-fan": imgV("/images-v3/products/home-furnishings/electric-fan/1.jpg"),
+  "hotel-supplies/bathroom-supplies": imgV("/images-v3/products/hotel-supplies/bathroom-supplies/1.jpg"),
+  "hotel-supplies/soap-dispenser": imgV("/images-v3/products/hotel-supplies/soap-dispenser/1.jpg"),
+  "hotel-supplies/vanity-mirror": imgV("/images-v3/products/hotel-supplies/vanity-mirror/1.jpg"),
+  "hotel-supplies/hotel-decor": imgV("/images-v3/products/hotel-supplies/hotel-decor/1.jpg"),
+  "shoes/urban-comfort-sneakers": imgV("/images-v3/products/shoes/urban-comfort-sneakers/1.jpg"),
+  "shoes/indoor-soft-slippers": imgV("/images-v3/products/shoes/indoor-soft-slippers/1.jpg"),
+  "shoes/lifestyle-walking-shoes": imgV("/images-v3/products/shoes/lifestyle-walking-shoes/1.jpg"),
+  "shoes/lightweight-canvas-series": imgV("/images-v3/products/shoes/lightweight-canvas-series/1.jpg"),
+  "shoes/hybrid-comfort-loafers": imgV("/images-v3/products/shoes/hybrid-comfort-loafers/1.jpg"),
+  "shoes/outdoor-casual-sandals": imgV("/images-v3/products/shoes/outdoor-casual-sandals/1.jpg"),
 };
 
 /** 将 i18n 文案与图片路径合并，返回完整的品类数据 */
@@ -128,7 +122,7 @@ export const getAllProductSlugs = (): Array<{ category: string; productId: strin
  * 用于商品详情页底部品类轮播图（ProductFilmSection）
  */
 export const getCategoryProductImages = (categoryId: string): string[] => {
-  const categoryDir = path.join(process.cwd(), "public", "images-v2", "products", categoryId);
+  const categoryDir = path.join(process.cwd(), "public", "images-v3", "products", categoryId);
 
   try {
     const productDirs = fs
@@ -141,8 +135,9 @@ export const getCategoryProductImages = (categoryId: string): string[] => {
       return fs
         .readdirSync(productDir)
         .filter((f) => /\.(jpg|jpeg|png|webp)$/i.test(f))
-        .sort()
-        .map((f) => imgV(`/images-v2/products/${categoryId}/${productId}/${f}`));
+        // 使用自然排序，确保 10.jpg 排在 9.jpg 之后而非 2.jpg 之前
+        .sort((a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" }))
+        .map((f) => imgV(`/images-v3/products/${categoryId}/${productId}/${f}`));
     });
   } catch {
     return [];

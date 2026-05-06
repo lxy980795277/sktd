@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { ContactForm } from "@/components/contact/contact-form";
 import { getContactContent } from "@/i18n/contact-content";
 import { isLocale } from "@/i18n/config";
 import { imgV } from "@/utils/image-version";
+import { ContactBackgroundCarousel } from "./background-carousel";
 
 type ContactPageProps = {
   params: Promise<{
@@ -32,14 +32,12 @@ export default async function ContactPage({
   return (
     /* 整页相对定位，背景图绝对铺满 */
     <main className="relative flex min-h-[calc(100vh-72px)] items-center overflow-hidden">
-      {/* ── 背景图：横向占满，纵向覆盖全页 ── */}
-      <Image
-        src={imgV("/images-v2/contact/1.jpg")}
-        alt="Contact background"
-        fill
-        priority
-        className="object-cover object-center"
-        sizes="100vw"
+      {/* ── 背景轮播：2 张图 5 秒静默交叉淡入淡出 ── */}
+      <ContactBackgroundCarousel
+        images={[
+          imgV("/images-v3/contact/1.jpg"),
+          imgV("/images-v3/contact/2.jpg"),
+        ]}
       />
 
       {/* 深色渐变遮罩：左深右浅，右侧留白给卡片 */}

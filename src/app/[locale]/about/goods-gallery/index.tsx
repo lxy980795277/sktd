@@ -4,18 +4,18 @@ import { imgV } from "@/utils/image-version";
 import "./goods-gallery.css";
 
 const GALLERY_ITEMS = [
-  { src: imgV("/images-v2/about/life-at-sktd/1.jpg"), ratio: "r-4-5", alt: "Team collaboration" },
-  { src: imgV("/images-v2/about/life-at-sktd/2.jpg"), ratio: "r-16-9", alt: "Modern office space" },
-  { src: imgV("/images-v2/about/life-at-sktd/3.jpg"), ratio: "r-3-4", alt: "Brainstorming session" },
-  { src: imgV("/images-v2/about/life-at-sktd/4.jpg"), ratio: "r-4-3", alt: "Team presentation" },
-  { src: imgV("/images-v2/about/life-at-sktd/5.jpg"), ratio: "r-2-3", alt: "Business professional" },
-  { src: imgV("/images-v2/about/life-at-sktd/6.jpg"), ratio: "r-16-9", alt: "Team at work" },
-  { src: imgV("/images-v2/about/life-at-sktd/7.jpg"), ratio: "r-3-5", alt: "Working together" },
-  { src: imgV("/images-v2/about/life-at-sktd/8.jpg"), ratio: "r-4-5", alt: "Focused work" },
-  { src: imgV("/images-v2/about/life-at-sktd/9.jpg"), ratio: "r-4-3", alt: "Business meeting" },
-  { src: imgV("/images-v2/about/life-at-sktd/10.jpg"), ratio: "r-1-1", alt: "Office discussion" },
-  { src: imgV("/images-v2/about/life-at-sktd/11.jpg"), ratio: "r-2-3", alt: "Creative workspace" },
-  { src: imgV("/images-v2/about/life-at-sktd/12.jpg"), ratio: "r-16-9", alt: "Laptop working" },
+  { src: imgV("/images-v3/about/life-at-sktd/1.jpg"), ratio: "r-4-5", alt: "Team collaboration" },
+  { src: imgV("/images-v3/about/life-at-sktd/2.jpg"), ratio: "r-16-9", alt: "Modern office space" },
+  { src: imgV("/images-v3/about/life-at-sktd/3.jpg"), ratio: "r-3-4", alt: "Brainstorming session" },
+  { src: imgV("/images-v3/about/life-at-sktd/4.jpg"), ratio: "r-4-3", alt: "Team presentation" },
+  { src: imgV("/images-v3/about/life-at-sktd/5.jpg"), ratio: "r-2-3", alt: "Business professional" },
+  { src: imgV("/images-v3/about/life-at-sktd/6.jpg"), ratio: "r-16-9", alt: "Team at work" },
+  { src: imgV("/images-v3/about/life-at-sktd/7.jpg"), ratio: "r-3-5", alt: "Working together" },
+  { src: imgV("/images-v3/about/life-at-sktd/8.jpg"), ratio: "r-4-5", alt: "Focused work" },
+  { src: imgV("/images-v3/about/life-at-sktd/9.jpg"), ratio: "r-4-3", alt: "Business meeting" },
+  { src: imgV("/images-v3/about/life-at-sktd/10.jpg"), ratio: "r-1-1", alt: "Office discussion" },
+  { src: imgV("/images-v3/about/life-at-sktd/11.jpg"), ratio: "r-2-3", alt: "Creative workspace" },
+  { src: imgV("/images-v3/about/life-at-sktd/12.jpg"), ratio: "r-16-9", alt: "Laptop working" },
 ];
 
 type GoodsGalleryProps = {

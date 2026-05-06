@@ -158,13 +158,6 @@ const productCategoriesContent: Record<Locale, ProductCategoryTextContent[]> = {
           specs: ["Power: Household standard", "Function: Multi-brew", "Use Case: Kitchen daily use"],
         },
         {
-          id: "water-purifier",
-          name: "Water Purifier",
-          description: "Compact countertop water purifier for clean drinking water at home.",
-          highlight: "Essential home water solution with easy filter replacement and compact footprint.",
-          specs: ["Type: Countertop", "Filter: Multi-stage", "Use Case: Home kitchen"],
-        },
-        {
           id: "humidifier",
           name: "Humidifier",
           description: "Quiet ultrasonic humidifier for maintaining comfortable indoor air moisture.",
@@ -191,20 +184,6 @@ const productCategoriesContent: Record<Locale, ProductCategoryTextContent[]> = {
           description: "Drip coffee maker designed for daily home brewing routines.",
           highlight: "Accessible coffee appliance for mainstream household consumption.",
           specs: ["Type: Drip brew", "Capacity: Standard", "Use Case: Home kitchen"],
-        },
-        {
-          id: "desk-fan",
-          name: "Desk Fan",
-          description: "Compact desk fan with adjustable speed for office and bedroom use.",
-          highlight: "Energy-efficient personal cooling for home and office environments.",
-          specs: ["Type: Desk / table", "Noise: Quiet operation", "Use Case: Bedroom / office"],
-        },
-        {
-          id: "garment-steamer",
-          name: "Garment Steamer",
-          description: "Handheld garment steamer for wrinkle removal on clothing and home textiles.",
-          highlight: "Travel and home-use steamer for quick fabric care.",
-          specs: ["Type: Handheld", "Heat-up: Fast", "Use Case: Home / travel care"],
         },
         {
           id: "food-processor",
@@ -277,13 +256,6 @@ const productCategoriesContent: Record<Locale, ProductCategoryTextContent[]> = {
       summary: "Hospitality-focused room and public-area supplies with consistent quality standards.",
       products: [
         {
-          id: "flashlight",
-          name: "Flashlight",
-          description: "Durable handheld flashlight for hotel room emergency kits and utility use.",
-          highlight: "Reliable illumination tool for hospitality safety and emergency preparedness.",
-          specs: ["Type: Handheld LED", "Use: Emergency / utility", "Use Case: Hotel room amenity"],
-        },
-        {
           id: "bathroom-supplies",
           name: "Bathroom Supplies",
           description: "Complete bathroom supply set including towels, slippers, disposables, and accessories.",
@@ -291,25 +263,11 @@ const productCategoriesContent: Record<Locale, ProductCategoryTextContent[]> = {
           specs: ["Set: Full bathroom kit", "Wash: High-frequency ready", "Use Case: Hotel guest room"],
         },
         {
-          id: "cleaning-tools",
-          name: "Cleaning Tools",
-          description: "Professional cleaning equipment for hotel room and public area housekeeping.",
-          highlight: "Efficient cleaning tool set for hospitality housekeeping operations.",
-          specs: ["Set: Multi-tool", "Durability: Commercial grade", "Use Case: Hotel housekeeping"],
-        },
-        {
           id: "soap-dispenser",
           name: "Soap Dispenser",
           description: "Wall-mounted soap dispenser for hotel bathroom and public washroom installations.",
           highlight: "Hygienic dispensing fixture for consistent guest bathroom experience.",
           specs: ["Type: Wall-mount", "Refill: Easy access", "Use Case: Hotel bathroom / public area"],
-        },
-        {
-          id: "display-stand",
-          name: "Display Stand",
-          description: "Branded display stands and signage for hotel room services and public area navigation.",
-          highlight: "Professional in-room and public area communication solution for hospitality brands.",
-          specs: ["Type: Freestanding / table", "Material: Acrylic / metal", "Use Case: Hotel room / lobby"],
         },
         {
           id: "vanity-mirror",
@@ -518,13 +476,6 @@ const productCategoriesContent: Record<Locale, ProductCategoryTextContent[]> = {
           specs: ["Leistung: Haushaltsstandard", "Funktion: Multi-Kochen", "Einsatzbereich: Küche"],
         },
         {
-          id: "water-purifier",
-          name: "Wasserfilter",
-          description: "Kompakter Tisch-Wasserfilter für sauberes Trinkwasser zu Hause.",
-          highlight: "Essenzielle Heimwasserlösung mit einfachem Filterwechsel und kompaktem Format.",
-          specs: ["Typ: Tischgerät", "Filter: Mehrstufig", "Einsatzbereich: Küche"],
-        },
-        {
           id: "humidifier",
           name: "Luftbefeuchter",
           description: "Leiser Ultraschall-Luftbefeuchter für angenehme Raumluftfeuchtigkeit.",
@@ -551,20 +502,6 @@ const productCategoriesContent: Record<Locale, ProductCategoryTextContent[]> = {
           description: "Filterkaffeemaschine für den täglichen Haushaltsgebrauch.",
           highlight: "Alltagskaffeegerät für den Mainstream-Haushalt.",
           specs: ["Typ: Filterbrühen", "Kapazität: Standard", "Einsatzbereich: Küche"],
-        },
-        {
-          id: "desk-fan",
-          name: "Tischventilator",
-          description: "Kompakter Tischventilator mit einstellbaren Geschwindigkeiten für Büro und Schlafzimmer.",
-          highlight: "Energiesparendes Personallüftungsgerät für Heim und Büro.",
-          specs: ["Typ: Tischgerät", "Lautstärke: Leise", "Einsatzbereich: Schlaf- / Bürozimmer"],
-        },
-        {
-          id: "garment-steamer",
-          name: "Dampfbügeler",
-          description: "Handgehaltener Dampfbügeler zur Knitterpflege von Kleidung und Heimtextilien.",
-          highlight: "Reise- und Heim-Dampfbügeler für schnelle Textilpflege.",
-          specs: ["Typ: Handgerät", "Aufheizzeit: Schnell", "Einsatzbereich: Heim / Reise"],
         },
         {
           id: "food-processor",
@@ -637,13 +574,6 @@ const productCategoriesContent: Record<Locale, ProductCategoryTextContent[]> = {
       summary: "Hospitality-Zimmer- und Allgemeinbereichsbedarf mit konsistenten Qualitätsstandards.",
       products: [
         {
-          id: "flashlight",
-          name: "Taschenlampe",
-          description: "Robuste Handtaschenlampe für Hotelzimmer-Notfallkits und den täglichen Einsatz.",
-          highlight: "Zuverlässiges Beleuchtungsgerät für Hospitality-Sicherheit.",
-          specs: ["Typ: LED-Handgerät", "Nutzung: Notfall / Utility", "Einsatzbereich: Hotelzimmer"],
-        },
-        {
           id: "bathroom-supplies",
           name: "Badezimmerbedarf",
           description: "Komplettes Badezimmer-Set mit Handtüchern, Hausschuhen und Einwegartikeln.",
@@ -651,25 +581,11 @@ const productCategoriesContent: Record<Locale, ProductCategoryTextContent[]> = {
           specs: ["Set: Vollständiges Bad-Kit", "Waschbarkeit: Hochfrequenz-geeignet", "Einsatzbereich: Hotelgastzimmer"],
         },
         {
-          id: "cleaning-tools",
-          name: "Reinigungsgeräte",
-          description: "Professionelle Reinigungsausstattung für Zimmer und Allgemeinbereiche.",
-          highlight: "Effizientes Reinigungsset für Hospitality-Housekeeping.",
-          specs: ["Set: Multi-Werkzeug", "Langlebigkeit: Gewerbequalität", "Einsatzbereich: Hotel-Housekeeping"],
-        },
-        {
           id: "soap-dispenser",
           name: "Seifenspender",
           description: "Wandmontierter Seifenspender für Hotelbäder und öffentliche Waschräume.",
           highlight: "Hygienische Spenderarmaturen für ein konsistentes Gästeerlebnis.",
           specs: ["Typ: Wandmontage", "Nachfüllung: Einfacher Zugang", "Einsatzbereich: Hotelbad / öffentlicher Bereich"],
-        },
-        {
-          id: "display-stand",
-          name: "Aufsteller",
-          description: "Markenaufsteller und Beschilderung für Hotelzimmer-Services und Wegeleitung.",
-          highlight: "Professionelle In-Room-Kommunikationslösung für Hospitality-Marken.",
-          specs: ["Typ: Freistehend / Tisch", "Material: Acryl / Metall", "Einsatzbereich: Hotelzimmer / Lobby"],
         },
         {
           id: "vanity-mirror",
@@ -878,13 +794,6 @@ const productCategoriesContent: Record<Locale, ProductCategoryTextContent[]> = {
           specs: ["功率：家用标准", "功能：多模式烹饪", "适用场景：厨房日常"],
         },
         {
-          id: "water-purifier",
-          name: "净水器",
-          description: "小巧台式净水器，为家庭提供洁净饮用水。",
-          highlight: "换芯简便、占地面积小的家庭用水解决方案。",
-          specs: ["类型：台式", "滤芯：多级过滤", "适用场景：家庭厨房"],
-        },
-        {
           id: "humidifier",
           name: "加湿器",
           description: "静音超声波加湿器，维持室内舒适湿度。",
@@ -911,20 +820,6 @@ const productCategoriesContent: Record<Locale, ProductCategoryTextContent[]> = {
           description: "滴滤式咖啡机，专为日常家庭冲泡习惯设计。",
           highlight: "主流家庭消费的实用咖啡电器。",
           specs: ["类型：滴滤式", "容量：标准", "适用场景：家庭厨房"],
-        },
-        {
-          id: "desk-fan",
-          name: "台式风扇",
-          description: "可调速小型台式风扇，适合办公桌和卧室。",
-          highlight: "高能效个人降温产品，适合家庭与办公场景。",
-          specs: ["类型：台式", "噪音：低噪运行", "适用场景：卧室 / 办公"],
-        },
-        {
-          id: "garment-steamer",
-          name: "手持挂烫机",
-          description: "手持式挂烫机，用于服装和家居织物快速去皱。",
-          highlight: "适合差旅与家庭的快速织物护理工具。",
-          specs: ["类型：手持", "预热：快速", "适用场景：家庭 / 差旅护理"],
         },
         {
           id: "food-processor",
@@ -997,13 +892,6 @@ const productCategoriesContent: Record<Locale, ProductCategoryTextContent[]> = {
       summary: "品质一致的酒店客房及公共区域用品供应方案。",
       products: [
         {
-          id: "flashlight",
-          name: "手电筒",
-          description: "坚固手持手电筒，用于酒店客房应急工具包与日常使用。",
-          highlight: "面向酒店安全与应急准备的可靠照明工具。",
-          specs: ["类型：LED 手持", "用途：应急 / 日用", "适用场景：酒店客房配品"],
-        },
-        {
           id: "bathroom-supplies",
           name: "浴室用品",
           description: "含毛巾、拖鞋、一次性用品及配件的完整浴室套装。",
@@ -1011,25 +899,11 @@ const productCategoriesContent: Record<Locale, ProductCategoryTextContent[]> = {
           specs: ["套装：完整浴室套装", "耐洗：高频次洗涤适用", "适用场景：酒店客房"],
         },
         {
-          id: "cleaning-tools",
-          name: "清洁工具",
-          description: "适用于酒店客房与公共区域客务清洁的专业用具。",
-          highlight: "高效酒店客务清洁工具套装。",
-          specs: ["套装：多功能组合", "耐用性：商用级别", "适用场景：酒店客务"],
-        },
-        {
           id: "soap-dispenser",
           name: "皂液器",
           description: "壁挂式皂液器，适用于酒店卫生间及公共洗手间。",
           highlight: "卫生出液装置，提升宾客浴室体验一致性。",
           specs: ["类型：壁挂式", "补充：易于操作", "适用场景：酒店卫生间 / 公共区域"],
-        },
-        {
-          id: "display-stand",
-          name: "展示架",
-          description: "酒店客房服务及公共区域导览用品牌展示架与标牌。",
-          highlight: "面向酒店品牌的专业客房及公共区域视觉沟通方案。",
-          specs: ["类型：独立式 / 台式", "材质：亚克力 / 金属", "适用场景：酒店客房 / 大堂"],
         },
         {
           id: "vanity-mirror",

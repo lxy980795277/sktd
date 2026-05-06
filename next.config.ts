@@ -10,7 +10,7 @@ const nextConfig: NextConfig = {
   },
   /** 每次设计师替换图片后，将此版本号 +1，所有图片缓存自动失效 */
   env: {
-    NEXT_PUBLIC_IMAGE_VERSION: "1",
+    NEXT_PUBLIC_IMAGE_VERSION: "2",
   },
   images: {
     /**
@@ -19,7 +19,7 @@ const nextConfig: NextConfig = {
      */
     localPatterns: [
       {
-        pathname: "/images-v2/**",
+        pathname: "/images-v3/**",
       },
     ],
     remotePatterns: [
