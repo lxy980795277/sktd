@@ -118,27 +118,19 @@ export const getAllProductSlugs = (): Array<{ category: string; productId: strin
 };
 
 /**
- * 服务端专用：读取品类目录下所有商品的所有图片路径
- * 用于商品详情页底部品类轮播图（ProductFilmSection）
+ * 服务端专用：读取指定商品目录下的所有图片路径
+ * 用于商品详情页底部轮播图（ProductFilmSection），只展示当前商品自身的图片
  */
-export const getCategoryProductImages = (categoryId: string): string[] => {
-  const categoryDir = path.join(process.cwd(), "public", "images-v3", "products", categoryId);
+export const getProductImages = (categoryId: string, productId: string): string[] => {
+  const productDir = path.join(process.cwd(), "public", "images-v3", "products", categoryId, productId);
 
   try {
-    const productDirs = fs
-      .readdirSync(categoryDir, { withFileTypes: true })
-      .filter((d) => d.isDirectory())
-      .map((d) => d.name);
-
-    return productDirs.flatMap((productId) => {
-      const productDir = path.join(categoryDir, productId);
-      return fs
-        .readdirSync(productDir)
-        .filter((f) => /\.(jpg|jpeg|png|webp)$/i.test(f))
-        // 使用自然排序，确保 10.jpg 排在 9.jpg 之后而非 2.jpg 之前
-        .sort((a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" }))
-        .map((f) => imgV(`/images-v3/products/${categoryId}/${productId}/${f}`));
-    });
+    return fs
+      .readdirSync(productDir)
+      .filter((f) => /\.(jpg|jpeg|png|webp)$/i.test(f))
+      // 使用自然排序，确保 10.jpg 排在 9.jpg 之后而非 2.jpg 之前
+      .sort((a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" }))
+      .map((f) => imgV(`/images-v3/products/${categoryId}/${productId}/${f}`));
   } catch {
     return [];
   }

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ProductFilmSection } from "@/components/products/product-film-section";
 import { ProductStorySection } from "@/components/products/product-story-section";
-import { getAllProductSlugs, getCategoryProductImages, getProductByIds } from "@/constants/products";
+import { getAllProductSlugs, getProductByIds, getProductImages } from "@/constants/products";
 import { getProductStories } from "@/i18n/products-content";
 import { imgV } from "@/utils/image-version";
 import { isLocale } from "@/i18n/config";
@@ -78,8 +78,8 @@ export default async function ProductDetailPage({
   }
 
   const detailImage = getDetailImage(category, productId);
-  /** 读取品类下所有商品图片，用于底部轮播 */
-  const filmImages = getCategoryProductImages(category);
+  /** 读取当前商品目录下的所有图片，用于底部轮播 */
+  const filmImages = getProductImages(category, productId);
   /** 当前语言的产品故事文案 */
   const productStories = getProductStories(resolvedLocale);
 

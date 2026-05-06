@@ -140,8 +140,8 @@ const content: Record<Locale, HomeContent> = {
       navigation: [
         { label: "Home", href: "/home" },
         { label: "About Us", href: "/about" },
-        { label: "Contact Us", href: "/contact" },
         { label: "Products", href: "/products" },
+        { label: "Contact Us", href: "/contact" },
       ],
     },
     featuredBanner: {
@@ -455,8 +455,8 @@ const content: Record<Locale, HomeContent> = {
       navigation: [
         { label: "Warum SKTD", href: "/home" },
         { label: "Über uns", href: "/about" },
-        { label: "Kontakt", href: "/contact" },
         { label: "Produkte", href: "/products" },
+        { label: "Kontakt", href: "/contact" },
       ],
     },
     featuredBanner: {
@@ -773,8 +773,8 @@ const content: Record<Locale, HomeContent> = {
       navigation: [
         { label: "为什么选择 SKTD", href: "/home" },
         { label: "关于我们", href: "/about" },
-        { label: "联系我们", href: "/contact" },
         { label: "产品", href: "/products" },
+        { label: "联系我们", href: "/contact" },
       ],
     },
     featuredBanner: {
