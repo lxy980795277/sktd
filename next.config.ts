@@ -19,7 +19,7 @@ const nextConfig: NextConfig = {
      */
     localPatterns: [
       {
-        pathname: "/images/**",
+        pathname: "/images-v2/**",
       },
     ],
     remotePatterns: [

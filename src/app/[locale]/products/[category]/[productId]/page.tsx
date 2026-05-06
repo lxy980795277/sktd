@@ -37,7 +37,7 @@ const detailText = {
 
 /** 商品详情页主图路径，取第一张图 */
 const getDetailImage = (category: string, productId: string): string => {
-  return imgV(`/images/products/${category}/${productId}/1.jpg`);
+  return imgV(`/images-v2/products/${category}/${productId}/1.jpg`);
 };
 
 export function generateStaticParams(): Array<{ category: string; productId: string }> {
