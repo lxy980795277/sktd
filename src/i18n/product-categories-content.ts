@@ -234,7 +234,21 @@ const productCategoriesContent: Record<Locale, ProductCategoryTextContent[]> = {
           highlight: "Fashion-forward women's wear with broad market adaptability and stable supply programs.",
           specs: ["Category: Women's Apparel", "Range: Tops / Dresses / Outerwear", "Use Case: Fashion retail"],
         },
-  ],
+        {
+          id: "mens-clothing",
+          name: "Men's Clothing",
+          description: "Core men's apparel selection from casual basics to functional outerwear.",
+          highlight: "Reliable men's wardrobe range for multi-channel retail replenishment.",
+          specs: ["Category: Men's Apparel", "Range: Tops / Jackets / Bottoms", "Use Case: Casual & lifestyle retail"],
+        },
+        {
+          id: "activewear",
+          name: "Activewear",
+          description: "Performance and functional sportswear designed for active lifestyles and training use.",
+          highlight: "Sport-ready apparel with technical fabric and flexible sizing for diverse markets.",
+          specs: ["Fabric: Performance blend", "Range: Training / Outdoor", "Use Case: Sports & activewear retail"],
+        },
+      ],
     },
     {
       id: "shoes",
@@ -320,6 +334,7 @@ const productCategoriesContent: Record<Locale, ProductCategoryTextContent[]> = {
         },
       ],
     },
+
   ],
 
   de: [
@@ -538,7 +553,21 @@ const productCategoriesContent: Record<Locale, ProductCategoryTextContent[]> = {
           highlight: "Trendorientierte Damenmode mit breiter Marktanpassung und stabilen Lieferprogrammen.",
           specs: ["Kategorie: Damen-Bekleidung", "Sortiment: Tops / Kleider / Oberbekleidung", "Einsatzbereich: Modeeinzelhandel"],
         },
-  ],
+        {
+          id: "mens-clothing",
+          name: "Herrenmode",
+          description: "Kernauswahl Herrenbekleidung von Casual-Basics bis funktionaler Oberbekleidung.",
+          highlight: "Verlässliches Herren-Sortiment für Multi-Channel-Einzelhandelsversorgung.",
+          specs: ["Kategorie: Herren-Bekleidung", "Sortiment: Tops / Jacken / Hosen", "Einsatzbereich: Casual & Lifestyle"],
+        },
+        {
+          id: "activewear",
+          name: "Sportbekleidung",
+          description: "Leistungsstarke Sportbekleidung für aktive Lebensstile und Trainingszwecke.",
+          highlight: "Sport-Bekleidung mit technischen Stoffen für diverse Märkte.",
+          specs: ["Stoff: Funktionsmix", "Sortiment: Training / Outdoor", "Einsatzbereich: Sport & Activewear"],
+        },
+      ],
     },
     {
       id: "shoes",
@@ -624,6 +653,7 @@ const productCategoriesContent: Record<Locale, ProductCategoryTextContent[]> = {
         },
       ],
     },
+
   ],
 
   zh: [
@@ -842,7 +872,21 @@ const productCategoriesContent: Record<Locale, ProductCategoryTextContent[]> = {
           highlight: "兼具流行趋势与广泛市场适应性的女装供应方案，货源稳定。",
           specs: ["品类：女士服装", "范围：上衣 / 连衣裙 / 外套", "适用场景：时尚零售"],
         },
-  ],
+        {
+          id: "mens-clothing",
+          name: "男装",
+          description: "核心男装品类，从休闲基础款到功能性外套全面覆盖。",
+          highlight: "适合多渠道零售补货的可靠男装系列。",
+          specs: ["品类：男士服装", "范围：上衣 / 夹克 / 下装", "适用场景：休闲与生活方式零售"],
+        },
+        {
+          id: "activewear",
+          name: "运动服",
+          description: "专为活跃生活方式与训练场景设计的功能性运动服装。",
+          highlight: "技术面料、尺码灵活，适应多元市场需求的运动服供应方案。",
+          specs: ["面料：功能性混纺", "范围：训练 / 户外", "适用场景：运动服零售"],
+        },
+      ],
     },
     {
       id: "shoes",
@@ -928,6 +972,7 @@ const productCategoriesContent: Record<Locale, ProductCategoryTextContent[]> = {
         },
       ],
     },
+
   ],
 };
 
