@@ -70,7 +70,7 @@ export default async function ContactPage({
 
               {/* 联系信息补充 */}
               <div className="mt-8 space-y-3 text-sm text-white/60">
-                <p>980795277@qq.com</p>
+                <p>sales@sktd-tech.com</p>
                 <p>Düsseldorf · Milan · Shanghai · Ho Chi Minh City</p>
               </div>
             </div>

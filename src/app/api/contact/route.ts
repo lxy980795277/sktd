@@ -8,7 +8,7 @@ type ContactPayload = {
   company?: string;
 };
 
-const CONTACT_RECEIVER = "980795277@qq.com";
+const CONTACT_RECEIVER = process.env.CONTACT_RECEIVER ?? "sales@sktd-tech.com";
 const RATE_LIMIT_WINDOW_MS = 60_000;
 const RATE_LIMIT_MAX_REQUESTS = 5;
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
