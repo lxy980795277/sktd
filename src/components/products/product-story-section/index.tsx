@@ -1,10 +1,13 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { useEffect, useRef } from "react";
 import type { FC } from "react";
 import { imgV } from "@/utils/image-version";
 import type { ProductStoryItem } from "@/i18n/products-content";
+import type { Locale } from "@/i18n/config";
 import "./product-story-section.css";
 
 /** 每条故事对应的配图，由 imgV 处理缓存版本 */
@@ -16,10 +19,12 @@ const STORY_IMAGES = [
 type ProductStorySectionProps = {
   /** 当前语言的故事内容，由服务端页面从 products-content.ts 读取后传入 */
   stories: ProductStoryItem[];
+  /** 当前语言，用于构建 CTA 跳转链接 */
+  locale: Locale;
 };
 
 /** 商品详情页底部：公司产品理念双分区，图片顶格页面边缘 */
-export const ProductStorySection: FC<ProductStorySectionProps> = ({ stories }) => {
+export const ProductStorySection: FC<ProductStorySectionProps> = ({ stories, locale }) => {
   const rowRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
@@ -78,6 +83,15 @@ export const ProductStorySection: FC<ProductStorySectionProps> = ({ stories }) =
                   <p className="pss-desc mt-5 text-base leading-8 text-(--muted) sm:text-lg">
                     {story.description}
                   </p>
+                  {story.ctaLabel && (
+                    <Link
+                      href={`/${locale}/contact`}
+                      className="mt-7 inline-flex items-center gap-2 rounded-full bg-(--accent) px-6 py-3 text-sm font-semibold text-white transition hover:bg-(--accent-strong)"
+                    >
+                      {story.ctaLabel}
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  )}
                 </div>
               </>
             ) : (
@@ -90,6 +104,15 @@ export const ProductStorySection: FC<ProductStorySectionProps> = ({ stories }) =
                   <p className="pss-desc mt-5 text-base leading-8 text-(--muted) sm:text-lg">
                     {story.description}
                   </p>
+                  {story.ctaLabel && (
+                    <Link
+                      href={`/${locale}/contact`}
+                      className="mt-7 inline-flex items-center gap-2 rounded-full bg-(--accent) px-6 py-3 text-sm font-semibold text-white transition hover:bg-(--accent-strong)"
+                    >
+                      {story.ctaLabel}
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  )}
                 </div>
                 {/* 图片顶格右边 */}
                 <div className="pss-img pss-img--bleed-right pss-img--from-right relative aspect-4/3 overflow-hidden">

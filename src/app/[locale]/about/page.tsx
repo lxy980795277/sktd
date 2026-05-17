@@ -4,7 +4,6 @@ import { isLocale } from "@/i18n/config";
 import { imgV } from "@/utils/image-version";
 import { StorySections } from "@/app/[locale]/about/story-sections";
 import { MilestonesCarousel } from "@/app/[locale]/about/milestones-carousel";
-import { MilestonesTimeline } from "@/app/[locale]/about/milestones-timeline";
 import { GoodsGallery } from "@/app/[locale]/about/goods-gallery";
 import "./about.css";
 
@@ -70,13 +69,8 @@ export default async function AboutPage({ params }: AboutPageProps): Promise<Rea
             </h2>
             <div className="mt-6 h-[2px] w-full bg-(--line-strong)" />
 
-            {/* 水平时间线：数据一览 */}
+            {/* 图片轮播 */}
             <div className="mt-10">
-              <MilestonesTimeline milestones={content.milestones} />
-            </div>
-
-            {/* 图片轮播：沉浸式视觉补充 */}
-            <div className="mt-12">
               <MilestonesCarousel milestones={content.milestones} images={MILESTONE_IMAGES} />
             </div>
           </section>

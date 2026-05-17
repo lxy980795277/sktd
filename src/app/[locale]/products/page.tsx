@@ -16,14 +16,14 @@ type ProductsPageProps = {
 
 const pageText: Record<"en" | "de" | "zh", ProductsPageContent> = {
   en: {
-    title: "Products",
+    title: "Product Collections",
     description:
-      "Explore SKTD product categories and preview representative product directions for each segment.",
+      "Explore our product categories and discover curated selections across each segment.",
   },
   de: {
-    title: "Produkte",
+    title: "Produkt-Kollektionen",
     description:
-      "Entdecken Sie die Produktkategorien von SKTD und sehen Sie repräsentative Produktausrichtungen je Segment.",
+      "Entdecken Sie unsere Produktkategorien und finden Sie kuratierte Auswahlen für jedes Segment.",
   },
   zh: {
     title: "产品",

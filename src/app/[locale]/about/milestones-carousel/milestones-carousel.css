@@ -27,7 +27,7 @@
   display: flex;
   gap: 20px;
   width: max-content;
-  animation: milestones-scroll 28s linear infinite;
+  animation: milestones-scroll 90s linear infinite;
   padding: 20px 0;
 }
 

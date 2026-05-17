@@ -7,6 +7,7 @@ import type { FC } from "react";
 type StorySection = {
   title: string;
   description: string;
+  locations?: string[];
 };
 
 type StorySectionsProps = {
@@ -56,6 +57,17 @@ export const StorySections: FC<StorySectionsProps> = ({ sections, images }) => {
             <p className="about-story-desc mt-5 text-base leading-8 text-(--muted) sm:text-lg">
               {section.description}
             </p>
+            {/* 办公地点列表（仅部分 section 展示） */}
+            {section.locations && (
+              <ul className="about-story-desc mt-5 space-y-1.5">
+                {section.locations.map((loc) => (
+                  <li key={loc} className="flex items-center gap-2.5 text-base font-medium text-(--muted) sm:text-lg">
+                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-(--accent)" />
+                    {loc}
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         );
 

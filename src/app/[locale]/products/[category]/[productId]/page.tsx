@@ -113,8 +113,8 @@ export default async function ProductDetailPage({
         </div>
       </div>
 
-      {/* 顶部主区：左侧大图顶格 + 右侧产品信息 */}
-      <div className="mt-6 grid min-h-[70vh] lg:grid-cols-2">
+      {/* 顶部主区：左侧大图 + 右侧产品信息，左边距与右侧内容到页面右边缘间距对齐 */}
+      <div className="mt-6 grid min-h-[70vh] pl-8 lg:grid-cols-2 lg:pl-14">
         {/* 左侧：图片从页面左边缘顶格铺满 */}
         <div className="relative min-h-[50vw] overflow-hidden lg:min-h-full">
           <Image
@@ -171,11 +171,11 @@ export default async function ProductDetailPage({
 
       {/* 底部品类图片滚动条 */}
       <div className="mt-14 sm:mt-16 lg:mt-20">
-        <ProductFilmSection images={filmImages} />
+        <ProductFilmSection images={filmImages} productName={result.product.name} />
       </div>
 
       {/* 公司产品理念双分区 */}
-      <ProductStorySection stories={productStories} />
+      <ProductStorySection stories={productStories} locale={resolvedLocale} />
 
     </main>
   );

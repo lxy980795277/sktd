@@ -87,14 +87,14 @@ export function FeaturedBanner({ locale, content }: FeaturedBannerProps): React.
     <section className="featured-banner-entry w-full">
       <div className="featured-banner-frame relative overflow-hidden border-y border-(--line) shadow-[0_26px_88px_rgba(31,29,25,0.12)]">
         <div className="relative min-h-[460px] sm:min-h-[560px] lg:min-h-[620px]">
-          <Carousel setApi={setCarouselApi} opts={{ loop: true }} className="h-full">
+          <Carousel setApi={setCarouselApi} opts={{ loop: true, duration: 60 }} className="h-full">
             <CarouselContent className="ml-0 h-full">
               {content.images.map((image, index) => {
                 return (
                   <CarouselItem key={`${image}-${index}`} className="pl-0">
                     <div className="featured-banner-media relative min-h-[460px] sm:min-h-[560px] lg:min-h-[620px]">
                       <Image
-                          src={imgV(image)}
+                        src={imgV(image)}
                         alt={`${content.title} ${index + 1}`}
                         fill
                         priority={index === 0}
@@ -112,17 +112,27 @@ export function FeaturedBanner({ locale, content }: FeaturedBannerProps): React.
 
           <div className="featured-banner-content absolute inset-x-0 top-0 p-6 sm:p-8 lg:p-10">
             <div className="max-w-3xl">
-              <p className="inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold tracking-[0.2em] text-white uppercase backdrop-blur-md">
+              <p className="inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold tracking-[0.2em] text-white uppercase backdrop-blur-md">
                 {content.eyebrow}
               </p>
-              <h1 className="section-title mt-5 text-4xl leading-[0.92] font-semibold text-white sm:text-5xl lg:text-6xl">
-                {content.title}
+              <h1 className="section-title mt-8 text-3xl leading-[0.97] font-semibold text-white sm:text-4xl lg:text-5xl">
+                {/* 最后一个 / 前的描述词独占第一行，桌面端强制不换行；最后一部分另起一行 */}
+                {(() => {
+                  const parts = content.title.split("/");
+                  const firstLine = parts.slice(0, -1).join(" / ");
+                  const lastLine = parts[parts.length - 1];
+                  return firstLine ? (
+                    <>
+                      <span className="block lg:whitespace-nowrap">{firstLine}</span>
+                      <span className="mt-3 block sm:mt-4">{lastLine}</span>
+                    </>
+                  ) : (
+                    <span className="block">{lastLine}</span>
+                  );
+                })()}
               </h1>
-              <p className="mt-5 max-w-2xl text-base leading-8 text-white/82 sm:text-lg">
-                {content.description}
-              </p>
 
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <div className="mt-16 flex flex-col gap-3 sm:flex-row">
                 <Link
                   href={getLocaleHref(locale, content.primaryHref)}
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-(--accent) transition hover:bg-[#f7e9df]"

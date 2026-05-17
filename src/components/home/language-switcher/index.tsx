@@ -52,14 +52,14 @@ export function LanguageSwitcher({
     <Select value={locale} onValueChange={handleValueChange}>
       <SelectTrigger
         aria-label="Select language"
-        className={cn("h-11 min-w-[124px] rounded-full px-4 font-semibold", className)}
+        className={cn("h-10 min-w-[124px] rounded-[4px] px-4 font-semibold", className)}
       >
         <span className="flex items-center gap-2">
           <Globe2 className="h-4 w-4 shrink-0 text-(--muted)" />
           <SelectValue />
         </span>
       </SelectTrigger>
-      <SelectContent align="end">
+      <SelectContent align="end" className="rounded-[4px]">
         {locales.map((item) => {
           return (
             <SelectItem key={item} value={item}>

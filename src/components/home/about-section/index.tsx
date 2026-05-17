@@ -61,29 +61,38 @@ export function AboutSection({ content }: AboutSectionProps): React.JSX.Element 
 
           <div className="about-section-content absolute inset-0 grid items-stretch gap-6 p-6 sm:p-8 lg:grid-cols-[0.92fr_1.08fr] lg:p-10">
             <div className="about-section-left flex items-end">
-              <div className="max-w-sm rounded-[26px] border border-white/20 bg-(--accent)/92 px-5 py-5 text-white shadow-[0_16px_40px_rgba(31,29,25,0.22)]">
+              <div className="max-w-lg rounded-[26px] border border-white/20 bg-(--accent)/92 px-8 py-8 text-white shadow-[0_16px_40px_rgba(31,29,25,0.22)]">
                 <p className="text-xs tracking-[0.22em] text-white/75 uppercase">SKTD network</p>
                 <p className="section-title mt-3 text-3xl font-semibold sm:text-4xl">
                   Europe ↔ Asia
                 </p>
-                <p className="mt-3 text-sm leading-7 text-white/82">
-                  A high-fidelity homepage inspired by the reference structure, ready for your final
-                  visual assets.
-                </p>
+                <ul className="mt-3 space-y-1.5">
+                  {content.highlights.map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-start gap-2 text-sm leading-6 text-white/82"
+                    >
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-white/60" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
 
             <div className="about-section-right flex items-center lg:justify-end">
               <div className="max-w-2xl text-white">
-                <p className="inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold tracking-[0.2em] uppercase backdrop-blur-md">
+                <p className="mb-10 inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold tracking-[0.2em] uppercase backdrop-blur-md">
                   {content.eyebrow}
                 </p>
-                <h2 className="section-title mt-5 text-4xl leading-[0.95] font-semibold sm:text-5xl lg:text-6xl">
-                  {content.title}
-                </h2>
-                <p className="mt-5 text-base leading-8 text-white/86 sm:text-lg">
-                  {content.description}
-                </p>
+                {content.tagline.split("/").map((line) => (
+                  <p
+                    key={line}
+                    className="section-title mt-0 text-3xl leading-snug font-semibold text-white/92 sm:text-4xl lg:text-5xl"
+                  >
+                    {line.trim()}
+                  </p>
+                ))}
               </div>
             </div>
           </div>

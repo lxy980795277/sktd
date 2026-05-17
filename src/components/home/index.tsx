@@ -18,12 +18,12 @@ type HomePageProps = {
 export function HomePage({ locale, content }: HomePageProps): React.JSX.Element {
   return (
     <div>
+      {/* 顶部品牌说明条，位于主导航下方、首屏轮播上方 */}
       <TopBar message={content.topBar} />
-
       <main className="space-y-10 sm:space-y-14 lg:space-y-20">
         {/* 首屏模块：品牌横幅 + 动态轮播 */}
         <FeaturedBanner locale={locale} content={content.featuredBanner} />
-        <HeroCarousel locale={locale} slides={content.hero.slides} />
+        {/* <HeroCarousel locale={locale} slides={content.hero.slides} /> */}
 
         {/* 内容模块：优势、滚动图片、关于、里程碑、CTA */}
         <AdvantagesSection content={content.advantages} />

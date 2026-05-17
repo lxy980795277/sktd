@@ -12,49 +12,56 @@ const ADVANTAGE_IMAGES = [
   imgV("/images-v3/home/advantages-section/3.jpg"),
 ];
 
-// 优势模块：聚焦 SKTD 的核心价值与差异化能力。
+// 优势模块：eyebrow 置顶左对齐，三卡片平铺展示核心差异化能力。
 export function AdvantagesSection({ content }: AdvantagesSectionProps): React.JSX.Element {
   return (
     <section id="advantages" className="container-shell">
-      <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-stretch">
-        <div className="grid gap-4 md:grid-cols-2">
-          {content.items.slice(0, 2).map((item, index) => {
-            const imageUrl = ADVANTAGE_IMAGES[index];
+      <p className="eyebrow mb-6">{content.eyebrow}</p>
+      <div className="grid gap-4 md:grid-cols-3">
+        {content.items.slice(0, 3).map((item, index) => {
+          const imageUrl = ADVANTAGE_IMAGES[index];
 
-            return (
-              <article
-                key={item.title}
-                className="glass-card overflow-hidden rounded-[28px] border border-(--line) p-0 shadow-[0_18px_50px_rgba(31,29,25,0.06)]"
-              >
-                <div className="relative h-40 w-full">
+          return (
+            <article
+              key={item.title}
+              className="group relative h-[380px] cursor-pointer overflow-hidden rounded-[28px] border border-(--line) bg-(--card)! shadow-[0_18px_50px_rgba(31,29,25,0.06)]"
+            >
+              {/* 图片容器：默认 h-40，hover 时高度扩展至填满整张卡片 */}
+              <div className="absolute inset-x-0 top-0 h-40 overflow-hidden transition-[height] duration-500 ease-out group-hover:h-full">
+                <div className="relative h-full w-full">
                   <Image
                     src={imageUrl}
                     alt={item.title}
                     fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 30vw"
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    sizes="(max-width: 1024px) 100vw, 33vw"
                   />
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold">{item.title}</h3>
-                  <p className="mt-3 text-sm font-semibold tracking-[0.18em] text-(--accent) uppercase">
-                    {item.value}
-                  </p>
-                  <p className="mt-3 text-sm leading-7 text-(--muted)">{item.description}</p>
-                </div>
-              </article>
-            );
-          })}
-        </div>
-        <div className="flex h-full flex-col">
-          <p className="eyebrow">{content.eyebrow}</p>
-          <h2 className="section-title mt-5 text-4xl leading-[0.95] font-semibold sm:text-5xl lg:text-6xl">
-            {content.title}
-          </h2>
-          <p className="mt-auto max-w-xl pt-5 text-base leading-8 text-(--muted) sm:text-lg">
-            {content.description}
-          </p>
-        </div>
+              </div>
+
+              {/* 暗色遮罩：hover 时渐显，承托居中白色文字 */}
+              <div className="absolute inset-0 bg-black/45 opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100" />
+
+              {/* 默认文字区（图片下方）：hover 时淡出下移 */}
+              <div className="absolute inset-x-0 top-40 bottom-0 p-6 transition-[opacity,transform] duration-500 ease-out group-hover:translate-y-3 group-hover:opacity-0">
+                <h3 className="text-xl font-semibold">{item.title}</h3>
+                <p className="mt-3 text-sm font-semibold tracking-[0.18em] text-(--accent) uppercase">
+                  {item.value}
+                </p>
+                <p className="mt-3 text-sm leading-7 text-(--muted)">{item.description}</p>
+              </div>
+
+              {/* hover 居中文字：默认不可见，hover 时上移淡入 */}
+              <div className="absolute inset-0 z-10 flex translate-y-3 flex-col items-center justify-center p-8 text-center text-white opacity-0 transition-[opacity,transform] duration-500 ease-out group-hover:translate-y-0 group-hover:opacity-100">
+                <h3 className="text-2xl font-semibold">{item.title}</h3>
+                <p className="mt-3 text-sm font-semibold tracking-[0.18em] text-white/70 uppercase">
+                  {item.value}
+                </p>
+                <p className="mt-4 max-w-xs text-sm leading-7 text-white/85">{item.description}</p>
+              </div>
+            </article>
+          );
+        })}
       </div>
     </section>
   );

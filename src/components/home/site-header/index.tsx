@@ -13,10 +13,7 @@ type SiteHeaderProps = {
   navigation: NavigationItem[];
 };
 
-export function SiteHeader({
-  locale,
-  navigation,
-}: SiteHeaderProps): React.JSX.Element {
+export function SiteHeader({ locale, navigation }: SiteHeaderProps): React.JSX.Element {
   const [open, setOpen] = useState(false);
   // 移动端展开的下拉项 href
   const [expandedHref, setExpandedHref] = useState<string | null>(null);
@@ -36,15 +33,10 @@ export function SiteHeader({
 
   return (
     <>
-      <header className="sticky top-0 z-40 border-b border-(--line) bg-[rgba(246,241,232,0.82)] backdrop-blur-xl">
+      <header className="sticky top-0 z-40 border-b border-white/10 bg-(--accent) backdrop-blur-xl">
         <div className="container-shell flex items-center justify-between gap-5 py-5 lg:py-6">
           <Link href={`/${locale}/home`} className="flex items-center">
-            <div>
-              <p className="text-xs tracking-[0.32em] text-(--muted) uppercase">
-                Corporate Homepage
-              </p>
-              <p className="section-title text-3xl leading-none font-semibold">SKTD</p>
-            </div>
+            <p className="section-title text-3xl leading-none font-semibold text-white">SKTD</p>
           </Link>
 
           {/* 桌面端导航 */}
@@ -54,19 +46,19 @@ export function SiteHeader({
                 // 有子菜单：渲染 hover 下拉，tab 本身不可点击
                 return (
                   <div key={item.href} className="group relative">
-                    <span className="flex cursor-pointer select-none items-center gap-1 text-sm font-semibold tracking-[0.06em] text-(--muted) uppercase transition group-hover:text-foreground">
+                    <span className="flex cursor-pointer items-center gap-1 font-(family-name:--font-cormorant) text-base font-semibold tracking-[0.06em] text-white/90 uppercase transition select-none group-hover:text-white">
                       {item.label}
                       <ChevronDown className="h-3.5 w-3.5 transition-transform duration-200 group-hover:rotate-180" />
                     </span>
 
                     {/* 下拉面板：CSS group-hover 控制显隐 */}
                     <div className="pointer-events-none absolute top-full left-1/2 z-50 -translate-x-1/2 pt-4 opacity-0 transition-all duration-150 group-hover:pointer-events-auto group-hover:opacity-100">
-                      <div className="min-w-[220px] overflow-hidden rounded-2xl border border-(--line) bg-white/95 py-2 shadow-xl backdrop-blur-xl">
+                      <div className="min-w-[220px] overflow-hidden rounded-[4px] border border-(--line) bg-white/95 py-2 shadow-xl backdrop-blur-xl">
                         {item.children.map((child) => (
                           <Link
                             key={child.href}
                             href={getLocaleHref(locale, child.href)}
-                            className="block px-5 py-2.5 text-sm font-medium text-(--muted) transition hover:bg-(--surface) hover:text-foreground"
+                            className="hover:text-foreground block px-5 py-2.5 text-sm font-medium text-(--muted) transition hover:bg-(--surface)"
                           >
                             {child.label}
                           </Link>
@@ -82,7 +74,7 @@ export function SiteHeader({
                 <Link
                   key={item.href}
                   href={getLocaleHref(locale, item.href)}
-                  className="hover:text-foreground text-sm font-semibold tracking-[0.06em] text-(--muted) uppercase transition"
+                  className="font-(family-name:--font-cormorant) text-base font-semibold tracking-[0.06em] text-white/90 uppercase transition hover:text-white"
                 >
                   {item.label}
                 </Link>
@@ -96,7 +88,7 @@ export function SiteHeader({
 
           <button
             type="button"
-            className="text-foreground inline-flex h-12 w-12 items-center justify-center rounded-full border border-(--line) bg-white/80 lg:hidden"
+            className="inline-flex h-12 w-12 items-center justify-center rounded-[4px] border border-white/20 bg-white/10 text-white lg:hidden"
             onClick={() => setOpen(true)}
             aria-label="Open menu"
           >
@@ -116,7 +108,7 @@ export function SiteHeader({
               </div>
               <button
                 type="button"
-                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-(--line) bg-white/80"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-[4px] border border-(--line) bg-white/80"
                 onClick={() => setOpen(false)}
                 aria-label="Close menu"
               >
@@ -137,7 +129,7 @@ export function SiteHeader({
                       {/* 展开/收起触发器 */}
                       <button
                         type="button"
-                        className="flex w-full items-center justify-between rounded-[24px] border border-(--line) bg-white/70 px-4 py-4 text-base font-medium"
+                        className="flex w-full items-center justify-between rounded-[4px] border border-(--line) bg-white/70 px-4 py-4 text-base font-medium"
                         onClick={() => setExpandedHref(isExpanded ? null : item.href)}
                       >
                         {item.label}
@@ -152,7 +144,7 @@ export function SiteHeader({
                             <Link
                               key={child.href}
                               href={getLocaleHref(locale, child.href)}
-                              className="rounded-[18px] border border-(--line) bg-white/50 px-4 py-3 text-sm font-medium text-(--muted)"
+                              className="rounded-[4px] border border-(--line) bg-white/50 px-4 py-3 text-sm font-medium text-(--muted)"
                               onClick={() => setOpen(false)}
                             >
                               {child.label}
@@ -168,7 +160,7 @@ export function SiteHeader({
                   <Link
                     key={item.href}
                     href={getLocaleHref(locale, item.href)}
-                    className="rounded-[24px] border border-(--line) bg-white/70 px-4 py-4 text-base font-medium"
+                    className="rounded-[4px] border border-(--line) bg-white/70 px-4 py-4 text-base font-medium"
                     onClick={() => setOpen(false)}
                   >
                     {item.label}

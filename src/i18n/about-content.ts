@@ -9,6 +9,7 @@ type AboutMilestone = {
 type AboutStorySection = {
   title: string;
   description: string;
+  locations?: string[];
 };
 
 export type AboutPageContent = {
@@ -37,24 +38,25 @@ const aboutContent: Record<Locale, AboutPageContent> = {
     title: "Connecting Asia and Europe with excellence since 2014.",
     storySections: [
       {
-        title: "A cross-border foundation",
+        title: "Your Cross-Border Growth Partner",
         description:
           "Founded in Düsseldorf in 2014, SKTD has grown into a trusted bridge between Asia and Europe. We combine German engineering discipline, Italian design intelligence, and Asian manufacturing strength to deliver practical value for global business teams.",
       },
       {
-        title: "Strategic global presence",
+        title: "Partnership-First Culture & Long-Term Growth Mindset",
         description:
-          "With strategic offices in Düsseldorf, Milan, Shanghai, and Ho Chi Minh City, we support clients across Europe, Asia, and North America. Our multicultural teams operate in local languages and local market contexts, enabling precise communication and faster execution.",
+          "We work as an extension of our clients' teams through transparent communication, accountable ownership, and measurable outcomes. This partnership-first approach helps transform one-time projects into long-term strategic collaborations.",
       },
       {
-        title: "End-to-end execution model",
+        title: "End-to-End Execution Model",
         description:
-          "Our operating model covers the full chain: procurement, product development, quality management, project financing, and logistics coordination. This end-to-end control allows us to reduce uncertainty, shorten lead time, and improve delivery consistency.",
+          "Our integrated operating model covers the full value chain, from procurement and product development to quality management, project financing, and logistics coordination. This end-to-end control reduces uncertainty, shortens lead times, and ensures more consistent delivery.",
       },
       {
-        title: "Long-term growth mindset",
+        title: "Strategic Global Presence",
         description:
-          "As our partnerships continue to grow, we remain focused on reliability, efficiency, and innovation. Your long-term trust drives us to open new opportunities and shape more sustainable, future-ready solutions.",
+          "We support clients across Europe, Asia, and beyond through multicultural teams operating in local languages and market contexts, enabling clear communication and faster execution.",
+        locations: ["Düsseldorf", "Milan", "Shanghai", "Ho Chi Minh City"],
       },
       {
         title: "Partnership-first culture",
@@ -114,24 +116,25 @@ const aboutContent: Record<Locale, AboutPageContent> = {
     title: "Seit 2014 verbinden wir Asien und Europa mit exzellenter Umsetzung.",
     storySections: [
       {
-        title: "Grenzüberschreitende Basis",
+        title: "Ihr Partner für grenzüberschreitendes Wachstum",
         description:
-          "Seit der Gründung in Düsseldorf im Jahr 2014 entwickelt sich SKTD zu einem verlässlichen Partner zwischen Asien und Europa. Wir verbinden deutsche Ingenieursdisziplin, italienisches Designverständnis und asiatische Fertigungsstärke zu konkretem Geschäftsnutzen.",
+          "Seit der Gründung in Düsseldorf im Jahr 2014 hat sich SKTD zu einem verlässlichen Partner zwischen Asien und Europa entwickelt. Wir verbinden deutsche Ingenieursdisziplin, italienisches Designverständnis und asiatische Fertigungsstärke zu konkretem Geschäftsnutzen.",
       },
       {
-        title: "Strategische internationale Präsenz",
+        title: "Partnerschaft als Grundprinzip & langfristige Wachstumsorientierung",
         description:
-          "Mit Standorten in Düsseldorf, Mailand, Shanghai und Ho-Chi-Minh-Stadt betreuen wir Kunden in Europa, Asien und Nordamerika. Unsere multikulturellen Teams arbeiten in lokalen Sprachen und mit tiefem Verständnis regionaler Geschäftsrealitäten.",
+          "Wir verstehen uns als Erweiterung der Teams unserer Kunden – mit transparenter Kommunikation, klarer Verantwortlichkeit und messbaren Ergebnissen. Dieser partnerschaftsorientierte Ansatz verwandelt einmalige Projekte in langfristige strategische Kooperationen.",
       },
       {
         title: "End-to-End-Umsetzungsmodell",
         description:
-          "Unser Leistungsmodell deckt die gesamte Wertschöpfungskette ab: Beschaffung, Produktentwicklung, Qualitätsmanagement, Projektfinanzierung und Logistikkoordination. Diese End-to-End-Steuerung erhöht Planungssicherheit und Lieferqualität.",
+          "Unser integriertes Leistungsmodell deckt die gesamte Wertschöpfungskette ab – von Beschaffung und Produktentwicklung über Qualitätsmanagement und Projektfinanzierung bis hin zur Logistikkoordination. Diese End-to-End-Steuerung reduziert Unsicherheiten, verkürzt Durchlaufzeiten und sorgt für eine konsistentere Lieferqualität.",
       },
       {
-        title: "Langfristige Entwicklungsorientierung",
+        title: "Strategische globale Präsenz",
         description:
-          "Mit jedem Jahr wachsen unsere Partnerschaften weiter. Unser Anspruch bleibt unverändert: zuverlässig, effizient und innovationsorientiert neue, nachhaltige Lösungen für internationale Märkte zu schaffen.",
+          "Wir unterstützen Kunden in Europa, Asien und darüber hinaus durch multikulturelle Teams, die in lokalen Sprachen und Marktumfeldern agieren – für klare Kommunikation und schnellere Umsetzung.",
+        locations: ["Düsseldorf", "Mailand", "Shanghai", "Ho-Chi-Minh-Stadt"],
       },
       {
         title: "Partnerschaft als Arbeitsprinzip",

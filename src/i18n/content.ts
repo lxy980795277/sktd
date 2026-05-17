@@ -92,10 +92,12 @@ export interface HomeContent {
     eyebrow: string;
     title: string;
     description: string;
+    highlights: string[];
     officesLabel: string;
     offices: string[];
     actionLabel: string;
     actionHref: string;
+    tagline: string;
     image: string;
   };
   services: {
@@ -140,17 +142,17 @@ const content: Record<Locale, HomeContent> = {
       navigation: [
         { label: "Home", href: "/home" },
         { label: "About Us", href: "/about" },
-        { label: "Products", href: "/products" },
+        { label: "Product Collections", href: "/products" },
         { label: "Contact Us", href: "/contact" },
       ],
     },
     featuredBanner: {
-      eyebrow: "SKTD international partnership",
-      title: "Since 2014, SKTD has connected Asia and Europe through reliable execution.",
+      eyebrow: "SKTD, your trusted international B2B partner",
+      title: "German Precision/Italian Design/Asian manufacturing Strength/Delivering End-to-End Excellence",
       description:
         "We blend German engineering discipline, Italian design perspective and Asian sourcing strength to deliver practical end-to-end value.",
       primaryLabel: "Explore capabilities",
-      primaryHref: "#services",
+      primaryHref: "/about",
       secondaryLabel: "View milestones",
       secondaryHref: "#milestones",
       images: [
@@ -166,9 +168,9 @@ const content: Record<Locale, HomeContent> = {
       slides: [
         {
           eyebrow: "Trusted cross-border growth partner",
-          title: "Connecting Asia and Europe with engineering precision and design insight.",
+          title: "From sourcing to delivery",
           description:
-            "SKTD combines German engineering, Italian design thinking and Asian product excellence to create commercial momentum for global clients.",
+            "SKTD manages every step of the supply chain — from product sourcing and development to quality control, financing and final delivery.",
           primaryLabel: "Explore our capabilities",
           primaryHref: "#services",
           secondaryLabel: "View milestones",
@@ -183,9 +185,9 @@ const content: Record<Locale, HomeContent> = {
         },
         {
           eyebrow: "Global reach, local fluency",
-          title: "A multicultural team that understands markets, languages and business customs.",
+          title: "your seamless trade solutions",
           description:
-            "From Düsseldorf and Milan to Shanghai and Ho Chi Minh City, SKTD responds quickly with regional knowledge and local-language support.",
+            "We simplify the complexity of international trade with integrated solutions — so your business can move faster, smarter and with full confidence.",
           primaryLabel: "See our global presence",
           primaryHref: "#about",
           secondaryLabel: "Plan a collaboration",
@@ -200,10 +202,9 @@ const content: Record<Locale, HomeContent> = {
         },
         {
           eyebrow: "Reliable execution from source to destination",
-          title:
-            "From sourcing and product development to financing and logistics, every stage stays under control.",
+          title: "connecting Asia and Europe",
           description:
-            "We manage the moving parts of international trade so your teams can focus on brand growth, sales and long-term partnerships.",
+            "With offices in Germany, Italy, China and Vietnam, SKTD bridges Asia and Europe through deep local expertise and trusted cross-border execution.",
           primaryLabel: "Discover the workflow",
           primaryHref: "#planning",
           secondaryLabel: "Meet SKTD",
@@ -225,22 +226,22 @@ const content: Record<Locale, HomeContent> = {
         "Built for companies that want dependable execution, international perspective and a partner who can move from concept to delivery without handoff friction.",
       items: [
         {
+          title: "Partnership",
+          description:
+            "A dedicated cross-border partnership model connecting European buyers with Asian manufacturers for scalable, long-term commercial growth.",
+          value: "Cross-Border Growth Partner",
+        },
+        {
           title: "Network",
           description:
             "A structured bridge between Asian product ecosystems and European market expectations.",
-          value: "4 Offices",
+          value: "4 offices connect the world",
         },
         {
           title: "Execution",
           description:
             "Controlled product development and quality management to reduce surprises across borders.",
-          value: "End-to-End",
-        },
-        {
-          title: "Resilience",
-          description:
-            "Reliable coordination across procurement, financing and logistics to keep projects moving.",
-          value: "Since 2014",
+          value: "End to End from one hand",
         },
       ],
     },
@@ -349,10 +350,16 @@ const content: Record<Locale, HomeContent> = {
         "A trusted partner shaped by engineering rigor, design culture and international trade know-how.",
       description:
         "Founded in Düsseldorf in 2014, SKTD has grown into a trusted bridge between Asia and Europe. We provide fully controlled solutions across sourcing, product development, quality management, project financing and logistics—always with reliability, efficiency and innovation at the core.",
+      highlights: [
+        "Bridging European markets with Asian manufacturing strength",
+        "Custom-featured products tailored to your brand and market",
+        "Full end-to-end control from concept to final delivery",
+      ],
       officesLabel: "Strategic offices",
       offices: ["Düsseldorf", "Milan", "Shanghai", "Ho Chi Minh City"],
       actionLabel: "Learn more about SKTD",
       actionHref: "#cta",
+      tagline: "From Sourcing to Delivery / Your Seamless Trade Solutions / Connecting Asia and Europe",
       image: "/images-v3/home/about-section/1.jpg",
     },
     services: {
@@ -433,7 +440,7 @@ const content: Record<Locale, HomeContent> = {
         "SKTD creates dependable links between Asia and Europe through sourcing, development, quality control, financing and logistics.",
       links: [
         { label: "Home", href: "/home" },
-        { label: "Products", href: "/products" },
+        { label: "Product Collections", href: "/products" },
         { label: "Milestones", href: "#milestones" },
         { label: "About Us", href: "/about" },
       ],
@@ -455,17 +462,17 @@ const content: Record<Locale, HomeContent> = {
       navigation: [
         { label: "Warum SKTD", href: "/home" },
         { label: "Über uns", href: "/about" },
-        { label: "Produkte", href: "/products" },
+        { label: "Produkt-Kollektionen", href: "/products" },
         { label: "Kontakt", href: "/contact" },
       ],
     },
     featuredBanner: {
-      eyebrow: "SKTD internationale Partnerschaft",
-      title: "Seit 2014 verbindet SKTD Asien und Europa durch verlässliche Umsetzung.",
+      eyebrow: "SKTD – Ihr vertrauenswürdiger internationaler B2B-Partner",
+      title: "Deutsche Präzision/Italienisches Design/Asiatische Produktionsstärke/Durchgängige Exzellenz aus einer Hand",
       description:
         "Wir vereinen deutsche Ingenieursdisziplin, italienische Designperspektive und asiatische Sourcing-Stärke zu belastbarem End-to-End-Mehrwert.",
       primaryLabel: "Leistungen entdecken",
-      primaryHref: "#services",
+      primaryHref: "/about",
       secondaryLabel: "Meilensteine ansehen",
       secondaryHref: "#milestones",
       images: [
@@ -481,10 +488,9 @@ const content: Record<Locale, HomeContent> = {
       slides: [
         {
           eyebrow: "Verlässlicher Partner für internationales Wachstum",
-          title:
-            "Wir verbinden Asien und Europa mit technischer Präzision und gestalterischem Verständnis.",
+          title: "Von der Beschaffung bis zur Lieferung",
           description:
-            "SKTD vereint deutsche Ingenieurskunst, italienisches Designverständnis und asiatische Produktstärke zu belastbaren Lösungen für internationale Kunden.",
+            "SKTD steuert jeden Schritt der Lieferkette – von der Produktbeschaffung und -entwicklung über Qualitätskontrolle und Finanzierung bis zur finalen Lieferung.",
           primaryLabel: "Leistungen entdecken",
           primaryHref: "#services",
           secondaryLabel: "Meilensteine ansehen",
@@ -499,10 +505,9 @@ const content: Record<Locale, HomeContent> = {
         },
         {
           eyebrow: "Globale Reichweite, lokale Sprachkompetenz",
-          title:
-            "Ein multikulturelles Team mit Verständnis für Märkte, Sprachen und Geschäftskulturen.",
+          title: "Ihre nahtlosen Handelslösungen",
           description:
-            "Von Düsseldorf und Mailand bis Shanghai und Ho-Chi-Minh-Stadt arbeitet SKTD schnell, regional verankert und mehrsprachig.",
+            "Wir vereinfachen die Komplexität des internationalen Handels mit integrierten Lösungen – damit Ihr Unternehmen schneller, klüger und mit vollem Vertrauen agieren kann.",
           primaryLabel: "Globale Präsenz ansehen",
           primaryHref: "#about",
           secondaryLabel: "Zusammenarbeit planen",
@@ -517,10 +522,9 @@ const content: Record<Locale, HomeContent> = {
         },
         {
           eyebrow: "Verlässliche Umsetzung vom Ursprung bis zum Ziel",
-          title:
-            "Von Sourcing und Produktentwicklung bis Finanzierung und Logistik bleibt jeder Schritt unter Kontrolle.",
+          title: "Verbindung von Asien und Europa",
           description:
-            "Wir steuern die Komplexität des internationalen Handels, damit sich Ihre Teams auf Marke, Vertrieb und langfristige Partnerschaften konzentrieren können.",
+            "Mit Büros in Deutschland, Italien, China und Vietnam verbindet SKTD Asien und Europa durch fundiertes lokales Know-how und verlässliche grenzüberschreitende Umsetzung.",
           primaryLabel: "Ablauf entdecken",
           primaryHref: "#planning",
           secondaryLabel: "SKTD kennenlernen",
@@ -542,22 +546,22 @@ const content: Record<Locale, HomeContent> = {
         "Für Unternehmen, die zuverlässige Umsetzung, internationale Perspektive und einen Partner suchen, der Konzepte ohne Reibungsverluste bis zur Auslieferung führt.",
       items: [
         {
+          title: "Partnerschaft",
+          description:
+            "Ein dediziertes grenzüberschreitendes Partnerschaftsmodell, das europäische Einkäufer mit asiatischen Herstellern für nachhaltiges, langfristiges Wachstum verbindet.",
+          value: "Grenzüberschreitender Wachstumspartner",
+        },
+        {
           title: "Integriertes Sourcing-Netzwerk",
           description:
             "Eine strukturierte Brücke zwischen asiatischen Produktökosystemen und europäischen Markterwartungen.",
-          value: "4 strategische Standorte",
+          value: "4 Standorte verbinden die Welt",
         },
         {
           title: "Qualitätsorientierte Umsetzung",
           description:
             "Kontrollierte Produktentwicklung und Qualitätsmanagement reduzieren Überraschungen im internationalen Geschäft.",
-          value: "End-to-End-Kontrolle",
-        },
-        {
-          title: "Kommerzielle Stabilität",
-          description:
-            "Zuverlässige Koordination von Einkauf, Finanzierung und Logistik hält Projekte in Bewegung.",
-          value: "Seit 2014",
+          value: "End-to-End aus einer Hand",
         },
       ],
     },
@@ -667,10 +671,16 @@ const content: Record<Locale, HomeContent> = {
         "Ein vertrauenswürdiger Partner, geprägt von Ingenieursdisziplin, Designkultur und internationalem Handelswissen.",
       description:
         "SKTD wurde 2014 in Düsseldorf gegründet und ist heute eine belastbare Brücke zwischen Asien und Europa. Wir bieten vollständig kontrollierte Lösungen für Sourcing, Produktentwicklung, Qualitätsmanagement, Projektfinanzierung und Logistik – stets mit Zuverlässigkeit, Effizienz und Innovation im Zentrum.",
+      highlights: [
+        "Europäische Märkte mit asiatischer Produktionsstärke verbinden",
+        "Maßgeschneiderte Produkte für Ihre Marke und Ihren Markt",
+        "Vollständige End-to-End-Kontrolle vom Konzept bis zur Lieferung",
+      ],
       officesLabel: "Strategische Büros",
       offices: ["Düsseldorf", "Mailand", "Shanghai", "Ho-Chi-Minh-Stadt"],
       actionLabel: "Mehr über SKTD",
       actionHref: "#cta",
+      tagline: "Von der Beschaffung bis zur Lieferung / Ihre nahtlosen Handelslösungen / Verbindung von Asien und Europa",
       image: "/images-v3/home/about-section/1.jpg",
     },
     services: {
@@ -751,7 +761,7 @@ const content: Record<Locale, HomeContent> = {
         "SKTD schafft belastbare Verbindungen zwischen Asien und Europa durch Sourcing, Entwicklung, Qualitätskontrolle, Finanzierung und Logistik.",
       links: [
         { label: "Warum SKTD", href: "/home" },
-        { label: "Produkte", href: "/products" },
+        { label: "Produkt-Kollektionen", href: "/products" },
         { label: "Meilensteine", href: "#milestones" },
         { label: "Über uns", href: "/about" },
       ],
@@ -783,7 +793,7 @@ const content: Record<Locale, HomeContent> = {
       description:
         "我们融合德国工程纪律、意大利设计视角与亚洲供应链优势，提供可落地的端到端商业价值。",
       primaryLabel: "查看服务能力",
-      primaryHref: "#services",
+      primaryHref: "/about",
       secondaryLabel: "浏览发展历程",
       secondaryHref: "#milestones",
       images: [
@@ -965,10 +975,16 @@ const content: Record<Locale, HomeContent> = {
       title: "一个由工程严谨性、设计文化与国际贸易经验共同塑造的长期伙伴。",
       description:
         "SKTD 于 2014 年成立于杜塞尔多夫，始终致力于成为连接亚洲与欧洲的可信赖合作伙伴。我们提供覆盖采购、产品开发、质量管理、项目融资与物流的完全可控解决方案，并始终以可靠性、效率和创新为核心。",
+      highlights: [
+        "连接欧洲市场与亚洲制造优势",
+        "为您的品牌和市场量身定制特色产品",
+        "从概念到最终交付的全流程端到端把控",
+      ],
       officesLabel: "战略办公室",
       offices: ["杜塞尔多夫", "米兰", "上海", "胡志明市"],
       actionLabel: "进一步了解 SKTD",
       actionHref: "#cta",
+      tagline: "从采购到交付 / 您的无缝贸易解决方案 / 连接亚洲与欧洲",
       image: "/images-v3/home/about-section/1.jpg",
     },
     services: {
