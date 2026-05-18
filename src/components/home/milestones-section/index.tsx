@@ -129,7 +129,8 @@ export function MilestonesSection({ content, hideHeader = false }: MilestonesSec
            * SVG 决定容器高度（由 viewBox 纵横比决定），
            * HTML 叠加层通过百分比坐标精确对齐 SVG 锚点
            */}
-          <div className="relative w-full">
+          {/* container-type 声明后，内部所有 cqw 单位均相对此容器宽度计算，随 SVG 等比联动 */}
+          <div className="relative w-full" style={{ containerType: "inline-size" }}>
             {/* 光晕呼吸动画：仅 scale，opacity 固定，避免颜色深浅变化感 */}
             <style>{`
               @keyframes milestone-halo-breathe {
@@ -238,7 +239,10 @@ export function MilestonesSection({ content, hideHeader = false }: MilestonesSec
                     transition: `opacity 0.45s ease ${delay}`,
                   }}
                 >
-                  <span className="section-title block pr-1 text-right text-4xl leading-none font-bold tracking-tight text-(--accent)">
+                  <span
+                    className="section-title block pr-1 text-right leading-none font-bold tracking-tight text-(--accent)"
+                    style={{ fontSize: "6.5cqw", fontFamily: "var(--font-cormorant), serif" }}
+                  >
                     {m.year}
                   </span>
                 </div>
@@ -274,11 +278,11 @@ export function MilestonesSection({ content, hideHeader = false }: MilestonesSec
                   >
                     <IconComponent
                       className={`mt-0.5 shrink-0 ${isLatest ? "text-(--accent)" : "text-(--accent)/75"}`}
-                      size={22}
+                      style={{ width: "3.8cqw", height: "3.8cqw", flexShrink: 0 }}
                     />
                     <div
                       style={{
-                        fontSize: "18px",
+                        fontSize: "3cqw",
                         fontWeight: 600,
                         lineHeight: 1.5,
                         color: "var(--foreground)",
