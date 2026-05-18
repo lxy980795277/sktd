@@ -58,11 +58,6 @@ const aboutContent: Record<Locale, AboutPageContent> = {
           "We support clients across Europe, Asia, and beyond through multicultural teams operating in local languages and market contexts, enabling clear communication and faster execution.",
         locations: ["Düsseldorf", "Milan", "Shanghai", "Ho Chi Minh City"],
       },
-      {
-        title: "Partnership-first culture",
-        description:
-          "We work as an extension of our clients' teams, with transparent communication, accountable ownership, and measurable outcomes. This partnership-first approach helps transform one-time projects into long-term strategic collaboration.",
-      },
     ],
     milestonesTitle: "Milestones in our journey",
     galleryTitle: "Life at SKTD",
@@ -136,11 +131,6 @@ const aboutContent: Record<Locale, AboutPageContent> = {
           "Wir unterstützen Kunden in Europa, Asien und darüber hinaus durch multikulturelle Teams, die in lokalen Sprachen und Marktumfeldern agieren – für klare Kommunikation und schnellere Umsetzung.",
         locations: ["Düsseldorf", "Mailand", "Shanghai", "Ho-Chi-Minh-Stadt"],
       },
-      {
-        title: "Partnerschaft als Arbeitsprinzip",
-        description:
-          "Wir verstehen uns als Erweiterung der Teams unserer Kunden - mit transparenter Kommunikation, klarer Verantwortlichkeit und messbaren Ergebnissen. So entwickeln sich einzelne Projekte zu langfristigen strategischen Partnerschaften.",
-      },
     ],
     milestonesTitle: "Meilensteine unserer Entwicklung",
     galleryTitle: "Leben bei SKTD",
@@ -209,11 +199,6 @@ const aboutContent: Record<Locale, AboutPageContent> = {
         title: "面向未来的承诺",
         description:
           "在客户长期信任与支持下，SKTD 持续成长。面向未来，我们将继续坚持可靠、效率与创新，探索新市场并共建更可持续的解决方案。",
-      },
-      {
-        title: "以伙伴关系为核心",
-        description:
-          "我们以客户团队延伸者的角色开展协作，强调透明沟通、责任闭环与结果可衡量。通过这种合作方式，我们能够将单次项目沉淀为长期、稳定、可持续的战略伙伴关系。",
       },
     ],
     milestonesTitle: "发展历程里程碑",

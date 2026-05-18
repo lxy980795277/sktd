@@ -14,6 +14,7 @@ import "./product-story-section.css";
 const STORY_IMAGES = [
   imgV("/images-v3/products/product-story-section/1.jpg"),
   imgV("/images-v3/products/product-story-section/2.jpg"),
+  imgV("/images-v3/products/product-story-section/3.jpg"),
 ];
 
 type ProductStorySectionProps = {

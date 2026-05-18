@@ -31,7 +31,6 @@ const STORY_IMAGES = [
   imgV("/images-v3/about/story-sections/2.jpg"),
   imgV("/images-v3/about/story-sections/3.jpg"),
   imgV("/images-v3/about/story-sections/4.jpg"),
-  imgV("/images-v3/about/story-sections/5.jpg"),
 ];
 
 export async function generateMetadata({ params }: AboutPageProps): Promise<Metadata> {

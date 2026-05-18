@@ -20,7 +20,11 @@ export const ProductFilmSection: FC<ProductFilmSectionProps> = ({ images, produc
       <div className="product-film-section__mask-left" />
       <div className="product-film-section__mask-right" />
 
-      <div className="product-film-track">
+      {/* 线速度统一：每张图约 7s，图越多轮播越长，但滚动快慢视觉一致 */}
+      <div
+        className="product-film-track"
+        style={{ animationDuration: `${images.length * 7}s` }}
+      >
         {/* 复制两组实现无缝循环 */}
         {[0, 1].map((groupIndex) => (
           <div
