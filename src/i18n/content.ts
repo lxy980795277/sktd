@@ -228,7 +228,7 @@ const content: Record<Locale, HomeContent> = {
         {
           title: "Partnership",
           description:
-            "A dedicated cross-border partnership model connecting European buyers with Asian manufacturers for scalable, long-term commercial growth.",
+            "Connecting European buyers with Asian manufacturers for scalable, long-term commercial growth.",
           value: "Cross-Border Growth Partner",
         },
         {

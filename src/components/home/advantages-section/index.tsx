@@ -15,9 +15,9 @@ const ADVANTAGE_IMAGES = [
 // 优势模块：eyebrow 置顶左对齐，三卡片平铺展示核心差异化能力。
 export function AdvantagesSection({ content }: AdvantagesSectionProps): React.JSX.Element {
   return (
-    <section id="advantages" className="container-shell">
+    <section id="advantages" className="w-full px-4 sm:px-6 lg:px-10">
       <p className="eyebrow mb-6">{content.eyebrow}</p>
-      <div className="grid gap-4 md:grid-cols-3">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {content.items.slice(0, 3).map((item, index) => {
           const imageUrl = ADVANTAGE_IMAGES[index];
 
@@ -27,7 +27,7 @@ export function AdvantagesSection({ content }: AdvantagesSectionProps): React.JS
               className="group relative h-[380px] cursor-pointer overflow-hidden rounded-[28px] border border-(--line) bg-(--card)! shadow-[0_18px_50px_rgba(31,29,25,0.06)]"
             >
               {/* 图片容器：默认 h-40，hover 时高度扩展至填满整张卡片 */}
-              <div className="absolute inset-x-0 top-0 h-40 overflow-hidden transition-[height] duration-500 ease-out group-hover:h-full">
+              <div className="absolute inset-x-0 top-0 h-48 overflow-hidden transition-[height] duration-500 ease-out group-hover:h-full">
                 <div className="relative h-full w-full">
                   <Image
                     src={imageUrl}
@@ -43,7 +43,7 @@ export function AdvantagesSection({ content }: AdvantagesSectionProps): React.JS
               <div className="absolute inset-0 bg-black/45 opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100" />
 
               {/* 默认文字区（图片下方）：hover 时淡出下移 */}
-              <div className="absolute inset-x-0 top-40 bottom-0 p-6 transition-[opacity,transform] duration-500 ease-out group-hover:translate-y-3 group-hover:opacity-0">
+              <div className="absolute inset-x-0 top-48 bottom-0 p-6 transition-[opacity,transform] duration-500 ease-out group-hover:translate-y-3 group-hover:opacity-0">
                 <h3 className="text-xl font-semibold">{item.title}</h3>
                 <p className="mt-3 text-sm font-semibold tracking-[0.18em] text-(--accent) uppercase">
                   {item.value}

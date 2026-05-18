@@ -16,7 +16,7 @@ export function CtaSection({ locale, content }: CtaSectionProps): React.JSX.Elem
     : getLocaleHref(locale, content.primaryHref);
 
   return (
-    <section id="cta" className="container-shell">
+    <section id="cta" className="w-full px-4 sm:px-6 lg:px-10">
       <div className="overflow-hidden rounded-[38px] border border-(--line) bg-[linear-gradient(135deg,#8b3f2c_0%,#6f2c1f_50%,#a75d3f_100%)] px-6 py-8 text-white shadow-[0_28px_90px_rgba(31,29,25,0.14)] sm:px-8 sm:py-10 lg:px-10 lg:py-12">
         <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
           <div>

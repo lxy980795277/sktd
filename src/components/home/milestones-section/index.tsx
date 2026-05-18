@@ -16,6 +16,8 @@ import { imgV } from "@/utils/image-version";
 
 type MilestonesSectionProps = {
   content: HomeContent["milestones"];
+  /** 隐藏顶部 eyebrow + 大标题，用于嵌入其他页面时避免重复标题 */
+  hideHeader?: boolean;
 };
 
 // 6 个锚点坐标：S 曲线摆幅 44px（168↔212）
@@ -71,7 +73,7 @@ const CURVE_LENGTH = 1400;
 const SVG_W = 600;
 const SVG_H = 650;
 
-export function MilestonesSection({ content }: MilestonesSectionProps): React.JSX.Element {
+export function MilestonesSection({ content, hideHeader = false }: MilestonesSectionProps): React.JSX.Element {
   const sectionRef = useRef<HTMLElement | null>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -95,13 +97,15 @@ export function MilestonesSection({ content }: MilestonesSectionProps): React.JS
 
   return (
     <section id="milestones" ref={sectionRef} className="w-full overflow-hidden">
-      {/* 顶部标题区 */}
-      <div className="container-shell mb-8">
-        <p className="eyebrow">{content.eyebrow}</p>
-        <h2 className="section-title mt-4 text-4xl leading-[0.95] font-semibold sm:text-5xl lg:text-6xl">
-          {content.title}
-        </h2>
-      </div>
+      {/* 顶部标题区：About 等页面复用时可通过 hideHeader 隐藏 */}
+      {!hideHeader && (
+        <div className="container-shell mb-8">
+          <p className="eyebrow">{content.eyebrow}</p>
+          <h2 className="section-title mt-4 text-4xl leading-[0.95] font-semibold sm:text-5xl lg:text-6xl">
+            {content.title}
+          </h2>
+        </div>
+      )}
 
       {/* 左图（全出血）+ 右侧时间轴 */}
       <div className="flex min-h-[520px] flex-col lg:flex-row lg:items-stretch">
