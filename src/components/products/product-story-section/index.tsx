@@ -55,7 +55,7 @@ export const ProductStorySection: FC<ProductStorySectionProps> = ({ stories, loc
 
         return (
           <div
-            key={story.title}
+            key={index}
             ref={(el) => {
               rowRefs.current[index] = el;
             }}
