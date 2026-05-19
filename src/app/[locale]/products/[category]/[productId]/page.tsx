@@ -78,8 +78,12 @@ export default async function ProductDetailPage({
   }
 
   const detailImage = getDetailImage(category, productId);
-  /** 读取当前品类下所有产品的图片，最多取 16 张用于底部轮播，避免一次加载过多 */
-  const filmImages = getCategoryImages(category).slice(0, 16);
+  /** 当前商品图优先，再补充品类内其他商品图，合计最多 16 张 */
+  const allCategoryImages = getCategoryImages(category);
+  const filmImages = [
+    ...allCategoryImages.filter((img) => img.includes(`/${productId}/`)),
+    ...allCategoryImages.filter((img) => !img.includes(`/${productId}/`)),
+  ].slice(0, 16);
   /** 当前语言的产品故事文案 */
   const productStories = getProductStories(resolvedLocale);
 
