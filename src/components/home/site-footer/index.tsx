@@ -36,7 +36,7 @@ export function SiteFooter({ locale, content }: SiteFooterProps): React.JSX.Elem
               <div className="mt-4 space-y-2 text-sm leading-7 text-white/82">
                 <div className="flex items-start gap-3">
                   <MapPin className="mt-1 h-4 w-4 shrink-0 text-white/65" />
-                  <p>Prinzenallee 7, 40549 Dusseldorf, Germany</p>
+                  <p>{content.address}</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <Phone className="mt-1 h-4 w-4 shrink-0 text-white/65" />

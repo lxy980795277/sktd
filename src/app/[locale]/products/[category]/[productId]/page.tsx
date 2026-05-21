@@ -4,7 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ProductFilmSection } from "@/components/products/product-film-section";
 import { ProductStorySection } from "@/components/products/product-story-section";
-import { getAllProductSlugs, getCategoryImages, getProductByIds } from "@/constants/products";
+import { getAllProductSlugs, getProductByIds, getProductImages } from "@/constants/products";
 import { getProductStories } from "@/i18n/products-content";
 import { imgV } from "@/utils/image-version";
 import { isLocale } from "@/i18n/config";
@@ -37,7 +37,7 @@ const detailText = {
 
 /** 商品详情页主图路径，取第一张图 */
 const getDetailImage = (category: string, productId: string): string => {
-  return imgV(`/images-v3/products/${category}/${productId}/1.jpg`);
+  return imgV(`/images-v4/products/${category}/${productId}/1.jpg`);
 };
 
 export function generateStaticParams(): Array<{ category: string; productId: string }> {
@@ -78,12 +78,8 @@ export default async function ProductDetailPage({
   }
 
   const detailImage = getDetailImage(category, productId);
-  /** 当前商品图优先，再补充品类内其他商品图，合计最多 16 张 */
-  const allCategoryImages = getCategoryImages(category);
-  const filmImages = [
-    ...allCategoryImages.filter((img) => img.includes(`/${productId}/`)),
-    ...allCategoryImages.filter((img) => !img.includes(`/${productId}/`)),
-  ].slice(0, 16);
+  /** 只取当前子品类下的所有图片，无限轮播 */
+  const filmImages = getProductImages(category, productId);
   /** 当前语言的产品故事文案 */
   const productStories = getProductStories(resolvedLocale);
 

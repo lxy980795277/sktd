@@ -9,21 +9,14 @@ export type ProductStoryItem = {
   ctaLabel?: string;
 };
 
-// 临时：三份相同内容分别对应 1.jpg / 2.jpg / 3.jpg，供视觉对比选图用
 const productStoriesContent: Record<Locale, ProductStoryItem[]> = {
   en: [
-    { title: "Can't find exactly what you're looking for?", description: "Our team is ready to create customised solutions for your business.", imageLeft: false, ctaLabel: "Contact Us" },
-    { title: "Can't find exactly what you're looking for?", description: "Our team is ready to create customised solutions for your business.", imageLeft: false, ctaLabel: "Contact Us" },
     { title: "Can't find exactly what you're looking for?", description: "Our team is ready to create customised solutions for your business.", imageLeft: false, ctaLabel: "Contact Us" },
   ],
   de: [
     { title: "Nicht das Richtige gefunden?", description: "Wir unterstützen Sie mit individuellen Produktlösungen und maßgeschneiderter Fertigung.", imageLeft: false, ctaLabel: "Kontakt aufnehmen" },
-    { title: "Nicht das Richtige gefunden?", description: "Wir unterstützen Sie mit individuellen Produktlösungen und maßgeschneiderter Fertigung.", imageLeft: false, ctaLabel: "Kontakt aufnehmen" },
-    { title: "Nicht das Richtige gefunden?", description: "Wir unterstützen Sie mit individuellen Produktlösungen und maßgeschneiderter Fertigung.", imageLeft: false, ctaLabel: "Kontakt aufnehmen" },
   ],
   zh: [
-    { title: "找不到您想要的产品？", description: "我们的团队随时准备为您的业务提供定制化解决方案。", imageLeft: false, ctaLabel: "联系我们" },
-    { title: "找不到您想要的产品？", description: "我们的团队随时准备为您的业务提供定制化解决方案。", imageLeft: false, ctaLabel: "联系我们" },
     { title: "找不到您想要的产品？", description: "我们的团队随时准备为您的业务提供定制化解决方案。", imageLeft: false, ctaLabel: "联系我们" },
   ],
 };

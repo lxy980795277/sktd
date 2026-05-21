@@ -17,20 +17,20 @@ type AboutPageProps = {
 
 // 里程碑轮播配图
 const MILESTONE_IMAGES = [
-  imgV("/images-v3/about/milestones/1.jpg"),
-  imgV("/images-v3/about/milestones/2.jpg"),
-  imgV("/images-v3/about/milestones/3.jpg"),
-  imgV("/images-v3/about/milestones/4.jpg"),
-  imgV("/images-v3/about/milestones/5.jpg"),
-  imgV("/images-v3/about/milestones/6.jpg"),
+  imgV("/images-v4/about/milestones/1.jpg"),
+  imgV("/images-v4/about/milestones/2.jpg"),
+  imgV("/images-v4/about/milestones/3.jpg"),
+  imgV("/images-v4/about/milestones/4.jpg"),
+  imgV("/images-v4/about/milestones/5.jpg"),
+  imgV("/images-v4/about/milestones/6.jpg"),
 ];
 
 // 五大板块配图
 const STORY_IMAGES = [
-  imgV("/images-v3/about/story-sections/1.jpg"),
-  imgV("/images-v3/about/story-sections/2.jpg"),
-  imgV("/images-v3/about/story-sections/3.jpg"),
-  imgV("/images-v3/about/story-sections/4.jpg"),
+  imgV("/images-v4/about/story-sections/1.jpg"),
+  imgV("/images-v4/about/story-sections/2.jpg"),
+  imgV("/images-v4/about/story-sections/3.jpg"),
+  imgV("/images-v4/about/story-sections/4.jpg"),
 ];
 
 export async function generateMetadata({ params }: AboutPageProps): Promise<Metadata> {

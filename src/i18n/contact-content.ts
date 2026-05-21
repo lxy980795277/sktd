@@ -36,7 +36,7 @@ const contactContent: Record<Locale, ContactContent> = {
     eyebrow: "Contact us",
     title: "Let's discuss your project.",
     description:
-      "Fill in the form below and our team will get back to you with a structured response as soon as possible.",
+      "Fill in the form below, and our team will get back to you with a tailored response as soon as possible.",
     form: {
       nameLabel: "Name",
       namePlaceholder: "Your name",
@@ -62,7 +62,7 @@ const contactContent: Record<Locale, ContactContent> = {
     eyebrow: "Kontakt",
     title: "Lassen Sie uns über Ihr Projekt sprechen.",
     description:
-      "Füllen Sie das Formular aus, und unser Team meldet sich zeitnah mit einer strukturierten Rückmeldung.",
+      "Füllen Sie das Formular aus, und unser Team meldet sich so schnell wie möglich mit einer individuell abgestimmten Antwort bei Ihnen.",
     form: {
       nameLabel: "Name",
       namePlaceholder: "Ihr Name",

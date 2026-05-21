@@ -62,9 +62,9 @@ export function AboutSection({ content }: AboutSectionProps): React.JSX.Element 
           <div className="about-section-content absolute inset-0 grid items-stretch gap-6 p-6 sm:p-8 lg:grid-cols-[0.92fr_1.08fr] lg:p-10">
             <div className="about-section-left flex items-end">
               <div className="max-w-lg rounded-[26px] border border-white/20 bg-(--accent)/92 px-8 py-8 text-white shadow-[0_16px_40px_rgba(31,29,25,0.22)]">
-                <p className="text-xs tracking-[0.22em] text-white/75 uppercase">SKTD network</p>
-                <p className="section-title mt-3 text-3xl font-semibold sm:text-4xl">
-                  Europe ↔ Asia
+                <p className="text-xs tracking-[0.22em] text-white/75 uppercase">{content.networkLabel}</p>
+                <p className="section-title mt-3 text-lg font-semibold leading-relaxed sm:text-xl">
+                  {content.offices.join(" · ")}
                 </p>
                 <ul className="mt-3 space-y-1.5">
                   {content.highlights.map((item) => (
@@ -72,7 +72,7 @@ export function AboutSection({ content }: AboutSectionProps): React.JSX.Element 
                       key={item}
                       className="flex items-start gap-2 text-sm leading-6 text-white/82"
                     >
-                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-white/60" />
+                      <span className="mt-[0.4em] h-1.5 w-1.5 shrink-0 rounded-full bg-white/60" />
                       {item}
                     </li>
                   ))}

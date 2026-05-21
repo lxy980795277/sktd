@@ -92,6 +92,7 @@ export interface HomeContent {
     eyebrow: string;
     title: string;
     description: string;
+    networkLabel: string;
     highlights: string[];
     officesLabel: string;
     offices: string[];
@@ -121,6 +122,7 @@ export interface HomeContent {
   };
   footer: {
     blurb: string;
+    address: string;
     links: NavigationItem[];
     rights: string;
     contactInfoLabel: string;
@@ -156,12 +158,12 @@ const content: Record<Locale, HomeContent> = {
       secondaryLabel: "View milestones",
       secondaryHref: "#milestones",
       images: [
-        "/images-v3/home/featured-banner/1.jpg",
-        "/images-v3/home/featured-banner/2.jpg",
-        "/images-v3/home/featured-banner/3.jpg",
-        "/images-v3/home/featured-banner/4.jpg",
-        "/images-v3/home/featured-banner/5.jpg",
-        "/images-v3/home/featured-banner/6.jpg",
+        "/images-v4/home/featured-banner/1.jpg",
+        "/images-v4/home/featured-banner/2.jpg",
+        "/images-v4/home/featured-banner/3.jpg",
+        "/images-v4/home/featured-banner/4.jpg",
+        "/images-v4/home/featured-banner/5.jpg",
+        "/images-v4/home/featured-banner/6.jpg",
       ],
     },
     hero: {
@@ -176,7 +178,7 @@ const content: Record<Locale, HomeContent> = {
           secondaryLabel: "View milestones",
           secondaryHref: "#milestones",
           note: "Germany · Italy · China · Vietnam",
-          image: "/images-v3/home/hero-carousel/1.jpg",
+          image: "/images-v4/home/hero-carousel/1.jpg",
           highlights: [
             "Established in Düsseldorf in 2014",
             "Strategic offices across Europe and Asia",
@@ -193,7 +195,7 @@ const content: Record<Locale, HomeContent> = {
           secondaryLabel: "Plan a collaboration",
           secondaryHref: "#planning",
           note: "Europe · Asia · North America",
-          image: "/images-v3/home/hero-carousel/2.jpg",
+          image: "/images-v4/home/hero-carousel/2.jpg",
           highlights: [
             "Multilingual commercial communication",
             "Regional business understanding",
@@ -210,7 +212,7 @@ const content: Record<Locale, HomeContent> = {
           secondaryLabel: "Meet SKTD",
           secondaryHref: "#about",
           note: "Reliability · Efficiency · Innovation",
-          image: "/images-v3/home/hero-carousel/3.jpg",
+          image: "/images-v4/home/hero-carousel/3.jpg",
           highlights: [
             "Sourcing and product development",
             "Quality management and project financing",
@@ -228,7 +230,7 @@ const content: Record<Locale, HomeContent> = {
         {
           title: "Partnership",
           description:
-            "Connecting European buyers with Asian manufacturers for scalable, long-term commercial growth.",
+            "Connecting European buyers with Asian manufacturers through trusted partnerships designed for scalable, long-term growth.",
           value: "Cross-Border Growth Partner",
         },
         {
@@ -240,8 +242,8 @@ const content: Record<Locale, HomeContent> = {
         {
           title: "Execution",
           description:
-            "Controlled product development and quality management to reduce surprises across borders.",
-          value: "End to End from one hand",
+            "Controlled product development and quality management to reduce uncertainty across borders.",
+          value: "End-to-End Control",
         },
       ],
     },
@@ -350,17 +352,18 @@ const content: Record<Locale, HomeContent> = {
         "A trusted partner shaped by engineering rigor, design culture and international trade know-how.",
       description:
         "Founded in Düsseldorf in 2014, SKTD has grown into a trusted bridge between Asia and Europe. We provide fully controlled solutions across sourcing, product development, quality management, project financing and logistics—always with reliability, efficiency and innovation at the core.",
+      networkLabel: "NETWORK",
       highlights: [
-        "Bridging European markets with Asian manufacturing strength",
-        "Custom-featured products tailored to your brand and market",
-        "Full end-to-end control from concept to final delivery",
+        "European market understanding with Asian manufacturing coordination",
+        "Multilingual communication across local business environments",
+        "End-to-end execution from sourcing to delivery",
       ],
       officesLabel: "Strategic offices",
       offices: ["Düsseldorf", "Milan", "Shanghai", "Ho Chi Minh City"],
       actionLabel: "Learn more about SKTD",
       actionHref: "#cta",
       tagline: "From Sourcing to Delivery / Your Seamless Trade Solutions / Connecting Asia and Europe",
-      image: "/images-v3/home/about-section/1.jpg",
+      image: "/images-v4/home/about-section/1.jpg",
     },
     services: {
       eyebrow: "Capabilities",
@@ -438,6 +441,7 @@ const content: Record<Locale, HomeContent> = {
     footer: {
       blurb:
         "SKTD creates dependable links between Asia and Europe through sourcing, development, quality control, financing and logistics.",
+      address: "Prinzenallee 7, Duesseldorf, Germany",
       links: [
         { label: "Home", href: "/home" },
         { label: "Product Collections", href: "/products" },
@@ -476,12 +480,12 @@ const content: Record<Locale, HomeContent> = {
       secondaryLabel: "Meilensteine ansehen",
       secondaryHref: "#milestones",
       images: [
-        "/images-v3/home/featured-banner/1.jpg",
-        "/images-v3/home/featured-banner/2.jpg",
-        "/images-v3/home/featured-banner/3.jpg",
-        "/images-v3/home/featured-banner/4.jpg",
-        "/images-v3/home/featured-banner/5.jpg",
-        "/images-v3/home/featured-banner/6.jpg",
+        "/images-v4/home/featured-banner/1.jpg",
+        "/images-v4/home/featured-banner/2.jpg",
+        "/images-v4/home/featured-banner/3.jpg",
+        "/images-v4/home/featured-banner/4.jpg",
+        "/images-v4/home/featured-banner/5.jpg",
+        "/images-v4/home/featured-banner/6.jpg",
       ],
     },
     hero: {
@@ -496,7 +500,7 @@ const content: Record<Locale, HomeContent> = {
           secondaryLabel: "Meilensteine ansehen",
           secondaryHref: "#milestones",
           note: "Deutschland · Italien · China · Vietnam",
-          image: "/images-v3/home/hero-carousel/1.jpg",
+          image: "/images-v4/home/hero-carousel/1.jpg",
           highlights: [
             "2014 in Düsseldorf gegründet",
             "Strategische Büros in Europa und Asien",
@@ -513,7 +517,7 @@ const content: Record<Locale, HomeContent> = {
           secondaryLabel: "Zusammenarbeit planen",
           secondaryHref: "#planning",
           note: "Europa · Asien · Nordamerika",
-          image: "/images-v3/home/hero-carousel/2.jpg",
+          image: "/images-v4/home/hero-carousel/2.jpg",
           highlights: [
             "Mehrsprachige Kommunikation",
             "Verständnis regionaler Geschäftspraxis",
@@ -530,7 +534,7 @@ const content: Record<Locale, HomeContent> = {
           secondaryLabel: "SKTD kennenlernen",
           secondaryHref: "#about",
           note: "Zuverlässigkeit · Effizienz · Innovation",
-          image: "/images-v3/home/hero-carousel/3.jpg",
+          image: "/images-v4/home/hero-carousel/3.jpg",
           highlights: [
             "Sourcing und Produktentwicklung",
             "Qualitätsmanagement und Projektfinanzierung",
@@ -548,7 +552,7 @@ const content: Record<Locale, HomeContent> = {
         {
           title: "Partnerschaft",
           description:
-            "Ein dediziertes grenzüberschreitendes Partnerschaftsmodell, das europäische Einkäufer mit asiatischen Herstellern für nachhaltiges, langfristiges Wachstum verbindet.",
+            "Wir verbinden europäische Einkäufer mit asiatischen Herstellern durch vertrauensvolle Partnerschaften für nachhaltiges, langfristiges Wachstum.",
           value: "Grenzüberschreitender Wachstumspartner",
         },
         {
@@ -560,7 +564,7 @@ const content: Record<Locale, HomeContent> = {
         {
           title: "Qualitätsorientierte Umsetzung",
           description:
-            "Kontrollierte Produktentwicklung und Qualitätsmanagement reduzieren Überraschungen im internationalen Geschäft.",
+            "Durch kontrollierte Produktentwicklung und strukturiertes Qualitätsmanagement reduzieren wir Unsicherheiten im internationalen Geschäft.",
           value: "End-to-End aus einer Hand",
         },
       ],
@@ -671,17 +675,18 @@ const content: Record<Locale, HomeContent> = {
         "Ein vertrauenswürdiger Partner, geprägt von Ingenieursdisziplin, Designkultur und internationalem Handelswissen.",
       description:
         "SKTD wurde 2014 in Düsseldorf gegründet und ist heute eine belastbare Brücke zwischen Asien und Europa. Wir bieten vollständig kontrollierte Lösungen für Sourcing, Produktentwicklung, Qualitätsmanagement, Projektfinanzierung und Logistik – stets mit Zuverlässigkeit, Effizienz und Innovation im Zentrum.",
+      networkLabel: "NETZWERK",
       highlights: [
-        "Europäische Märkte mit asiatischer Produktionsstärke verbinden",
-        "Maßgeschneiderte Produkte für Ihre Marke und Ihren Markt",
-        "Vollständige End-to-End-Kontrolle vom Konzept bis zur Lieferung",
+        "Europäische Marktkenntnis und asiatische Fertigungskompetenz",
+        "Mehrsprachige Kommunikation in lokalen Marktumfeldern",
+        "End-to-End-Umsetzung von der Beschaffung bis zur Auslieferung",
       ],
       officesLabel: "Strategische Büros",
       offices: ["Düsseldorf", "Mailand", "Shanghai", "Ho-Chi-Minh-Stadt"],
       actionLabel: "Mehr über SKTD",
       actionHref: "#cta",
       tagline: "Von der Beschaffung bis zur Lieferung / Ihre nahtlosen Handelslösungen / Verbindung von Asien und Europa",
-      image: "/images-v3/home/about-section/1.jpg",
+      image: "/images-v4/home/about-section/1.jpg",
     },
     services: {
       eyebrow: "Leistungen",
@@ -759,6 +764,7 @@ const content: Record<Locale, HomeContent> = {
     footer: {
       blurb:
         "SKTD schafft belastbare Verbindungen zwischen Asien und Europa durch Sourcing, Entwicklung, Qualitätskontrolle, Finanzierung und Logistik.",
+      address: "Prinzenallee 7, Düsseldorf, Deutschland",
       links: [
         { label: "Warum SKTD", href: "/home" },
         { label: "Produkt-Kollektionen", href: "/products" },
@@ -797,12 +803,12 @@ const content: Record<Locale, HomeContent> = {
       secondaryLabel: "浏览发展历程",
       secondaryHref: "#milestones",
       images: [
-        "/images-v3/home/featured-banner/1.jpg",
-        "/images-v3/home/featured-banner/2.jpg",
-        "/images-v3/home/featured-banner/3.jpg",
-        "/images-v3/home/featured-banner/4.jpg",
-        "/images-v3/home/featured-banner/5.jpg",
-        "/images-v3/home/featured-banner/6.jpg",
+        "/images-v4/home/featured-banner/1.jpg",
+        "/images-v4/home/featured-banner/2.jpg",
+        "/images-v4/home/featured-banner/3.jpg",
+        "/images-v4/home/featured-banner/4.jpg",
+        "/images-v4/home/featured-banner/5.jpg",
+        "/images-v4/home/featured-banner/6.jpg",
       ],
     },
     hero: {
@@ -817,7 +823,7 @@ const content: Record<Locale, HomeContent> = {
           secondaryLabel: "浏览发展历程",
           secondaryHref: "#milestones",
           note: "德国 · 意大利 · 中国 · 越南",
-          image: "/images-v3/home/hero-carousel/1.jpg",
+          image: "/images-v4/home/hero-carousel/1.jpg",
           highlights: [
             "2014 年于杜塞尔多夫成立",
             "欧洲与亚洲多地战略办公室",
@@ -834,7 +840,7 @@ const content: Record<Locale, HomeContent> = {
           secondaryLabel: "规划合作路径",
           secondaryHref: "#planning",
           note: "欧洲 · 亚洲 · 北美",
-          image: "/images-v3/home/hero-carousel/2.jpg",
+          image: "/images-v4/home/hero-carousel/2.jpg",
           highlights: ["多语言商业沟通能力", "深入理解区域商业惯例", "跨时区快速协同响应"],
         },
         {
@@ -847,7 +853,7 @@ const content: Record<Locale, HomeContent> = {
           secondaryLabel: "认识 SKTD",
           secondaryHref: "#about",
           note: "可靠 · 高效 · 创新",
-          image: "/images-v3/home/hero-carousel/3.jpg",
+          image: "/images-v4/home/hero-carousel/3.jpg",
           highlights: ["采购与产品开发", "质量管理与项目融资", "物流节奏与交付控制"],
         },
       ],
@@ -975,6 +981,7 @@ const content: Record<Locale, HomeContent> = {
       title: "一个由工程严谨性、设计文化与国际贸易经验共同塑造的长期伙伴。",
       description:
         "SKTD 于 2014 年成立于杜塞尔多夫，始终致力于成为连接亚洲与欧洲的可信赖合作伙伴。我们提供覆盖采购、产品开发、质量管理、项目融资与物流的完全可控解决方案，并始终以可靠性、效率和创新为核心。",
+      networkLabel: "网络",
       highlights: [
         "连接欧洲市场与亚洲制造优势",
         "为您的品牌和市场量身定制特色产品",
@@ -985,7 +992,7 @@ const content: Record<Locale, HomeContent> = {
       actionLabel: "进一步了解 SKTD",
       actionHref: "#cta",
       tagline: "从采购到交付 / 您的无缝贸易解决方案 / 连接亚洲与欧洲",
-      image: "/images-v3/home/about-section/1.jpg",
+      image: "/images-v4/home/about-section/1.jpg",
     },
     services: {
       eyebrow: "服务能力",
@@ -1062,6 +1069,7 @@ const content: Record<Locale, HomeContent> = {
     footer: {
       blurb:
         "SKTD 通过采购、产品开发、质量控制、融资与物流，在亚洲与欧洲之间建立稳定可信的合作链路。",
+      address: "Prinzenallee 7, Düsseldorf, Deutschland",
       links: [
         { label: "为什么选择 SKTD", href: "/home" },
         { label: "产品", href: "/products" },

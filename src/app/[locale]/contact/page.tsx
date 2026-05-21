@@ -35,8 +35,8 @@ export default async function ContactPage({
       {/* ── 背景轮播：2 张图 5 秒静默交叉淡入淡出 ── */}
       <ContactBackgroundCarousel
         images={[
-          imgV("/images-v3/contact/1.jpg"),
-          imgV("/images-v3/contact/2.jpg"),
+          imgV("/images-v4/contact/1.jpg"),
+          imgV("/images-v4/contact/2.jpg"),
         ]}
       />
 

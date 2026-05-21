@@ -7,9 +7,9 @@ type AdvantagesSectionProps = {
 };
 
 const ADVANTAGE_IMAGES = [
-  imgV("/images-v3/home/advantages-section/1.jpg"),
-  imgV("/images-v3/home/advantages-section/2.jpg"),
-  imgV("/images-v3/home/advantages-section/3.jpg"),
+  imgV("/images-v4/home/advantages-section/1.jpg"),
+  imgV("/images-v4/home/advantages-section/2.jpg"),
+  imgV("/images-v4/home/advantages-section/3.jpg"),
 ];
 
 // 优势模块：eyebrow 置顶左对齐，三卡片平铺展示核心差异化能力。
@@ -45,7 +45,7 @@ export function AdvantagesSection({ content }: AdvantagesSectionProps): React.JS
               {/* 默认文字区（图片下方）：hover 时淡出下移 */}
               <div className="absolute inset-x-0 top-48 bottom-0 p-6 transition-[opacity,transform] duration-500 ease-out group-hover:translate-y-3 group-hover:opacity-0">
                 <h3 className="text-xl font-semibold">{item.title}</h3>
-                <p className="mt-3 text-sm font-semibold tracking-[0.18em] text-(--accent) uppercase">
+                <p className="mt-3 text-sm font-semibold tracking-[0.18em] text-(--accent)">
                   {item.value}
                 </p>
                 <p className="mt-3 text-sm leading-7 text-(--muted)">{item.description}</p>
@@ -54,7 +54,7 @@ export function AdvantagesSection({ content }: AdvantagesSectionProps): React.JS
               {/* hover 居中文字：默认不可见，hover 时上移淡入 */}
               <div className="absolute inset-0 z-10 flex translate-y-3 flex-col items-center justify-center p-8 text-center text-white opacity-0 transition-[opacity,transform] duration-500 ease-out group-hover:translate-y-0 group-hover:opacity-100">
                 <h3 className="text-2xl font-semibold">{item.title}</h3>
-                <p className="mt-3 text-sm font-semibold tracking-[0.18em] text-white/70 uppercase">
+                <p className="mt-3 text-sm font-semibold tracking-[0.18em] text-white/70">
                   {item.value}
                 </p>
                 <p className="mt-4 max-w-xs text-sm leading-7 text-white/85">{item.description}</p>

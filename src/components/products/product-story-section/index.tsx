@@ -12,9 +12,7 @@ import "./product-story-section.css";
 
 /** 每条故事对应的配图，由 imgV 处理缓存版本 */
 const STORY_IMAGES = [
-  imgV("/images-v3/products/product-story-section/1.jpg"),
-  imgV("/images-v3/products/product-story-section/2.jpg"),
-  imgV("/images-v3/products/product-story-section/3.jpg"),
+  imgV("/images-v4/products/product-story-section/1.jpg"),
 ];
 
 type ProductStorySectionProps = {
