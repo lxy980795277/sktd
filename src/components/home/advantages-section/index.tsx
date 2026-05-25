@@ -7,9 +7,9 @@ type AdvantagesSectionProps = {
 };
 
 const ADVANTAGE_IMAGES = [
-  imgV("/images-v4/home/advantages-section/1.jpg"),
-  imgV("/images-v4/home/advantages-section/2.jpg"),
-  imgV("/images-v4/home/advantages-section/3.jpg"),
+  imgV("/images-v5/home/advantages-section/1.jpg"),
+  imgV("/images-v5/home/advantages-section/2.jpg"),
+  imgV("/images-v5/home/advantages-section/3.jpg"),
 ];
 
 // 优势模块：eyebrow 置顶左对齐，三卡片平铺展示核心差异化能力。

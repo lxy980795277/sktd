@@ -5,26 +5,26 @@ import "./index.css";
 
 /** 上排图片（top/8-1，反序播放） */
 const ROW_PRIMARY_IMAGES = [
-  imgV("/images-v4/home/market-film-section/top/8.jpg"),
-  imgV("/images-v4/home/market-film-section/top/7.jpg"),
-  imgV("/images-v4/home/market-film-section/top/6.jpg"),
-  imgV("/images-v4/home/market-film-section/top/5.jpg"),
-  imgV("/images-v4/home/market-film-section/top/4.jpg"),
-  imgV("/images-v4/home/market-film-section/top/3.jpg"),
-  imgV("/images-v4/home/market-film-section/top/2.jpg"),
-  imgV("/images-v4/home/market-film-section/top/1.jpg"),
+  imgV("/images-v5/home/market-film-section/top/8.jpg"),
+  imgV("/images-v5/home/market-film-section/top/7.jpg"),
+  imgV("/images-v5/home/market-film-section/top/6.jpg"),
+  imgV("/images-v5/home/market-film-section/top/5.jpg"),
+  imgV("/images-v5/home/market-film-section/top/4.jpg"),
+  imgV("/images-v5/home/market-film-section/top/3.jpg"),
+  imgV("/images-v5/home/market-film-section/top/2.jpg"),
+  imgV("/images-v5/home/market-film-section/top/1.jpg"),
 ];
 
 /** 下排图片（bottom/1-8） */
 const ROW_SECONDARY_IMAGES = [
-  imgV("/images-v4/home/market-film-section/bottom/1.jpg"),
-  imgV("/images-v4/home/market-film-section/bottom/2.jpg"),
-  imgV("/images-v4/home/market-film-section/bottom/3.jpg"),
-  imgV("/images-v4/home/market-film-section/bottom/4.jpg"),
-  imgV("/images-v4/home/market-film-section/bottom/5.jpg"),
-  imgV("/images-v4/home/market-film-section/bottom/6.jpg"),
-  imgV("/images-v4/home/market-film-section/bottom/7.jpg"),
-  imgV("/images-v4/home/market-film-section/bottom/8.jpg"),
+  imgV("/images-v5/home/market-film-section/bottom/1.jpg"),
+  imgV("/images-v5/home/market-film-section/bottom/2.jpg"),
+  imgV("/images-v5/home/market-film-section/bottom/3.jpg"),
+  imgV("/images-v5/home/market-film-section/bottom/4.jpg"),
+  imgV("/images-v5/home/market-film-section/bottom/5.jpg"),
+  imgV("/images-v5/home/market-film-section/bottom/6.jpg"),
+  imgV("/images-v5/home/market-film-section/bottom/7.jpg"),
+  imgV("/images-v5/home/market-film-section/bottom/8.jpg"),
 ];
 
 export const MarketFilmSection: FC = () => {

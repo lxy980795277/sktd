@@ -112,7 +112,7 @@ export function MilestonesSection({ content, hideHeader = false }: MilestonesSec
         {/* 左侧：全出血图片 */}
         <div className="relative min-h-[300px] w-full shrink-0 lg:w-[60%]">
           <Image
-            src={imgV("/images-v4/home/milestones-section/1.jpg")}
+            src={imgV("/images-v5/home/milestones-section/1.jpg")}
             alt={content.title}
             fill
             priority
