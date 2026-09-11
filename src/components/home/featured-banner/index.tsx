@@ -12,6 +12,8 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 import type { Locale } from "@/i18n/config";
+import type { CommonContent } from "@/i18n/types/common";
+import { formatMessage } from "@/i18n/format-message";
 import { getLocaleHref } from "@/lib/locale-href";
 import { cn } from "@/lib/utils";
 import "./index.css";
@@ -30,9 +32,14 @@ type FeaturedBannerContent = {
 type FeaturedBannerProps = {
   locale: Locale;
   content: FeaturedBannerContent;
+  common: CommonContent;
 };
 
-export function FeaturedBanner({ locale, content }: FeaturedBannerProps): React.JSX.Element {
+export function FeaturedBanner({
+  locale,
+  content,
+  common,
+}: FeaturedBannerProps): React.JSX.Element {
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -87,7 +94,12 @@ export function FeaturedBanner({ locale, content }: FeaturedBannerProps): React.
     <section className="featured-banner-entry w-full">
       <div className="featured-banner-frame relative overflow-hidden border-y border-(--line) shadow-[0_26px_88px_rgba(31,29,25,0.12)]">
         <div className="relative min-h-[460px] sm:min-h-[560px] lg:min-h-[620px]">
-          <Carousel setApi={setCarouselApi} opts={{ loop: true, duration: 60 }} className="h-full">
+          <Carousel
+            setApi={setCarouselApi}
+            labels={common.carousel}
+            opts={{ loop: true, duration: 60 }}
+            className="h-full"
+          >
             <CarouselContent className="ml-0 h-full">
               {content.images.map((image, index) => {
                 return (
@@ -157,7 +169,7 @@ export function FeaturedBanner({ locale, content }: FeaturedBannerProps): React.
                   <button
                     key={`${image}-dot-${index}`}
                     type="button"
-                    aria-label={`Go to slide ${index + 1}`}
+                    aria-label={formatMessage(common.carousel.goToSlide, { number: index + 1 })}
                     onClick={() => handleDotClick(index)}
                     className={cn(
                       "h-2 cursor-pointer rounded-full transition-all duration-300",

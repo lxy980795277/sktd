@@ -4,6 +4,7 @@ import * as React from "react";
 import useEmblaCarousel, { type UseEmblaCarouselType } from "embla-carousel-react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import type { CommonContent } from "@/i18n/types/common";
 
 type CarouselApi = UseEmblaCarouselType[1];
 type CarouselOptions = Parameters<typeof useEmblaCarousel>[0];
@@ -15,6 +16,7 @@ type CarouselNavButtonProps = React.ComponentProps<"button"> & {
 };
 
 type CarouselProps = {
+  labels: Omit<CommonContent["carousel"], "goToSlide">;
   opts?: CarouselOptions;
   plugins?: CarouselPlugin;
   orientation?: "horizontal" | "vertical";
@@ -43,6 +45,7 @@ function useCarousel(): CarouselContextProps {
 }
 
 function Carousel({
+  labels,
   orientation = "horizontal",
   opts,
   setApi,
@@ -129,13 +132,14 @@ function Carousel({
         scrollNext,
         canScrollPrev,
         canScrollNext,
+        labels,
       }}
     >
       <div
         onKeyDownCapture={handleKeyDown}
         className={cn("relative", className)}
         role="region"
-        aria-roledescription="carousel"
+        aria-roledescription={labels.roleDescription}
         data-slot="carousel"
         {...props}
       >
@@ -159,12 +163,12 @@ function CarouselContent({ className, ...props }: React.ComponentProps<"div">): 
 }
 
 function CarouselItem({ className, ...props }: React.ComponentProps<"div">): React.JSX.Element {
-  const { orientation } = useCarousel();
+  const { orientation, labels } = useCarousel();
 
   return (
     <div
       role="group"
-      aria-roledescription="slide"
+      aria-roledescription={labels.slideDescription}
       data-slot="carousel-item"
       className={cn(
         "min-w-0 shrink-0 grow-0 basis-full",
@@ -182,7 +186,7 @@ function CarouselPrevious({
   size = "icon",
   ...props
 }: CarouselNavButtonProps): React.JSX.Element {
-  const { orientation, scrollPrev, canScrollPrev } = useCarousel();
+  const { orientation, scrollPrev, canScrollPrev, labels } = useCarousel();
 
   return (
     <button
@@ -202,7 +206,7 @@ function CarouselPrevious({
       {...props}
     >
       <ArrowLeft className="h-4 w-4" />
-      <span className="sr-only">Previous slide</span>
+      <span className="sr-only">{labels.previousSlide}</span>
     </button>
   );
 }
@@ -213,7 +217,7 @@ function CarouselNext({
   size = "icon",
   ...props
 }: CarouselNavButtonProps): React.JSX.Element {
-  const { orientation, scrollNext, canScrollNext } = useCarousel();
+  const { orientation, scrollNext, canScrollNext, labels } = useCarousel();
 
   return (
     <button
@@ -233,7 +237,7 @@ function CarouselNext({
       {...props}
     >
       <ArrowRight className="h-4 w-4" />
-      <span className="sr-only">Next slide</span>
+      <span className="sr-only">{labels.nextSlide}</span>
     </button>
   );
 }

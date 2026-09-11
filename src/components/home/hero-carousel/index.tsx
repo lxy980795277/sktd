@@ -11,14 +11,17 @@ import {
 } from "@/components/ui/carousel";
 import type { HeroSlide } from "@/i18n/content";
 import type { Locale } from "@/i18n/config";
+import type { CommonContent } from "@/i18n/types/common";
+import { formatMessage } from "@/i18n/format-message";
 import { cn } from "@/lib/utils";
 
 type HeroCarouselProps = {
   locale: Locale;
   slides: HeroSlide[];
+  common: CommonContent;
 };
 
-export function HeroCarousel({ locale: _locale, slides }: HeroCarouselProps): React.JSX.Element {
+export function HeroCarousel({ slides, common }: HeroCarouselProps): React.JSX.Element {
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -83,10 +86,10 @@ export function HeroCarousel({ locale: _locale, slides }: HeroCarouselProps): Re
         </div>
 
         <div className="relative h-full overflow-hidden rounded-[32px] border border-(--line) bg-[#e8dccd] shadow-[0_24px_80px_rgba(31,29,25,0.08)]">
-
           <div className="relative h-full min-h-[420px] sm:min-h-[560px] lg:min-h-[760px]">
             <Carousel
               setApi={setCarouselApi}
+              labels={common.carousel}
               opts={{ loop: true }}
               className="h-full min-h-[420px] sm:min-h-[560px] lg:min-h-[760px]"
             >
@@ -124,7 +127,7 @@ export function HeroCarousel({ locale: _locale, slides }: HeroCarouselProps): Re
                         dotClassName,
                       )}
                       onClick={() => handleDotClick(index)}
-                      aria-label={`Go to slide ${index + 1}`}
+                      aria-label={formatMessage(common.carousel.goToSlide, { number: index + 1 })}
                     />
                   );
                 })}

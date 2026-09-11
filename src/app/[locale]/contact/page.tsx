@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact/contact-form";
 import { getContactContent } from "@/i18n/contact-content";
+import { getHomeContent } from "@/i18n/content";
+import { getCommonContent } from "@/i18n/common-content";
 import { isLocale } from "@/i18n/config";
 import { imgV } from "@/utils/image-version";
 import { ContactBackgroundCarousel } from "./background-carousel";
@@ -34,10 +36,8 @@ export default async function ContactPage({
     <main className="relative flex min-h-[calc(100vh-72px)] items-center overflow-hidden">
       {/* ── 背景轮播：2 张图 5 秒静默交叉淡入淡出 ── */}
       <ContactBackgroundCarousel
-        images={[
-          imgV("/images-v5/contact/1.jpg"),
-          imgV("/images-v5/contact/2.jpg"),
-        ]}
+        imageDescription={getCommonContent(resolvedLocale).images.contactBackground}
+        images={[imgV("/images-v5/contact/1.jpg"), imgV("/images-v5/contact/2.jpg")]}
       />
 
       {/* 深色渐变遮罩：左深右浅，右侧留白给卡片 */}
@@ -71,7 +71,7 @@ export default async function ContactPage({
               {/* 联系信息补充 */}
               <div className="mt-8 space-y-3 text-sm text-white/60">
                 <p>sales@sktd-tech.com</p>
-                <p>Düsseldorf · Milan · Shanghai · Ho Chi Minh City</p>
+                <p>{getHomeContent(resolvedLocale).about.offices.join(" · ")}</p>
               </div>
             </div>
 

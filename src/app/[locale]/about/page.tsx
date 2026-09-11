@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getAboutPageContent } from "@/i18n/about-content";
 import { getHomeContent } from "@/i18n/content";
+import { getCommonContent } from "@/i18n/common-content";
 import { isLocale } from "@/i18n/config";
 import { imgV } from "@/utils/image-version";
 import { StorySections } from "@/app/[locale]/about/story-sections";
@@ -49,6 +50,7 @@ export default async function AboutPage({ params }: AboutPageProps): Promise<Rea
   const resolvedLocale = isLocale(locale) ? locale : "en";
   const content = getAboutPageContent(resolvedLocale);
   const homeContent = getHomeContent(resolvedLocale);
+  const common = getCommonContent(resolvedLocale);
 
   return (
     /* overflow-x 防止图片向右扩展时产生横向滚动条 */
@@ -74,7 +76,7 @@ export default async function AboutPage({ params }: AboutPageProps): Promise<Rea
       </div>
 
       {/* ── 全出血：左图右轴时间轴 ── */}
-      <MilestonesSection content={homeContent.milestones} hideHeader />
+      <MilestonesSection content={homeContent.milestones} common={common} hideHeader />
 
       {/* ── 受限宽度区：里程碑图片轮播 ── */}
       <div className="container-shell pb-8 sm:pb-10 lg:pb-12">
@@ -86,7 +88,7 @@ export default async function AboutPage({ params }: AboutPageProps): Promise<Rea
       </div>
 
       {/* 瀑布流商品画廊：全宽，置于页面最底部 */}
-      <GoodsGallery title={content.galleryTitle} />
+      <GoodsGallery title={content.galleryTitle} imageDescriptions={common.images.aboutGallery} />
     </main>
   );
 }

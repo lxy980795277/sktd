@@ -1,0 +1,61 @@
+import type { CommonContent } from "@/i18n/types/common";
+
+export const common = {
+  contactLabels: { phone: "电话", fax: "传真", email: "电子邮箱", website: "网站" },
+  navigation: {
+    title: "导航",
+    openMenu: "打开菜单",
+    closeMenu: "关闭菜单",
+    selectLanguage: "选择语言",
+  },
+  carousel: {
+    roleDescription: "轮播图",
+    slideDescription: "幻灯片",
+    goToSlide: "转到第 {number} 张幻灯片",
+    previousSlide: "上一张幻灯片",
+    nextSlide: "下一张幻灯片",
+  },
+  images: {
+    viewImage: "查看第 {number} 张图片",
+    productImage: "{productName}，第 {number} 张图片",
+    productThumbnail: "{productName}，第 {number} 张缩略图",
+    marketTop: "市场展示图片 {number}",
+    marketBottom: "市场展示补充图片 {number}",
+    contactBackground: "联系页面背景",
+    aboutGallery: [
+      "团队协作",
+      "现代办公空间",
+      "头脑风暴",
+      "团队演示",
+      "商务人士",
+      "团队工作现场",
+      "携手工作",
+      "专注工作",
+      "商务会议",
+      "办公室交流",
+      "创意工作空间",
+      "使用笔记本电脑工作",
+      "团队活动",
+      "工作瞬间",
+      "SKTD 的日常",
+    ],
+  },
+  sections: {
+    milestonesTimeline: "SKTD 发展里程碑时间轴",
+    marketFilm: "市场展示图片带",
+    productFilm: "产品展示图片带",
+  },
+  milestones: [
+    { year: "2014", lines: ["于杜塞尔多夫创立"] },
+    { year: "2015", lines: ["年销售额突破百万欧元"] },
+    { year: "2016", lines: ["上海采购中心成立"] },
+    { year: "2017", lines: ["米兰设计与销售中心开业"] },
+    { year: "2019", lines: ["越南办事处成立", "与 KUKA HOME 建立战略合作伙伴关系"] },
+    { year: "2022", lines: ["启动低碳物流倡议"] },
+  ],
+  notFound: {
+    title: "页面未找到",
+    description: "您要访问的页面暂不可用，请返回 SKTD 首页。",
+    backHome: "返回首页",
+  },
+} satisfies CommonContent;

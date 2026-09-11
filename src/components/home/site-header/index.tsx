@@ -7,13 +7,15 @@ import { LanguageSwitcher } from "@/components/home/language-switcher";
 import type { NavigationItem } from "@/i18n/content";
 import type { RouteLocale } from "@/i18n/config";
 import { getLocaleHref } from "@/lib/locale-href";
+import type { CommonContent } from "@/i18n/types/common";
 
 type SiteHeaderProps = {
   locale: RouteLocale;
   navigation: NavigationItem[];
+  labels: CommonContent["navigation"];
 };
 
-export function SiteHeader({ locale, navigation }: SiteHeaderProps): React.JSX.Element {
+export function SiteHeader({ locale, navigation, labels }: SiteHeaderProps): React.JSX.Element {
   const [open, setOpen] = useState(false);
   // 移动端展开的下拉项 href
   const [expandedHref, setExpandedHref] = useState<string | null>(null);
@@ -83,14 +85,18 @@ export function SiteHeader({ locale, navigation }: SiteHeaderProps): React.JSX.E
           </nav>
 
           <div className="hidden items-center lg:flex">
-            <LanguageSwitcher locale={locale} className="min-w-[118px]" />
+            <LanguageSwitcher
+              locale={locale}
+              label={labels.selectLanguage}
+              className="min-w-[118px]"
+            />
           </div>
 
           <button
             type="button"
             className="inline-flex h-12 w-12 items-center justify-center rounded-[4px] border border-white/20 bg-white/10 text-white lg:hidden"
             onClick={() => setOpen(true)}
-            aria-label="Open menu"
+            aria-label={labels.openMenu}
           >
             <Menu className="h-5 w-5" />
           </button>
@@ -103,21 +109,25 @@ export function SiteHeader({ locale, navigation }: SiteHeaderProps): React.JSX.E
           <div className="bg-background ml-auto flex h-full w-full max-w-sm flex-col px-6 py-6 shadow-2xl">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-xs tracking-[0.32em] text-(--muted) uppercase">Navigation</p>
+                <p className="text-xs tracking-[0.32em] text-(--muted) uppercase">{labels.title}</p>
                 <p className="section-title text-3xl font-semibold">SKTD</p>
               </div>
               <button
                 type="button"
                 className="inline-flex h-11 w-11 items-center justify-center rounded-[4px] border border-(--line) bg-white/80"
                 onClick={() => setOpen(false)}
-                aria-label="Close menu"
+                aria-label={labels.closeMenu}
               >
                 <X className="h-5 w-5" />
               </button>
             </div>
 
             <div className="mt-8">
-              <LanguageSwitcher locale={locale} className="w-full justify-center" />
+              <LanguageSwitcher
+                locale={locale}
+                label={labels.selectLanguage}
+                className="w-full justify-center"
+              />
             </div>
 
             <nav className="mt-8 flex flex-col gap-3">

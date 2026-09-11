@@ -14,6 +14,7 @@ import { localeLabels, locales, type RouteLocale } from "@/i18n/config";
 
 type LanguageSwitcherProps = {
   locale: RouteLocale;
+  label: string;
   className?: string;
 };
 
@@ -35,6 +36,7 @@ function getLocalizedPath(pathname: string, nextLocale: RouteLocale): string {
 
 export function LanguageSwitcher({
   locale,
+  label,
   className = "",
 }: LanguageSwitcherProps): React.JSX.Element {
   const pathname = usePathname();
@@ -51,7 +53,7 @@ export function LanguageSwitcher({
   return (
     <Select value={locale} onValueChange={handleValueChange}>
       <SelectTrigger
-        aria-label="Select language"
+        aria-label={label}
         className={cn("h-10 min-w-[124px] rounded-[4px] px-4 font-semibold", className)}
       >
         <span className="flex items-center gap-2">

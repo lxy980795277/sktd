@@ -3,14 +3,16 @@ import { Globe, Mail, MapPin, Phone, Printer } from "lucide-react";
 import type { HomeContent } from "@/i18n/content";
 import type { Locale } from "@/i18n/config";
 import { getLocaleHref } from "@/lib/locale-href";
+import type { CommonContent } from "@/i18n/types/common";
 
 type SiteFooterProps = {
   locale: Locale;
   content: HomeContent["footer"];
+  contactLabels: CommonContent["contactLabels"];
 };
 
 // 页脚模块：提供品牌摘要、快速导航与语言切换。
-export function SiteFooter({ locale, content }: SiteFooterProps): React.JSX.Element {
+export function SiteFooter({ locale, content, contactLabels }: SiteFooterProps): React.JSX.Element {
   const quickAccessLinks = [
     ...content.links,
     { label: content.contactLabel, href: "/contact" },
@@ -40,16 +42,16 @@ export function SiteFooter({ locale, content }: SiteFooterProps): React.JSX.Elem
                 </div>
                 <div className="flex items-start gap-3">
                   <Phone className="mt-1 h-4 w-4 shrink-0 text-white/65" />
-                  <p>Tel: (00)49 211 3399 5616</p>
+                  <p>{contactLabels.phone}: (00)49 211 3399 5616</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <Printer className="mt-1 h-4 w-4 shrink-0 text-white/65" />
-                  <p>Fax: (00)49 211 3399 5616</p>
+                  <p>{contactLabels.fax}: (00)49 211 3399 5616</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <Mail className="mt-1 h-4 w-4 shrink-0 text-white/65" />
                   <p>
-                    E-mail:{" "}
+                    {contactLabels.email}:{" "}
                     <a href="mailto:sales@sktd-tech.com" className="text-white hover:text-white/80">
                       sales@sktd-tech.com
                     </a>
@@ -58,7 +60,7 @@ export function SiteFooter({ locale, content }: SiteFooterProps): React.JSX.Elem
                 <div className="flex items-start gap-3">
                   <Globe className="mt-1 h-4 w-4 shrink-0 text-white/65" />
                   <p>
-                    Website:{" "}
+                    {contactLabels.website}:{" "}
                     <a
                       href="http://www.sktd-tech.com"
                       target="_blank"

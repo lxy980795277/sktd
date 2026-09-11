@@ -6,13 +6,17 @@ import Image from "next/image";
 
 type ContactBackgroundCarouselProps = {
   images: string[];
+  imageDescription: string;
 };
 
 /**
  * 无锚点静默背景轮播
  * 每张图通过 opacity 过渡交叉淡入淡出，5 秒自动切换
  */
-export const ContactBackgroundCarousel: FC<ContactBackgroundCarouselProps> = ({ images }) => {
+export const ContactBackgroundCarousel: FC<ContactBackgroundCarouselProps> = ({
+  images,
+  imageDescription,
+}) => {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
@@ -28,7 +32,7 @@ export const ContactBackgroundCarousel: FC<ContactBackgroundCarouselProps> = ({ 
         <Image
           key={src}
           src={src}
-          alt="Contact background"
+          alt={imageDescription}
           fill
           priority={index === 0}
           sizes="100vw"

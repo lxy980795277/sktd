@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { FC } from "react";
+import type { CommonContent } from "@/i18n/types/common";
 import "./product-film-section.css";
 
 type ProductFilmSectionProps = {
@@ -7,35 +8,31 @@ type ProductFilmSectionProps = {
   images: string[];
   /** 商品名称，用于 hover 蒙层展示 */
   productName: string;
+  common: CommonContent;
 };
 
 /** 商品详情页底部无限滚动图片条，展示当前商品的所有图片，hover 时显示商品名蒙层 */
-export const ProductFilmSection: FC<ProductFilmSectionProps> = ({ images, productName }) => {
+export const ProductFilmSection: FC<ProductFilmSectionProps> = ({
+  images,
+  productName,
+  common,
+}) => {
   if (images.length === 0) {
     return null;
   }
 
   return (
-    <section className="product-film-section" aria-label="Product showcase strip">
+    <section className="product-film-section" aria-label={common.sections.productFilm}>
       <div className="product-film-section__mask-left" />
       <div className="product-film-section__mask-right" />
 
       {/* 线速度统一：每张图约 7s，图越多轮播越长，但滚动快慢视觉一致 */}
-      <div
-        className="product-film-track"
-        style={{ animationDuration: `${images.length * 7}s` }}
-      >
+      <div className="product-film-track" style={{ animationDuration: `${images.length * 7}s` }}>
         {/* 复制两组实现无缝循环 */}
         {[0, 1].map((groupIndex) => (
-          <div
-            key={`group-${groupIndex}`}
-            className="product-film-group"
-          >
+          <div key={`group-${groupIndex}`} className="product-film-group">
             {images.map((image, index) => (
-              <article
-                key={`${groupIndex}-${index}`}
-                className="product-film-card"
-              >
+              <article key={`${groupIndex}-${index}`} className="product-film-card">
                 <div className="product-film-card__shine" />
                 <Image
                   src={image}

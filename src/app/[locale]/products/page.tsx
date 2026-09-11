@@ -3,38 +3,17 @@ import { redirect } from "next/navigation";
 import { ProductsShowcase } from "@/components/products/products-showcase";
 import { getProductCategories } from "@/constants/products";
 import { isLocale } from "@/i18n/config";
-
-type ProductsPageContent = {
-  title: string;
-  description: string;
-};
+import { getProductPagesContent } from "@/i18n/product-pages-content";
 
 type ProductsPageProps = {
   params: Promise<{ locale: string }>;
   searchParams: Promise<{ category?: string }>;
 };
 
-const pageText: Record<"en" | "de" | "zh", ProductsPageContent> = {
-  en: {
-    title: "Product Collections",
-    description:
-      "Explore our product categories and discover curated selections across each segment.",
-  },
-  de: {
-    title: "Produkt-Kollektionen",
-    description:
-      "Entdecken Sie unsere Produktkategorien und finden Sie kuratierte Auswahlen für jedes Segment.",
-  },
-  zh: {
-    title: "产品",
-    description: "查看 SKTD 的产品分类，并按分类预览对应的代表性商品方向。",
-  },
-};
-
 export async function generateMetadata({ params }: ProductsPageProps): Promise<Metadata> {
   const { locale } = await params;
   const resolvedLocale = isLocale(locale) ? locale : "en";
-  const content = pageText[resolvedLocale];
+  const content = getProductPagesContent(resolvedLocale).listing;
 
   return {
     title: `${content.title} | SKTD`,
@@ -49,7 +28,7 @@ export default async function ProductsPage({
   const { locale } = await params;
   const { category } = await searchParams;
   const resolvedLocale = isLocale(locale) ? locale : "en";
-  const content = pageText[resolvedLocale];
+  const content = getProductPagesContent(resolvedLocale).listing;
   const categories = getProductCategories(resolvedLocale);
 
   // 无分类参数时，默认跳转到第一个分类
@@ -58,8 +37,7 @@ export default async function ProductsPage({
   }
 
   // 找到匹配的分类；若 category 非法则回退到第一个
-  const activeCategory =
-    categories.find((c) => c.id === category) ?? categories[0];
+  const activeCategory = categories.find((c) => c.id === category) ?? categories[0];
 
   return (
     <main className="container-shell py-8 sm:py-10 lg:py-12">

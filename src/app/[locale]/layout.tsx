@@ -4,6 +4,7 @@ import { SiteHeader } from "@/components/home/site-header";
 import { getProductCategories } from "@/constants/products";
 import { getHomeContent } from "@/i18n/content";
 import { isLocale } from "@/i18n/config";
+import { getCommonContent } from "@/i18n/common-content";
 
 type LocaleLayoutProps = {
   children: React.ReactNode;
@@ -23,6 +24,7 @@ export default async function LocaleLayout({
   }
 
   const content = getHomeContent(locale);
+  const common = getCommonContent(locale);
 
   // 将产品分类动态注入到 Products 导航项的 children，保持分类数据单一来源
   const productCategories = getProductCategories(locale);
@@ -41,12 +43,9 @@ export default async function LocaleLayout({
 
   return (
     <div className="flex min-h-screen flex-col">
-      <SiteHeader
-        locale={locale}
-        navigation={navigation}
-      />
+      <SiteHeader locale={locale} navigation={navigation} labels={common.navigation} />
       <div className="flex-1">{children}</div>
-      <SiteFooter locale={locale} content={content.footer} />
+      <SiteFooter locale={locale} content={content.footer} contactLabels={common.contactLabels} />
     </div>
   );
 }

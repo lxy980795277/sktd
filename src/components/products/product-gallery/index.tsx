@@ -9,13 +9,20 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
+import type { CommonContent } from "@/i18n/types/common";
+import { formatMessage } from "@/i18n/format-message";
 
 type ProductGalleryProps = {
   images: string[];
   productName: string;
+  common: CommonContent;
 };
 
-export function ProductGallery({ images, productName }: ProductGalleryProps): React.JSX.Element {
+export function ProductGallery({
+  images,
+  productName,
+  common,
+}: ProductGalleryProps): React.JSX.Element {
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -49,7 +56,12 @@ export function ProductGallery({ images, productName }: ProductGalleryProps): Re
   return (
     /* 竖长图容器：3:4 比例，符合电商商品图构图 */
     <div className="relative">
-      <Carousel setApi={setCarouselApi} opts={{ loop: false }} className="w-full">
+      <Carousel
+        setApi={setCarouselApi}
+        labels={common.carousel}
+        opts={{ loop: false }}
+        className="w-full"
+      >
         <CarouselContent className="ml-0">
           {images.map((image, index) => {
             return (
@@ -57,7 +69,10 @@ export function ProductGallery({ images, productName }: ProductGalleryProps): Re
                 <div className="relative aspect-[9/10] overflow-hidden rounded-[20px] border border-(--line)">
                   <Image
                     src={image}
-                    alt={`${productName} image ${index + 1}`}
+                    alt={formatMessage(common.images.productImage, {
+                      productName,
+                      number: index + 1,
+                    })}
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 50vw"
@@ -84,12 +99,15 @@ export function ProductGallery({ images, productName }: ProductGalleryProps): Re
                   ? "border-(--accent) opacity-100"
                   : "border-white/40 opacity-70 hover:opacity-100",
               )}
-              aria-label={`View image ${index + 1}`}
+              aria-label={formatMessage(common.images.viewImage, { number: index + 1 })}
             >
               <div className="relative h-12 w-9">
                 <Image
                   src={image}
-                  alt={`${productName} thumbnail ${index + 1}`}
+                  alt={formatMessage(common.images.productThumbnail, {
+                    productName,
+                    number: index + 1,
+                  })}
                   fill
                   className="object-cover"
                   sizes="48px"

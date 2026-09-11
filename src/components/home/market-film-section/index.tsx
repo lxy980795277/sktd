@@ -1,6 +1,8 @@
 import Image from "next/image";
 import type { FC } from "react";
 import { imgV } from "@/utils/image-version";
+import type { CommonContent } from "@/i18n/types/common";
+import { formatMessage } from "@/i18n/format-message";
 import "./index.css";
 
 /** 上排图片（top/8-1，反序播放） */
@@ -27,9 +29,9 @@ const ROW_SECONDARY_IMAGES = [
   imgV("/images-v5/home/market-film-section/bottom/8.jpg"),
 ];
 
-export const MarketFilmSection: FC = () => {
+export const MarketFilmSection: FC<{ common: CommonContent }> = ({ common }) => {
   return (
-    <section className="market-film-section" aria-label="Market film strip">
+    <section className="market-film-section" aria-label={common.sections.marketFilm}>
       <div className="market-film-section__inner">
         <div className="market-film-section__glow" />
         <div className="market-film-section__mask-left" />
@@ -53,7 +55,7 @@ export const MarketFilmSection: FC = () => {
                         <div className="market-film-card__shine" />
                         <Image
                           src={image}
-                          alt={`Market showcase ${index + 1}`}
+                          alt={formatMessage(common.images.marketTop, { number: index + 1 })}
                           fill
                           className="market-film-card__image"
                           sizes="320px"
@@ -85,7 +87,7 @@ export const MarketFilmSection: FC = () => {
                         <div className="market-film-card__shine" />
                         <Image
                           src={image}
-                          alt={`Market showcase alternate ${index + 1}`}
+                          alt={formatMessage(common.images.marketBottom, { number: index + 1 })}
                           fill
                           className="market-film-card__image"
                           sizes="260px"

@@ -13,9 +13,11 @@ import {
 import { useEffect, useRef, useState } from "react";
 import type { HomeContent } from "@/i18n/content";
 import { imgV } from "@/utils/image-version";
+import type { CommonContent } from "@/i18n/types/common";
 
 type MilestonesSectionProps = {
   content: HomeContent["milestones"];
+  common: CommonContent;
   /** 隐藏顶部 eyebrow + 大标题，用于嵌入其他页面时避免重复标题 */
   hideHeader?: boolean;
 };
@@ -54,26 +56,27 @@ const CURVE_PATH = (() => {
   return segments.join(" ");
 })();
 
-// 里程碑数据：从远到近，2014 在顶部，自上而下时间递增
-const MILESTONES: { year: string; lines: string[]; Icon: LucideIcon }[] = [
-  { year: "2014", lines: ["Founded in Düsseldorf"], Icon: Building2 },
-  { year: "2015", lines: ["Exceeded €1M annual sales"], Icon: TrendingUp },
-  { year: "2016", lines: ["Shanghai sourcing center established"], Icon: Warehouse },
-  { year: "2017", lines: ["Milan design & sales center opened"], Icon: Palette },
-  {
-    year: "2019",
-    lines: ["Vietnam office established", "Strategic partnership with KUKA HOME"],
-    Icon: Globe,
-  },
-  { year: "2022", lines: ["Low-carbon logistics initiative launched"], Icon: Leaf },
-];
+// 图标与固定六个锚点对应；年份和文案由当前语言字典提供。
+const MILESTONE_ICONS = [
+  Building2,
+  TrendingUp,
+  Warehouse,
+  Palette,
+  Globe,
+  Leaf,
+] as const satisfies readonly LucideIcon[];
 
 const CURVE_LENGTH = 1400;
 // SVG viewBox 尺寸，供 HTML 叠加层计算百分比定位使用
 const SVG_W = 600;
 const SVG_H = 650;
 
-export function MilestonesSection({ content, hideHeader = false }: MilestonesSectionProps): React.JSX.Element {
+export function MilestonesSection({
+  content,
+  common,
+  hideHeader = false,
+}: MilestonesSectionProps): React.JSX.Element {
+  const milestones = common.milestones;
   const sectionRef = useRef<HTMLElement | null>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -148,7 +151,7 @@ export function MilestonesSection({ content, hideHeader = false }: MilestonesSec
             <svg
               viewBox={`0 0 ${SVG_W} ${SVG_H}`}
               className="block w-full"
-              aria-label="SKTD milestones timeline"
+              aria-label={common.sections.milestonesTimeline}
             >
               {/* 底色曲线（始终可见） */}
               <path d={CURVE_PATH} fill="none" stroke="var(--line)" strokeWidth="1.5" />
@@ -167,7 +170,7 @@ export function MilestonesSection({ content, hideHeader = false }: MilestonesSec
                 }}
               />
 
-              {MILESTONES.map((m, i) => {
+              {milestones.map((m, i) => {
                 const { x, y } = POINTS[i];
                 const delay = `${0.6 + i * 0.18}s`;
                 return (
@@ -223,7 +226,7 @@ export function MilestonesSection({ content, hideHeader = false }: MilestonesSec
             </svg>
 
             {/* ── HTML 层：年份标签（左侧，百分比坐标对齐 SVG 锚点） ── */}
-            {MILESTONES.map((m, i) => {
+            {milestones.map((m, i) => {
               const { x, y } = POINTS[i];
               const delay = `${0.6 + i * 0.18}s`;
               return (
@@ -250,12 +253,12 @@ export function MilestonesSection({ content, hideHeader = false }: MilestonesSec
             })}
 
             {/* ── HTML 层：里程碑卡片（右侧，毛玻璃风格） ── */}
-            {MILESTONES.map((m, i) => {
+            {milestones.map((m, i) => {
               const { x, y } = POINTS[i];
               const delay = `${0.6 + i * 0.18}s`;
-              const IconComponent = m.Icon;
+              const IconComponent = MILESTONE_ICONS[i];
               // 最近一条（2022，位于末尾）给予高亮样式，与其余条目区分
-              const isLatest = i === MILESTONES.length - 1;
+              const isLatest = i === milestones.length - 1;
               return (
                 <div
                   key={`card-${m.year}`}

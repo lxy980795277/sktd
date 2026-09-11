@@ -1,0 +1,61 @@
+import type { CommonContent } from "@/i18n/types/common";
+
+export const common = {
+  contactLabels: { phone: "Tel", fax: "Fax", email: "E-mail", website: "Website" },
+  navigation: {
+    title: "Navigation",
+    openMenu: "Open menu",
+    closeMenu: "Close menu",
+    selectLanguage: "Select language",
+  },
+  carousel: {
+    roleDescription: "carousel",
+    slideDescription: "slide",
+    goToSlide: "Go to slide {number}",
+    previousSlide: "Previous slide",
+    nextSlide: "Next slide",
+  },
+  images: {
+    viewImage: "View image {number}",
+    productImage: "{productName} image {number}",
+    productThumbnail: "{productName} thumbnail {number}",
+    marketTop: "Market showcase {number}",
+    marketBottom: "Market showcase alternate {number}",
+    contactBackground: "Contact background",
+    aboutGallery: [
+      "Team collaboration",
+      "Modern office space",
+      "Brainstorming session",
+      "Team presentation",
+      "Business professional",
+      "Team at work",
+      "Working together",
+      "Focused work",
+      "Business meeting",
+      "Office discussion",
+      "Creative workspace",
+      "Laptop working",
+      "Team activity",
+      "Workplace moment",
+      "Life at SKTD",
+    ],
+  },
+  sections: {
+    milestonesTimeline: "SKTD milestones timeline",
+    marketFilm: "Market film strip",
+    productFilm: "Product showcase strip",
+  },
+  milestones: [
+    { year: "2014", lines: ["Founded in Düsseldorf"] },
+    { year: "2015", lines: ["Exceeded €1M annual sales"] },
+    { year: "2016", lines: ["Shanghai sourcing center established"] },
+    { year: "2017", lines: ["Milan design & sales center opened"] },
+    { year: "2019", lines: ["Vietnam office established", "Strategic partnership with KUKA HOME"] },
+    { year: "2022", lines: ["Low-carbon logistics initiative launched"] },
+  ],
+  notFound: {
+    title: "Page not found",
+    description: "The page you are looking for is unavailable. Please return to the SKTD homepage.",
+    backHome: "Back to home",
+  },
+} satisfies CommonContent;

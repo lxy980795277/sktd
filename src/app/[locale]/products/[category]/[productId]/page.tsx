@@ -8,6 +8,8 @@ import { getAllProductSlugs, getProductByIds, getProductImages } from "@/constan
 import { getProductStories } from "@/i18n/products-content";
 import { imgV } from "@/utils/image-version";
 import { isLocale } from "@/i18n/config";
+import { getCommonContent } from "@/i18n/common-content";
+import { getProductPagesContent } from "@/i18n/product-pages-content";
 
 type ProductDetailPageProps = {
   params: Promise<{
@@ -16,24 +18,6 @@ type ProductDetailPageProps = {
     productId: string;
   }>;
 };
-
-const detailText = {
-  en: {
-    productsLabel: "Products",
-    highlightLabel: "Product highlight",
-    specsLabel: "Key specifications",
-  },
-  de: {
-    productsLabel: "Produkte",
-    highlightLabel: "Produkt-Highlight",
-    specsLabel: "Wichtige Spezifikationen",
-  },
-  zh: {
-    productsLabel: "产品",
-    highlightLabel: "产品亮点",
-    specsLabel: "关键规格",
-  },
-} as const;
 
 /** 商品详情页主图路径，取第一张图 */
 const getDetailImage = (category: string, productId: string): string => {
@@ -48,11 +32,12 @@ export async function generateMetadata({ params }: ProductDetailPageProps): Prom
   const { locale, category, productId } = await params;
   const resolvedLocale = isLocale(locale) ? locale : "en";
   const result = getProductByIds(resolvedLocale, category, productId);
+  const copy = getProductPagesContent(resolvedLocale).detail;
 
   if (!result) {
     return {
-      title: "Product | SKTD",
-      description: "Product details from SKTD.",
+      title: copy.fallbackTitle,
+      description: copy.fallbackDescription,
     };
   }
 
@@ -70,7 +55,7 @@ export default async function ProductDetailPage({
 }: ProductDetailPageProps): Promise<React.JSX.Element> {
   const { locale, category, productId } = await params;
   const resolvedLocale = isLocale(locale) ? locale : "en";
-  const copy = detailText[resolvedLocale];
+  const copy = getProductPagesContent(resolvedLocale).detail;
   const result = getProductByIds(resolvedLocale, category, productId);
 
   if (!result) {
@@ -108,7 +93,7 @@ export default async function ProductDetailPage({
               {result.category.title}
             </Link>
             <span className="text-(--muted)">&rsaquo;</span>
-            <span className="font-semibold text-foreground">{result.product.name}</span>
+            <span className="text-foreground font-semibold">{result.product.name}</span>
           </nav>
         </div>
       </div>
@@ -171,12 +156,15 @@ export default async function ProductDetailPage({
 
       {/* 底部品类图片滚动条 */}
       <div className="mt-14 sm:mt-16 lg:mt-20">
-        <ProductFilmSection images={filmImages} productName={result.product.name} />
+        <ProductFilmSection
+          images={filmImages}
+          productName={result.product.name}
+          common={getCommonContent(resolvedLocale)}
+        />
       </div>
 
       {/* 公司产品理念双分区 */}
       <ProductStorySection stories={productStories} locale={resolvedLocale} />
-
     </main>
   );
 }

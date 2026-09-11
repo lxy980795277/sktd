@@ -1,25 +1,14 @@
 import type { Locale } from "@/i18n/config";
+import type { ProductStoryItem } from "@/i18n/types/product-stories";
+import en from "@/i18n/locales/en/product-stories";
+import de from "@/i18n/locales/de/product-stories";
+import zh from "@/i18n/locales/zh/product-stories";
+import es from "@/i18n/locales/es/product-stories";
+import it from "@/i18n/locales/it/product-stories";
 
-export type ProductStoryItem = {
-  title: string;
-  description: string;
-  /** 图片在左侧时为 true */
-  imageLeft: boolean;
-  /** 可选 CTA 按钮文案，有值时在描述下方渲染按钮 */
-  ctaLabel?: string;
-};
+export type { ProductStoryItem } from "@/i18n/types/product-stories";
 
-const productStoriesContent: Record<Locale, ProductStoryItem[]> = {
-  en: [
-    { title: "Can't find exactly what you're looking for?", description: "Our team is ready to create customised solutions for your business.", imageLeft: false, ctaLabel: "Contact Us" },
-  ],
-  de: [
-    { title: "Nicht das Richtige gefunden?", description: "Wir unterstützen Sie mit individuellen Produktlösungen und maßgeschneiderter Fertigung.", imageLeft: false, ctaLabel: "Kontakt aufnehmen" },
-  ],
-  zh: [
-    { title: "找不到您想要的产品？", description: "我们的团队随时准备为您的业务提供定制化解决方案。", imageLeft: false, ctaLabel: "联系我们" },
-  ],
-};
+const productStoriesContent: Record<Locale, ProductStoryItem[]> = { en, de, zh, es, it };
 
 export const getProductStories = (locale: Locale): ProductStoryItem[] => {
   return productStoriesContent[locale];
